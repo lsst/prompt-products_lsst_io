@@ -4,6 +4,11 @@
 Observations
 ############
 
+.. important::
+
+   **Placeholder.** This website is currently under development.
+
+
 Rubin Observatory is still in the commissioning phase.
 The key objective is to verify the as-built system and to evaluate the operational efficiency.
 The amount of science-grade data collected during commissioning is dependent on several potentially compounding factors, such as resolving emergent technical challenges, calibrating the system performance, weather in Chilean winter, and so on.

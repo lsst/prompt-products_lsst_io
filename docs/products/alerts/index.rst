@@ -11,6 +11,11 @@ Alert packets
 
 Ascii files of measurements for detected difference-image sources.
 
+For more information about alert packets and brokers, visit:
+
+* Rubin Observatory `Alerts & Brokers <https://rubinobservatory.org/for-scientists/data-products/alerts-and-brokers>`_ webpage
+
+
 
 Access
 ======
