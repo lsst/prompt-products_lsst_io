@@ -26,7 +26,7 @@ Archive
 -------
 
 Alerts are stored in an archive accessible via the Rubin Science Platform by their unique identifier number.
-The alerts archive is not queryable; use the ``DiaObject`` and ``SSObject`` :doc:`/catalogs/index` instead.
+The alerts archive is not queryable; use the ``DiaObject`` and ``SSObject`` :doc:`/products/catalogs/index` instead.
 
 
 Schema
