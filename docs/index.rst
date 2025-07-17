@@ -4,7 +4,7 @@
 Vera C. Rubin Observatory Prompt Products
 #########################################
 
-**Anticipated release date**: June/July 2025
+**Anticipated start of Alert Production**: July 2025
 
 .. important::
 
@@ -13,7 +13,7 @@ Vera C. Rubin Observatory Prompt Products
 Overview
 ========
 
-General information about LSST prompt data products.
+General information about the observations and data products.
 
 .. toctree::
    :maxdepth: 2
@@ -21,10 +21,22 @@ General information about LSST prompt data products.
 
    Overview <overview/index>
 
+
+Brokers
+=======
+
+Software to process and serve alerts to scientists.
+
+.. toctree::
+   :maxdepth: 2
+   :titlesonly:
+
+   Brokers <brokers/index>
+
 Data products
 =============
 
-Descriptions and schema for the images and catalogs.
+Descriptions and schema for the alert packets, catalogs, and images.
 
 .. toctree::
    :maxdepth: 2
@@ -35,7 +47,7 @@ Descriptions and schema for the images and catalogs.
 Data processing
 ===============
 
-Summaries of the data processing steps that generated the data products.
+Summaries of the data processing steps that generate the data products.
 
 .. toctree::
    :maxdepth: 2
@@ -53,3 +65,14 @@ Tutorials demonstrating how to access and analyze data via the Rubin Science Pla
    :titlesonly:
 
    Tutorials <tutorials/index>
+
+How to cite
+===========
+
+How to cite Rubin Observatory and the Prompt data products.
+
+.. toctree::
+    :maxdepth: 1
+    :glob:
+
+    cite
