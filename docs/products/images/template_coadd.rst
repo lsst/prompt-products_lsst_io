@@ -50,7 +50,7 @@ Template coadd images are for a single filter.
 Processing
 ----------
 
-TBD
+The creation of template coadd images is described in :doc:`/processing/templates/index`.
 
 Pixel data
 ----------

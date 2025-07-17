@@ -45,7 +45,7 @@ The raw images should not be used for scientific analysis, and users should not 
 Processing
 ----------
 
-The raw exposures are first processed with the :doc:`/processing/isr/index` pipeline.
+The processing of raw exposures is described in :doc:`/processing/single-frame/index` pipeline.
 
 Pixel data
 ----------

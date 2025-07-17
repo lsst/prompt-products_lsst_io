@@ -49,7 +49,7 @@ Each individual visit image contains data from one of the camera's detectors.
 Processing
 ----------
 
-The visit images are the result of :doc:`/processing/calibration/index`.
+The creation of visit images is described in :doc:`/processing/single-frame/index`.
 
 Pixel data
 ----------
