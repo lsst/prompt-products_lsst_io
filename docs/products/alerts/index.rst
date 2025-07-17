@@ -20,13 +20,13 @@ Alert packet contents are world public and have no proprietary period.
 Brokers
 -------
 
-Alerts are delivered to :doc:`brokers/index` and accessed via individual brokers' web-based interfaces.
+Alerts are delivered to :doc:`/brokers/index` and accessed via individual brokers' web-based interfaces.
 
 Archive
 -------
 
 Alerts are stored in an archive accessible via the Rubin Science Platform by their unique identifier number.
-The alerts archive is not queryable; use the ``DiaObject`` and ``SSObject`` :doc:`catalogs/index` instead.
+The alerts archive is not queryable; use the ``DiaObject`` and ``SSObject`` :doc:`/catalogs/index` instead.
 
 
 Schema

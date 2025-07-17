@@ -23,7 +23,7 @@ When asked to cite the Prompt Products dataset as a whole please use:
 |prompt_doi|
 
 If you only use a specific subset, such as only the alerts, or a specific catalog table or image type, you may cite the DOI explicitly assigned to that subset.
-Each individual page in :ref:`products` includes the relevant DOI.
+Each individual page in :doc:`/products/index` includes the relevant DOI.
 
 
 How to refer to single objects
