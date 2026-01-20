@@ -2,17 +2,13 @@
 Data products
 #############
 
-.. important::
-
-   This website is currently under development.
-
 
 Descriptions and schema for the science-ready data products.
 
 Alerts
 ======
 
-Ascii files of measurements for detected difference-image sources.
+Packets containing information from detected difference-image sources.
 
 .. toctree::
     :maxdepth: 1
@@ -35,7 +31,7 @@ Tables of measurements made on detected sources.
 Images
 ======
 
-Individual, difference, and template coadded images of the sky in the six LSST filters.
+Science, difference, and coadded template images of the sky.
 
 .. toctree::
     :maxdepth: 1

@@ -4,14 +4,14 @@
 Template generation
 ###################
 
-.. important::
+Template coadded images are created by combining multiple calibrated images obtained in the same filter and of the same region of the sky.
+This coaddition reduces noise, gaps, and artifacts.
 
-   **Placeholder.** Prompt data processing is under construction.
+Incremental Template Generation
+===============================
 
-
-Template coadded images are created by combining multiple calibrated images obtained in the
-same filter and of the same region of the sky to achieve a sharper image
-(i.e., by selecting images with good seeing).
+Template Availability
+=====================
 
 
 Coadds by patch

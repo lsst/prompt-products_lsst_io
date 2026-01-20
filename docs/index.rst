@@ -4,61 +4,62 @@
 Vera C. Rubin Observatory Prompt Products
 #########################################
 
-**Anticipated start of Alert Production**: July 2025
+**Anticipated start of Alert Production**: February 2026
 
 .. important::
 
    This website is currently under development.
 
-Overview
-========
+Observations and Status
+=======================
 
-General information about the observations and data products.
-
-.. toctree::
-   :maxdepth: 2
-   :titlesonly:
-
-   Overview <overview/index>
-
-
-Brokers
-=======
-
-Software to process and serve alerts to scientists.
+Information and live status for the Rubin observations producing alerts.
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :titlesonly:
 
-   Brokers <brokers/index>
-
-Data products
-=============
-
-Descriptions and schema for the alert packets, catalogs, and images.
-
-.. toctree::
-   :maxdepth: 2
-   :titlesonly:
-
-   Data products <products/index>
+   Observations <observations/index>
 
 Data processing
 ===============
 
-Summaries of the data processing steps that generate the data products.
+Summary of the data processing steps that generate the data products.
+
+.. toctree::
+   :maxdepth: 1
+   :titlesonly:
+
+   Data Processing <processing/index>
+
+
+Data products
+=============
+
+Descriptions and schemas for the alert packets, catalogs, and images.
 
 .. toctree::
    :maxdepth: 2
    :titlesonly:
 
-   Processing <processing/index>
+   Data Products <products/index>
 
-Data access and analysis
-========================
+Data Access and Brokers
+=======================
 
-Tutorials demonstrating how to access and analyze data via the Rubin Science Platform (RSP).
+How to access Prompt Products through community alert brokers and the Rubin Science Platform.
+
+.. toctree::
+   :maxdepth: 2
+   :titlesonly:
+
+   Data Access <access/index>
+
+
+Tutorials
+=========
+
+Tutorials demonstrating how to access and analyze data.
 
 .. toctree::
    :maxdepth: 2
@@ -66,13 +67,13 @@ Tutorials demonstrating how to access and analyze data via the Rubin Science Pla
 
    Tutorials <tutorials/index>
 
-How to cite
-===========
+Citing Prompt Products
+======================
 
 How to cite Rubin Observatory and the Prompt data products.
 
 .. toctree::
     :maxdepth: 1
-    :glob:
+    :titlesonly:
 
-    cite
+    Citing Prompt Products <cite>

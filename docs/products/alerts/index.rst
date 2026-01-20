@@ -1,52 +1,36 @@
 .. _alerts:
 
 #############
-Alert packets
+Alert Packets
 #############
+
+
+Each alert packet contains information triggered by a single DiaSource detected at 5 sigma in image differencing by Prompt Processing.
+
+
+Data Rights
+===========
+
+Alert packet contents are world public and have no proprietary period `RDO-013 <http://ls.st/rdo-013>`_.
+
+
+Brokers
+=======
+
+Realtime access to alerts is available through community alert brokers.
+Alerts are delivered to :doc:`/access/brokers` and accessed via individual brokers' interfaces.
+
+Alert Archive
+=============
+
+As-transmitted alerts are stored in an archive accessible to Data Rights holders via the Rubin Science Platform.
 
 .. important::
 
-   **Placeholder.** Alerts are not yet available.
+   **Placeholder.** The Alert Archive interface has not yet been released.
 
-
-Ascii files of measurements for detected difference-image sources.
-
-For more information about alert packets and brokers, visit:
-
-* Rubin Observatory `Alerts & Brokers <https://rubinobservatory.org/for-scientists/data-products/alerts-and-brokers>`_ webpage
-
-
-
-Access
-======
-
-Alert packet contents are world public and have no proprietary period.
-
-Brokers
--------
-
-Alerts are delivered to :doc:`/brokers/index` and accessed via individual brokers' web-based interfaces.
-
-Archive
--------
-
-Alerts are stored in an archive accessible via the Rubin Science Platform by their unique identifier number.
-The alerts archive is not queryable; use the ``DiaObject`` and ``SSObject`` :doc:`/products/catalogs/index` instead.
-
-
-Schema
-======
-
-Alert packets are generated with Avro schema (JSON format).
-
-Find the most recent version of the LSST `alert packet schema <https://github.com/lsst/alert_packet/tree/main/python/lsst/alert/packet/schema>`_/
-
-Note that most broker users do not need to know the details of the packet schema
-unless they are developing custom alert filters.
-
-
-Description
-===========
+Contents
+========
 
 Each alert packet contains:
 
@@ -54,14 +38,13 @@ Each alert packet contains:
 * the ``DiaSource`` record that triggered the alert
 * the associated ``DiaObject`` or ``SSObject`` record
 * associated ``DiaSource`` and ``DiaForcedSource`` records from the past 12 months
-* cutout stamps from the difference and template images
+* FITS-formatted cutout postage stamps from the science, difference, template images
 
-Processing
-----------
 
-The alerts packets are the result of :doc:`/processing/alert-gen/index`.
+Schema
+======
 
-Tutorials
----------
+A detailed description of the records contained within the alert packet is available at `sdm-schemas.lsst.io <http://sdm-schemas.lsst.io/apdb.html>`_.
 
-TBD
+Alert packets are serialized in the binary Apache Avro format.
+The Avro schema is `alert packet schema <https://github.com/lsst/alert_packet/tree/main/python/lsst/alert/packet/schema>`_.
