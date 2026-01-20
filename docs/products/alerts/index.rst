@@ -44,7 +44,7 @@ Each alert packet contains:
 Schema
 ======
 
-A detailed description of the records contained within the alert packet is available at `sdm-schemas.lsst.io <http://sdm-schemas.lsst.io/apdb.html>`_.
+A detailed description of the records contained within the alert packet is available at `sdm-schemas.lsst.io <https://sdm-schemas.lsst.io/apdb.html>`_.
 
 Alert packets are serialized in the binary Apache Avro format.
 The Avro schema is `alert packet schema <https://github.com/lsst/alert_packet/tree/main/python/lsst/alert/packet/schema>`_.
