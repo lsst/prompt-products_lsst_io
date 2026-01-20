@@ -25,6 +25,8 @@ When asked to cite the Prompt Products dataset as a whole please use:
 If you only use a specific subset, such as only the alerts, or a specific catalog table or image type, you may cite the DOI explicitly assigned to that subset.
 Each individual page in :doc:`/products/index` includes the relevant DOI.
 
+`citations.lsst.io <http://citations.lsst.io/>`_ provides a single point of reference for Rubin citations.
+
 
 How to refer to single objects
 ==============================

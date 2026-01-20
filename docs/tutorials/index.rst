@@ -1,6 +1,6 @@
-########################
-Data access and analysis
-########################
+#########
+Tutorials
+#########
 
 .. important::
 
@@ -14,7 +14,7 @@ Tutorials demonstrating how to access and analyze data via the Rubin Science Pla
 
 **Alerts are world public and accessible via the brokers.**
 
-Visit the :doc:`/brokers/index` page.
+Visit the :doc:`/access/index` page.
 
 
 Get started
