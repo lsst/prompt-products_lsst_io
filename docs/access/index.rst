@@ -4,8 +4,8 @@ Data Access & Brokers
 
 Accessing prompt data products.
 
-Community Alert Brokers
-=======================
+Alert brokers
+=============
 
 Services that receive alerts in realtime.
 

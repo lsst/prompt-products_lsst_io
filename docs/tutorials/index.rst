@@ -13,9 +13,7 @@ Tutorials demonstrating how to access and analyze data via the Rubin Science Pla
 All scientists and students in the US and Chile, plus named members of international in-kind teams, have Rubin data rights.
 `Learn more about the Rubin data policy <https://rubinobservatory.org/for-scientists/data-products/data-policy>`_.
 
-**Alerts are world public and accessible via the brokers.**
-
-Visit the :doc:`/access/index` page.
+**Alerts are world public and accessible by everyone via the `Alert brokers`_.**
 
 
 Get started
@@ -41,7 +39,7 @@ Weekly `Rubin Science Assemblies <https://rubinobservatory.org/for-scientists/ev
 Notebook Aspect
 ===============
 
-Get executable versions of these notebooks in the RSP using the "Tutorials" menu; find them under "Commissioning"
+Get executable versions of these notebooks in the RSP using the "Tutorials" drop-down menu. Select the "Commissioning" folder and then select the file name.
 
 .. toctree::
     :titlesonly:
