@@ -21,7 +21,7 @@ Nightly projection
 ------------------
 
 The projected Rubin schedule can be obtained via ObsLocTAP `programatically <https://usdf-rsp.slac.stanford.edu/obsloctap/schedule?time=24>`_ or with the browser-based `viewer <https://usdf-rsp.slac.stanford.edu/obsloctap/static/viewer.html>`_.
-A :ref:`tutorial notebook<_tutorials-notebook>` for the Rubin Schedule Viewer is available.
+A :ref:`tutorial notebook <tutorials-notebook>` for the Rubin Schedule Viewer is available.
 
 
 Alert stream status
