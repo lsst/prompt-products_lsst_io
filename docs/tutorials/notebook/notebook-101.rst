@@ -5,4 +5,4 @@
 ###########################
 
 .. raw:: html
-    :file: 101_lsstcam_visit_database.html
+    :file: 101_lsstcam_visits_database.html
