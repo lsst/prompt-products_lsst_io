@@ -1,17 +1,17 @@
 .. _alerts:
 
 #############
-Alert Packets
+Alert packets
 #############
 
 
-Each alert packet contains information triggered by a single DiaSource detected at 5 sigma in image differencing by Prompt Processing.
+Each alert packet contains information triggered by a single ``DiaSource`` detected at 5 sigma in image differencing by Prompt Processing.
 
 
-Data Rights
+Data rights
 ===========
 
-Alert packet contents are world public and have no proprietary period `RDO-013 <http://ls.st/rdo-013>`_.
+Alert packet contents are world public and have no proprietary period (see Section 3 of the `Rubin Data Policy <http://ls.st/rdo-013>`_.
 
 
 Brokers
