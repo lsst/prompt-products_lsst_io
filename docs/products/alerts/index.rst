@@ -29,7 +29,7 @@ As-transmitted alerts are stored in an archive accessible to Data Rights holders
 
 .. important::
 
-   **Placeholder.** The Alert Archive interface has not yet been released.
+   The Alert Archive interface has not yet been released.
 
 
 Description

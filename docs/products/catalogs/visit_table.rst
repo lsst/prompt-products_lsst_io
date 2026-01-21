@@ -6,35 +6,17 @@ Visit
 
 .. important::
 
-   **Placeholder.** Prompt catalogs are not yet available.
+   Prompt catalogs are not yet available.
 
 
 Observation metadata for the full focal plane (date, time, band, coordinates).
 
-Schema:
+Schema: TBD
 
 Access
 ======
 
-The visit catalog is accessible via ...
-
-**Recommended access service:**
-
-TAP
----
-
-* doi
-* Table name:
-* Columns:
-* Rows:
-
-Butler
-------
-
-* doi
-* dataset type
-* Format: Parquet
-* Number of Butler datasets:
+The visit catalog is not yet accessible.
 
 
 Description

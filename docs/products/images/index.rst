@@ -6,12 +6,12 @@ Images
 
 .. important::
 
-   **Placeholder.** Prompt images are not yet available.
+   Prompt images are not yet available.
 
 
 Images of the sky in the six LSST filters with a variety of calibration levels.
 
-The `schema browser <https://sdm-schemas.lsst.io/>`_ includes tables of image metadata (``ObsCore``).
+Schema for image metadata: `ObsCore table <https://sdm-schemas.lsst.io/ivoa_obscore.html>`_
 
 
 Template coadd images

@@ -6,14 +6,12 @@ Catalogs
 
 .. important::
 
-   **Placeholder.** Prompt catalogs are not yet available.
+   Prompt catalogs are not yet available.
 
 
 Tables of measurements for detections in difference images.
 
-The Prompt catalogs together are referred to as the Alert Production Database (APDB).
-
-The `APDB schema browser <https://sdm-schemas.lsst.io/apdb.html>`_ includes column descriptions for all tables.
+The Prompt catalogs together are referred to as the Prompt Products Database (PPDB).
 
 
 Difference image analysis
