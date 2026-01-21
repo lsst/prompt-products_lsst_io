@@ -1,13 +1,13 @@
-#####################
-Data Access & Brokers
-#####################
+###########
+Data access
+###########
 
-Accessing prompt data products.
+Services and tools for accessing the alerts and the Prompt data products.
 
 Alert brokers
 =============
 
-Services that receive alerts in realtime.
+Software systems that ingest and process astronomical alerts from the LSST (and other surveys).
 
 .. toctree::
     :maxdepth: 1
@@ -16,15 +16,29 @@ Services that receive alerts in realtime.
     brokers
 
 
-Alert Archive
-=============
+Rubin Science Platform (RSP)
+============================
 
-Image Access
-============
+Past alerts and Prompt data products can be accessed via the RSP, as demonstrated in the :doc:`/tutorials/index`.
 
-Catalog Access
-==============
+.. important::
 
-Solar System Data Products
-==========================
+   The Prompt products and alert archive are not yet available.
 
+
+Alert archive
+-------------
+
+An archive of all past alerts will be available via the Rubin Science Platform.
+This archive will be queryable by the ``DIA Object`` identifier.
+
+Prompt Products Database (PPDB)
+-------------------------------
+
+The PPDB will be updated within 24 hours of alert distribution.
+The same data that is streamed in alert packets is available for query and analysis via the RSP.
+
+Prompt images
+-------------
+
+The promptly-processed visit and difference images will be available after an 80 hour embargo period via the RSP.

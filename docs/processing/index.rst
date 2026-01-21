@@ -4,7 +4,7 @@ Data processing
 
 .. important::
 
-   **Placeholder.** Prompt data processing is under construction.
+   Prompt data processing is under construction.
 
 
 A high-level overview of the Prompt Processing steps which generated the data products.

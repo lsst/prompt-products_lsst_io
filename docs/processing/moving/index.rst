@@ -6,7 +6,7 @@ Solar System processing (SSP)
 
 .. important::
 
-   **Placeholder.** Prompt data processing is under construction.
+   Prompt data processing is under construction.
 
 
 The Solar System processing (SSP) pipeline links together detections of new and known solar system objects,
