@@ -38,7 +38,7 @@ The `Rubin Science Pipelines <https://pipelines.lsst.io/>`_ can be formally cite
 Telescope and instrument
 ------------------------
 
-For AAS publications please refer to the `facility <https://journals.aas.org/facility-keywords/>`_ as **"Rubin:Simonyi"**.
+For AAS publications please refer to the `facility <https://journals.aas.org/facility-keywords/>`_ as ``Rubin:Simonyi``.
 
 Note that the `Minor Planet Center <https://minorplanetcenter.net/iau/lists/ObsCodesF.html>`_ has allocated the telescope code X05.
 
@@ -50,7 +50,7 @@ The `LSST Camera <https://lsstcam.lsst.io/>`_ should be citing using:
 Rubin Science Platform
 ----------------------
 
-If you accessed data via the RSP, for AAS publications please also add the facility **"Rubin:USDAC"**.
+If you accessed data via the RSP, for AAS publications please also add the facility ``Rubin:USDAC``.
 
 Tutorials
 ---------
