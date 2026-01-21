@@ -6,41 +6,22 @@ Raw exposure
 
 .. important::
 
-   **Placeholder.** Prompt images are not yet available.
+   Prompt images are not yet available.
 
 
 Unprocessed exposure from camera readout.
 
-doi
-
-
 Access
 ======
 
-The raw exposures are accessible via ...
-
-Butler
-------
-
-* dataset type
-* Format:
-* Number of Butler datasets:
-
-SIA and TAP
------------
-
-Schema: `ObsCore table <https://sdm-schemas.lsst.io/ivoa_obscore.html>`_
-
-IVOA calibration level: 1
-
-Dataproduct subtype: ``lsst.raw``
+The raw exposures are not yet accessible.
 
 
 Description
 ===========
 
 Raw images from the camera are available exactly as they were read out of the camera.
-The raw images should not be used for scientific analysis, and users should not attempt to rerun ISR.
+The raw images should not be used for scientific analysis, and users should not attempt to rerun the instrument signature removal (ISR) processing.
 
 Processing
 ----------
@@ -57,9 +38,7 @@ Image: sky pixel data in units of ADU (analog-digital units).
 Metadata
 --------
 
-The metadata for raw exposures retrieved from the Butler include
-information about the observation (e.g., pointing, weather)
-and an initial WCS estimated from the telescope boresight.
+The metadata for raw exposures retrieved from the Butler include information about the observation (e.g., pointing, weather) and an initial WCS estimated from the telescope boresight.
 
 Tutorials
 ---------

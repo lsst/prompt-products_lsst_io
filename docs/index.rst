@@ -10,7 +10,7 @@ Vera C. Rubin Observatory Prompt Products
 
    This website is currently under development.
 
-Observations and Status
+Observations and status
 =======================
 
 Information and live status for the Rubin observations producing alerts.
@@ -20,17 +20,6 @@ Information and live status for the Rubin observations producing alerts.
    :titlesonly:
 
    Observations <observations/index>
-
-Data processing
-===============
-
-Summary of the data processing steps that generate the data products.
-
-.. toctree::
-   :maxdepth: 1
-   :titlesonly:
-
-   Data Processing <processing/index>
 
 
 Data products
@@ -42,10 +31,24 @@ Descriptions and schemas for the alert packets, catalogs, and images.
    :maxdepth: 2
    :titlesonly:
 
-   Data Products <products/index>
+   Data products <products/index>
 
-Data Access and Brokers
-=======================
+
+Data processing
+===============
+
+Summary of the data processing steps that generate the data products.
+
+.. toctree::
+   :maxdepth: 1
+   :titlesonly:
+
+   Data processing <processing/index>
+
+
+
+Data access
+===========
 
 How to access Prompt Products through community alert brokers and the Rubin Science Platform.
 
@@ -53,7 +56,7 @@ How to access Prompt Products through community alert brokers and the Rubin Scie
    :maxdepth: 2
    :titlesonly:
 
-   Data Access <access/index>
+   Data access <access/index>
 
 
 Tutorials
@@ -62,10 +65,11 @@ Tutorials
 Tutorials demonstrating how to access and analyze data.
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :titlesonly:
 
    Tutorials <tutorials/index>
+
 
 Citing Prompt Products
 ======================

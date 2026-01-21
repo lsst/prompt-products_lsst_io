@@ -1,14 +1,14 @@
 #######################
-Observations and Status
+Observations and status
 #######################
 
 .. important::
 
-   **Placeholder.** Rubin Observatory is still in an early operations optimization phase.
+   Rubin Observatory is still in an early operations phase.
 
 The key objective is to improve the image quality and survey efficiency in order to start the ten-year LSST survey.
-The amount of science-grade data collected during this phase will vary.
-
+The amount of science-grade data collected during this early phase will vary.
+For the general timeline during this phase, read more about the `Early Science Program <https://rubinobservatory.org/for-scientists/resources/early-science>`_.
 
 
 Survey strategy
@@ -16,11 +16,12 @@ Survey strategy
 
 Information about the strategy and cadence for the Legacy Survey of Space and Time can be found at `survey-strategy.lsst.io <https://survey-strategy.lsst.io/>`_.
 
+
 Nightly projection
 ------------------
 
-The projected Rubin schedule can be obtained via ObsLocTAP `programatically <https://usdf-rsp.slac.stanford.edu/obsloctap/schedule?time=24>`_ or with a `viewer <https://usdf-rsp.slac.stanford.edu/obsloctap/static/viewer.html>`_.
-A `tutorial <https://github.com/lsst/tutorial-notebooks/blob/main/Commissioning/102_rubin_schedule_viewer.ipynb>`_ is available.
+The projected Rubin schedule can be obtained via ObsLocTAP `programatically <https://usdf-rsp.slac.stanford.edu/obsloctap/schedule?time=24>`_ or with the browser-based `viewer <https://usdf-rsp.slac.stanford.edu/obsloctap/static/viewer.html>`_.
+A :ref:`tutorial notebook <tutorials-notebook>` for the Rubin Schedule Viewer is available.
 
 
 Alert stream status

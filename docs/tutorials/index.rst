@@ -4,26 +4,26 @@ Tutorials
 
 .. important::
 
-   **Placeholder.** This website is currently under development.
+   Tutorials are currently under development.
 
 
 Tutorials demonstrating how to access and analyze data via the Rubin Science Platform (RSP).
 
-**Data rights:** it is necessary to be a Rubin data rights holder in order to have an account in the Rubin Science Platform (RSP) and access the images, catalogs, and alerts archive.
+**Data Policy:** Only Rubin data rights holders may have an account in the Rubin Science Platform (RSP).
+All scientists and students in the US and Chile, plus named members of international in-kind teams, have Rubin data rights.
 `Learn more about the Rubin data policy <https://rubinobservatory.org/for-scientists/data-products/data-policy>`_.
 
-**Alerts are world public and accessible via the brokers.**
-
-Visit the :doc:`/access/index` page.
+**Alerts are world public and accessible by everyone via the** :doc:`/access/brokers`.
 
 
 Get started
 ===========
 
-**To set up a new account in the RSP**, visit the `RSP documentation <https://rsp.lsst.io/guides/getting-started/get-an-account.html>`_.
-To learn more about the RSP's functionality, see the `RSP user guides <https://rsp.lsst.io/guides/index.html>`_ or work through the tutorials.
+**Get an RSP account:** follow these `instructions to sign up <https://rsp.lsst.io/guides/getting-started/get-an-account.html>`_.
 
-Tutorials are organized into levels (100, 200, 300), and levels into topical series, which proceed from beginner to more advanced topics.
+**Learn about the RSP:** visit the Portal, Notebook, and API aspects’ `User Guides <https://rsp.lsst.io/guides/index.html>`_.
+
+Then work through the tutorials.
 
 
 Get support
@@ -34,15 +34,21 @@ To ask question and get help with any aspect of Rubin Observatory please post a 
 Weekly `Rubin Science Assemblies <https://rubinobservatory.org/for-scientists/events-deadlines/events-rsa>`_ offer presentations, hands-on tutorials, and drop-in office hours to support use of the Rubin data products, services, and tools.
 
 
-Tutorials
-=========
+.. _tutorials-notebook:
 
-Tutorials will be developed as various Prompt products become available.
+Notebook Aspect
+===============
 
-For example:
+Get executable versions of these notebooks in the RSP using the "Tutorials" drop-down menu.
 
-* when alert archive is available, a "working with avro alerts" notebook
-* when community filters are available, tutorial
-* when PPDB is available, tutorial
-* when images are available, tutorial
-* MPC tutorial
+Commissioning metadata
+----------------------
+
+.. toctree::
+    :titlesonly:
+    :glob:
+
+    notebook/notebook-101.rst
+    notebook/notebook-102.rst
+
+
