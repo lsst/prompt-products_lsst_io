@@ -4,28 +4,60 @@
 How to cite
 ###########
 
-`How to cite Rubin Observatory <https://rubinobservatory.org/for-scientists/documentation/cite>`_.
+For general information, see `How to cite Rubin Observatory <https://rubinobservatory.org/for-scientists/documentation/cite>`_ and `citations.lsst.io <https://citations.lsst.io/>`_.
 
-When citing the Prompt Products please reference this paper: |pp_paper|.
 
-For AAS publications please refer to the `facility <https://journals.aas.org/facility-keywords/>`_ as "Rubin:Simonyi".
+DOI and publications
+====================
 
-The `Minor Planet Center <https://minorplanetcenter.net/iau/lists/ObsCodesF.html>`_ has allocated the telescope code X05.
+Data products
+-------------
 
-The instrument (LSST Science Camera) can be formally cited as
+When citing the Prompt Products please reference this paper:
 
-|lsstcam_doi|
+|pp_paper|
 
-and that page includes additional references describing the camera.
 
-When asked to cite the Prompt Products dataset as a whole please use:
+When citing the Prompt Products dataset as a whole please use:
 
 |prompt_doi|
 
-If you only use a specific subset, such as only the alerts, or a specific catalog table or image type, you may cite the DOI explicitly assigned to that subset.
-Each individual page in :doc:`/products/index` includes the relevant DOI.
 
-`citations.lsst.io <http://citations.lsst.io/>`_ provides a single point of reference for Rubin citations.
+If you only use a specific data product (e.g., alerts, or a specific catalog or image type), you may cite the DOI explicitly assigned to that subset.
+These DOI will appear on the individual pages under :doc:`/products/index`.
+
+
+Science pipelines software
+--------------------------
+
+The `Rubin Science Pipelines <https://pipelines.lsst.io/>`_ can be formally cited as:
+
+|osprae_doi|
+
+
+Telescope and instrument
+------------------------
+
+For AAS publications please refer to the `facility <https://journals.aas.org/facility-keywords/>`_ as **"Rubin:Simonyi"**.
+
+Note that the `Minor Planet Center <https://minorplanetcenter.net/iau/lists/ObsCodesF.html>`_ has allocated the telescope code X05.
+
+The `LSST Camera <https://lsstcam.lsst.io/>`_ should be citing using:
+
+|lsstcam_doi|
+
+
+Rubin Science Platform
+----------------------
+
+If you accessed data via the RSP, for AAS publications please also add the facility **"Rubin:USDAC"**.
+
+Tutorials
+---------
+
+When citing the tutorials please use:
+
+|tutorials_doi|
 
 
 How to refer to single objects

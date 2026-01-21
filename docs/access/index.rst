@@ -19,12 +19,12 @@ Software systems that ingest and process astronomical alerts from the LSST (and 
 Rubin Science Platform (RSP)
 ============================
 
-Past alerts and Prompt data products can be accessed via the RSP, as demonstrated in the :doc:`/tutorials/index`.
-
 .. important::
 
-   The Prompt products and alert archive are not yet available.
+   The alert archive, PPDB, and prompt images are not yet available.
 
+
+Past alerts and Prompt data products will be accessable via the RSP, as demonstrated in the :doc:`/tutorials/index`.
 
 Alert archive
 -------------

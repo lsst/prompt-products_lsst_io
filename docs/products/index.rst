@@ -16,6 +16,12 @@ Packets containing information from detected difference-image sources.
     alerts/index
 
 
+
+.. important::
+
+   The Prompt catalogs and images are not yet available.
+
+
 Catalogs
 ========
 

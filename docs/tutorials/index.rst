@@ -13,7 +13,7 @@ Tutorials demonstrating how to access and analyze data via the Rubin Science Pla
 All scientists and students in the US and Chile, plus named members of international in-kind teams, have Rubin data rights.
 `Learn more about the Rubin data policy <https://rubinobservatory.org/for-scientists/data-products/data-policy>`_.
 
-**Alerts are world public and accessible by everyone via the :doc:`/access/brokers`.**
+**Alerts are world public and accessible by everyone via the** :doc:`/access/brokers`.
 
 
 Get started
