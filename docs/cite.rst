@@ -32,7 +32,7 @@ Science pipelines software
 
 The `Rubin Science Pipelines <https://pipelines.lsst.io/>`_ can be formally cited as:
 
-|osprae_doi|
+|osprae_doi| [:download:`BibTeX <../bib/osprae.bib>`]
 
 
 Telescope and instrument
@@ -44,7 +44,7 @@ Note that the `Minor Planet Center <https://minorplanetcenter.net/iau/lists/ObsC
 
 The `LSST Camera <https://lsstcam.lsst.io/>`_ should be citing using:
 
-|lsstcam_doi|
+|lsstcam_doi| [:download:`BibTeX <../bib/lsstcam.bib>`]
 
 
 Rubin Science Platform
@@ -57,7 +57,7 @@ Tutorials
 
 When citing the tutorials please use:
 
-|tutorials_doi|
+|tutorials_doi| [:download:`BibTeX <../bib/tutorials.bib>`]
 
 
 How to refer to single objects
