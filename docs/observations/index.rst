@@ -29,6 +29,8 @@ Incremental templates
 
 During early Alert Production, templates (and thus alerts) only exist in the `Deep Drilling Fields <https://survey-strategy.lsst.io/baseline/ddf.html>`_.
 
+As of the end of January 2026, templates had been deployed in Alert Production in the COSMOS (ugrizy), ECDFS (riz), ELAIS-S1 (griz), and EDFS (griz) DDFs.
+
 Additional template images will be generated incrementally during the early science phase, and information about template regions will be added here.
 
 
