@@ -24,6 +24,14 @@ The projected Rubin schedule can be obtained via ObsLocTAP `programatically <htt
 A :ref:`tutorial notebook <tutorials-notebook>` for the Rubin Schedule Viewer is available.
 
 
+Incremental templates
+---------------------
+
+During early Alert Production, templates (and thus alerts) only exist in the `Deep Drilling Fields <https://survey-strategy.lsst.io/baseline/ddf.html>`_.
+
+Additional template images will be generated incrementally during the early science phase, and information about template regions will be added here.
+
+
 Alert stream status
 ===================
 
