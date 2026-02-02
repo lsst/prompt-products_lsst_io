@@ -24,6 +24,6 @@
 .. |dia_source_doi| replace:: *Citation*: ``<placeholder dia source catalog DOI>``
 .. |dia_object_doi| replace:: *Citation*: ``<placeholder dia object catalog DOI>``
 .. |dia_forced_source_doi| replace:: *Citation*: ``<placeholder dia object catalog DOI>``
-
 .. |ss_source_doi| replace:: *Citation*: ``<placeholder ss source catalog DOI>``
 .. |ss_object_doi| replace:: *Citation*: ``<placeholder ss object catalog DOI>``
+.. |detector_visit_doi| replace:: *Citation*: ``<placeholder detector visit processing summary catalog DOI>``
