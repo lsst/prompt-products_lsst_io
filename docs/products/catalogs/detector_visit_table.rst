@@ -23,7 +23,7 @@ TAP
 ---
 
 * Table name: ``DetectorVisitProcessingSummary``
-* Schema: `APDB DetectorVisitProcessingSummary table <https://sdm-schemas.lsst.io/apdb.html#DetectorVisitProcessingSummary`_
+* Schema: `APDB DetectorVisitProcessingSummary table <https://sdm-schemas.lsst.io/apdb.html#DetectorVisitProcessingSummary>`_
 
 
 Butler
