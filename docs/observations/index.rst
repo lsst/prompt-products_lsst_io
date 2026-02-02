@@ -43,6 +43,7 @@ As of the end of January 2026, templates had been deployed in Alert Production i
 .. list-table:: DDF templates
    :widths: 20 20 20
    :header-rows: 1
+   :class: tight-table
 
    * - Name
      - Coordinates
