@@ -41,7 +41,7 @@ During early Alert Production, templates (and thus alerts) only exist in the `De
 As of the end of January 2026, templates had been deployed in Alert Production in the COSMOS (ugrizy), ECDFS (riz), ELAIS-S1 (griz), and EDFS (griz) DDFs.
 
 .. list-table:: DDF templates
-   :widths: 25 50 25
+   :widths: 20 20 20
    :header-rows: 1
 
    * - Name
