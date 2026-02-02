@@ -16,6 +16,8 @@
 .. |pp_paper| replace:: *Citation:* ``<placeholder Prompt paper DOI>``
 .. |prompt_doi| replace:: *Citation:* ``<placeholder Prompt dataset DOI>``
 
+.. |alerts_doi| replace:: *Citation:* ``<placeholder alerts DOI>``
+
 .. |raw_image_doi| replace:: *Citation*: ``<placeholder raw images DOI>``
 .. |visit_image_doi| replace:: *Citation*: ``<placeholder visit images DOI>``
 .. |template_coadd_doi| replace:: *Citation*: ``<placeholder template images DOI>``
