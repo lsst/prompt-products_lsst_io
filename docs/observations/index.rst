@@ -40,6 +40,30 @@ During early Alert Production, templates (and thus alerts) only exist in the `De
 
 As of the end of January 2026, templates had been deployed in Alert Production in the COSMOS (ugrizy), ECDFS (riz), ELAIS-S1 (griz), and EDFS (griz) DDFs.
 
+.. list-table:: DDF templates
+   :widths: 25 50 25
+   :header-rows: 1
+
+   * - Name
+     - Coordinates
+     - Filters
+   * - COSMOS
+     - 150.11, 2.23
+     - ugrizy
+   * - ECDFS
+     - 52.98, -28.12 deg
+     - riz
+   * - ELAIS-S1
+     - 9.45, -44.02 deg
+     - griz
+   * - EDFS_a
+     - 58.9, -49.32 deg
+     - griz
+   * - EDFS_b
+     - 63.6, -47.6 deg
+     - griz
+
+
 Additional template images will be generated incrementally during the early science phase, and information about template regions will be added here.
 
 
