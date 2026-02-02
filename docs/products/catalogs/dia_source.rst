@@ -42,6 +42,8 @@ The DIA source catalog contains measurements on a difference image at the coordi
 These measurements include PSF-fit and forced PSF fluxes, and aperture and trailed-source fluxes.
 Forced PSF fluxes on the corresponding visit (i.e., "direct" or "science") image at the coordinates of the DIA source are also included.
 
+All DIA sources are associated with either a :doc:`/products/catalogs/dia_object` or a :doc:`/products/catalogs/ss_object`.
+
 
 Processing
 ----------
