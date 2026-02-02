@@ -13,10 +13,14 @@
 .. |tutorials_doi| replace:: *Citation*: NSF-DOE Vera C. Rubin Observatory (2025); *Rubin Observatory LSST Tutorials* |doi_image| https://doi.org/10.11578/rubin/dc.20250909.20
 .. |bandpasses_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2025); Legacy Survey of Space and Time Data Preview 1 |doi_image| https://doi.org/10.71929/rubin/2587407
 
-.. |pp_paper| replace:: *Citation:* ``<placeholder Prompt paper>``
+.. |pp_paper| replace:: *Citation:* ``<placeholder Prompt paper DOI>``
 .. |prompt_doi| replace:: *Citation:* ``<placeholder Prompt dataset DOI>``
 
-.. |raw_doi| replace:: *Citation*: ``<placeholder raw images>``
-.. |visit_image_doi| replace:: *Citation*: ``<placeholder visit images>``
-.. |template_coadd_doi| replace:: *Citation*: ``<placeholder template images>``
-.. |difference_image_doi| replace:: *Citation*: ``<placeholder difference images>``
+.. |raw_image_doi| replace:: *Citation*: ``<placeholder raw images DOI>``
+.. |visit_image_doi| replace:: *Citation*: ``<placeholder visit images DOI>``
+.. |template_coadd_doi| replace:: *Citation*: ``<placeholder template images DOI>``
+.. |difference_image_doi| replace:: *Citation*: ``<placeholder difference images DOI>``
+
+.. |dia_source_doi| replace:: *Citation*: ``<placeholder dia source catalog DOI>``
+.. |dia_object_doi| replace:: *Citation*: ``<placeholder dia object catalog DOI>``
+.. |dia_forced_source_doi| replace:: *Citation*: ``<placeholder dia object catalog DOI>``
