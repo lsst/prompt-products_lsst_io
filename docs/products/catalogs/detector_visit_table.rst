@@ -1,7 +1,7 @@
 .. _catalogs-detector-visit-table:
 
 ###############################################
-Detector Visit Processing Summary (coming soon)
+Detector visit processing summary (coming soon)
 ###############################################
 
 .. important::

@@ -11,6 +11,15 @@ The amount of science-grade data collected during this early phase will vary.
 For the general timeline during this phase, read more about the `Early Science Program <https://rubinobservatory.org/for-scientists/resources/early-science>`_.
 
 
+LSSTCam
+=======
+
+All observations were obtained with the LSST Camera (LSSTCam).
+Find a description, key numbers, filter bandpasses, and more in the `LSSTCam documentation <https://lsstcam.lsst.io/>`_.
+
+|lsstcam_doi|
+
+
 Survey strategy
 ===============
 
