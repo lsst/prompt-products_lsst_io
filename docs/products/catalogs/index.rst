@@ -1,8 +1,8 @@
 .. _catalogs:
 
-########
-Catalogs
-########
+######################
+Catalogs (coming soon)
+######################
 
 .. important::
 
@@ -14,8 +14,8 @@ Tables of measurements for detections in difference images.
 The Prompt catalogs together are referred to as the Prompt Products Database (PPDB).
 
 
-Difference image analysis
-=========================
+Difference image analysis (DIA)
+===============================
 
 Measurements on the difference and direct images at the locations of all variable or moving objects.
 
@@ -32,7 +32,7 @@ Measurements on the difference and direct images at the locations of all variabl
 Moving objects
 ==============
 
-Derived properties for moving objects detected in images.
+Derived properties for moving objects detected in images: Solar System (SS) objects.
 
 .. toctree::
     :maxdepth: 1
@@ -55,5 +55,4 @@ Observational metadata for visits and detectors.
     :titlesonly:
     :glob:
 
-    visit_table
-    visit_detector_table
+    detector_visit_table

@@ -11,6 +11,15 @@ The amount of science-grade data collected during this early phase will vary.
 For the general timeline during this phase, read more about the `Early Science Program <https://rubinobservatory.org/for-scientists/resources/early-science>`_.
 
 
+LSSTCam
+=======
+
+All observations were obtained with the LSST Camera (LSSTCam).
+Find a description, key numbers, filter bandpasses, and more in the `LSSTCam documentation <https://lsstcam.lsst.io/>`_.
+
+|lsstcam_doi|
+
+
 Survey strategy
 ===============
 
@@ -29,7 +38,32 @@ Incremental templates
 
 During early Alert Production, templates (and thus alerts) only exist in the `Deep Drilling Fields <https://survey-strategy.lsst.io/baseline/ddf.html>`_.
 
-As of the end of January 2026, templates had been deployed in Alert Production in the COSMOS (ugrizy), ECDFS (riz), ELAIS-S1 (griz), and EDFS (griz) DDFs.
+As of the end of January 2026, templates had been deployed in Alert Production in the DDF listed in the table below.
+
+.. list-table:: DDF templates
+   :widths: 20 20 20
+   :header-rows: 1
+   :class: tight-table
+
+   * - Name
+     - Coordinates
+     - Filters
+   * - COSMOS
+     - 150.11, 2.23
+     - ugrizy
+   * - ECDFS
+     - 52.98, -28.12 deg
+     - riz
+   * - ELAIS-S1
+     - 9.45, -44.02 deg
+     - griz
+   * - EDFS_a
+     - 58.9, -49.32 deg
+     - griz
+   * - EDFS_b
+     - 63.6, -47.6 deg
+     - griz
+
 
 Additional template images will be generated incrementally during the early science phase, and information about template regions will be added here.
 

@@ -1,8 +1,8 @@
 .. _images-visit-image:
 
-###########
-Visit image
-###########
+#########################
+Visit image (coming soon)
+#########################
 
 .. important::
 
@@ -11,10 +11,28 @@ Visit image
 
 Individual processed and calibrated sky images.
 
+|visit_image_doi|
+
+
 Access
 ======
 
-The visit images are not yet accessible.
+**The visit images are not yet accessible.**
+
+**Embargo:** All promptly-processed visit images are subject to an 80-hour embargo period and will be released shortly after the embargo expires.
+
+Butler
+------
+
+* Dataset type: ('visit_image', {band, **instrument**, day_obs, **detector**, physical_filter, **visit**}, ExposureF)
+* Format: FITS
+
+SIA and TAP
+-----------
+
+* Schema: `ObsCore table <https://sdm-schemas.lsst.io/ivoa_obscore.html>`_
+* IVOA calibration level: 2
+* Data Product Subtype: ``lsst.visit_image``
 
 
 Description
@@ -35,11 +53,9 @@ Pixel data
 
 The visit images have three planes of pixel data.
 
-Image: Sky pixel data in flux units of nJy.
-
-Variance: Uncertainty (noise) in the flux in units of nJy^2.
-
-Mask: An integer bitmask of representative flag values.
+* Image: sky pixel data in flux units of nJy.
+* Variance: uncertainty (noise) in the flux in units of nJy^2.
+* Mask: an integer bitmask of representative flag values.
 
 Metadata
 --------
@@ -49,4 +65,4 @@ The metadata for visit images retrieved from the Butler include information abou
 Tutorials
 ---------
 
-TBD
+Coming soon.

@@ -1,8 +1,8 @@
 .. _images-raw:
 
-############
-Raw exposure
-############
+##########################
+Raw exposure (coming soon)
+##########################
 
 .. important::
 
@@ -11,10 +11,27 @@ Raw exposure
 
 Unprocessed exposure from camera readout.
 
+|raw_image_doi|
+
 Access
 ======
 
-The raw exposures are not yet accessible.
+**The raw exposures are not yet accessible.**
+
+**Embargo:** All raw images are subject to an 80-hour embargo period and will be released shortly after the embargo expires.
+
+Butler
+------
+
+* Dataset type: ('raw', {band, **instrument**, day_obs, **detector**, group, physical_filter, **exposure**}, Exposure)
+* Format: FITS
+
+SIA and TAP
+-----------
+
+* Schema: `ObsCore table <https://sdm-schemas.lsst.io/ivoa_obscore.html>`_
+* IVOA Calibration Level: 1
+* Data Product Subtype: ``lsst.raw``
 
 
 Description
@@ -43,4 +60,4 @@ The metadata for raw exposures retrieved from the Butler include information abo
 Tutorials
 ---------
 
-TBD
+Coming soon.

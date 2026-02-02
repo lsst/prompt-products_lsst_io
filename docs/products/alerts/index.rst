@@ -6,13 +6,15 @@ Alert packets
 
 Ascii files of measurements for 5-sigma source detections in difference images.
 
-Schema: `Alert Production Database (APDB) <https://sdm-schemas.lsst.io/apdb.html>`_
+|alerts_doi|
 
 
 Access
 ======
 
 Alert packet contents are world public and have no proprietary period (see Section 3 of the `Rubin Data Policy <http://ls.st/rdo-013>`_).
+
+Schema: `Alert Production Database (APDB) <https://sdm-schemas.lsst.io/apdb.html>`_
 
 
 Brokers
@@ -25,17 +27,17 @@ Alerts are delivered to :doc:`/access/brokers` and accessed via individual broke
 Alert archive
 -------------
 
-As-transmitted alerts are stored in an archive accessible to Data Rights holders via the Rubin Science Platform.
-
 .. important::
 
-   The Alert Archive interface has not yet been released.
+   The Alert Archive interface is not yet available.
+
+As-transmitted alerts are stored in an archive accessible to Data Rights holders via the Rubin Science Platform.
 
 
 Description
 ===========
 
-Each alert packet contains information triggered by a single ``DiaSource`` detected at 5 sigma in a difference image by by Prompt Processing.
+Each alert packet contains information triggered by a single :doc:`/products/catalogs/dia_source`: a positive or negative detection of at least 5 sigma in a difference image.
 
 
 Contents
@@ -44,10 +46,10 @@ Contents
 Each alert packet contains:
 
 * unique identifier
-* the ``DiaSource`` record that triggered the alert
-* the associated ``DiaObject`` or ``SSObject`` record
-* associated ``DiaSource`` and ``DiaForcedSource`` records from the past 12 months
-* FITS-formatted cutout postage stamps from the science, difference, template images
+* the :doc:`/products/catalogs/dia_source` record that triggered the alert
+* the associated :doc:`/products/catalogs/dia_object` or :doc:`/products/catalogs/ss_object` record
+* associated :doc:`/products/catalogs/dia_source` and :doc:`/products/catalogs/dia_forced_source` records from the past 12 months
+* FITS-formatted cutout postage stamps from the :doc:`/products/images/visit_image`, :doc:`/products/images/difference_image`, :doc:`/products/images/template_coadd`
 
 
 Schema

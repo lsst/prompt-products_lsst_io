@@ -1,8 +1,8 @@
 .. _images-difference-image:
 
-################
-Difference image
-################
+##############################
+Difference image (coming soon)
+##############################
 
 .. important::
 
@@ -11,10 +11,28 @@ Difference image
 
 The result of subtracting a template coadd from a visit image.
 
+|difference_image_doi|
+
 Access
 ======
 
-The difference images are not yet accessible.
+**The difference images are not yet accessible.**
+
+**Embargo:** All promptly-processed difference images are subject to an 80-hour embargo period and will be released shortly after the embargo expires.
+
+Butler
+------
+
+* Dataset type: ('difference_image', {band, **instrument**, day_obs, **detector**, physical_filter, **visit**}, ExposureF)
+* Format: FITS
+
+SIA and TAP
+-----------
+
+* Schema: `ObsCore table <https://sdm-schemas.lsst.io/ivoa_obscore.html>`_
+* IVOA Calibration Level: 3
+* Data Product Subtype: ``lsst.difference_image``
+
 
 Description
 ===========
@@ -35,11 +53,9 @@ Pixel data
 
 The difference images have three planes of pixel data.
 
-Image: sky pixel data in flux units of nJy.
-
-Variance: uncertainty (noise) in the flux in units of nJy^2.
-
-Mask: an integer bitmask of representative flag values.
+* Image: sky pixel data in flux units of nJy.
+* Variance: uncertainty (noise) in the flux in units of nJy^2.
+* Mask: an integer bitmask of representative flag values.
 
 Metadata
 --------
@@ -49,4 +65,4 @@ The metadata for difference images retrieved from the Butler include information
 Tutorials
 ---------
 
-TBD
+Coming soon.

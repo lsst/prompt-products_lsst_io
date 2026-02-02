@@ -1,9 +1,8 @@
 .. _catalogs-dia-source:
 
-##########
-DIA source
-##########
-
+########################
+DIA source (coming soon)
+########################
 
 .. important::
 
@@ -12,12 +11,26 @@ DIA source
 
 Measurements for sources detected in difference images.
 
-Schema: TBD
+|dia_source_doi|
+
 
 Access
 ======
 
-The DIA source catalog is not yet accessible.
+**The Prompt DIA source catalog is not yet accessible.**
+
+
+TAP
+---
+
+* Table name: ``DiaSource``
+* Schema: `APDB DIA Source table <https://sdm-schemas.lsst.io/apdb.html#DiaSource>`_
+
+Butler
+------
+
+* Dataset type: ('dia_source', {**skymap**, **tract**}, ArrowAstropy)
+* Format: Parquet
 
 
 Description
@@ -29,6 +42,8 @@ The DIA source catalog contains measurements on a difference image at the coordi
 These measurements include PSF-fit and forced PSF fluxes, and aperture and trailed-source fluxes.
 Forced PSF fluxes on the corresponding visit (i.e., "direct" or "science") image at the coordinates of the DIA source are also included.
 
+All DIA sources are associated with either a :doc:`/products/catalogs/dia_object` or a :doc:`/products/catalogs/ss_object`.
+
 
 Processing
 ----------
@@ -38,4 +53,4 @@ The DIA source catalog is the result of :doc:`/processing/dia/index`.
 Tutorials
 ---------
 
-TBD
+Coming soon.

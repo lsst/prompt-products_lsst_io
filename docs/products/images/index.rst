@@ -1,8 +1,8 @@
 .. _images:
 
-######
-Images
-######
+####################
+Images (coming soon)
+####################
 
 .. important::
 
@@ -10,8 +10,6 @@ Images
 
 
 Images of the sky in the six LSST filters with a variety of calibration levels.
-
-Schema for image metadata: `ObsCore table <https://sdm-schemas.lsst.io/ivoa_obscore.html>`_
 
 
 Template coadd images
