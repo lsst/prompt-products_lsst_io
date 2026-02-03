@@ -16,9 +16,6 @@ Access
 
 **The MPC orbits catalog is not yet accessible.**
 
-All solar system objects discovered by Rubin Observatory with LSSTCam are available through the `Minor Planets Center <https://minorplanetcenter.net/>`_ (MPC).
-The MPC has assigned `"observatory code" <https://minorplanetcenter.net/iau/lists/ObsCodesF.html>`_ ``X05`` to the Rubin Observatory.
-
 
 TAP
 ---
@@ -30,7 +27,10 @@ TAP
 Description
 ===========
 
-The `Minor Planet Center <https://minorplanetcenter.net/>`_ (MPC) is the single worldwide location for receipt and distribution of positional measurements of small bodies.
+All solar system objects discovered by Rubin Observatory with LSSTCam are reported to the `Minor Planets Center <https://minorplanetcenter.net/>`_ (MPC).
+The MPC has assigned `"observatory code" <https://minorplanetcenter.net/iau/lists/ObsCodesF.html>`_ ``X05`` to the Rubin Observatory.
+
+The MPC is the single worldwide location for receipt and distribution of positional measurements of small bodies in the Solar System.
 The MPC is responsible for the identification, designation, and orbit computation for all moving objects.
 
 The ``mpc_orbits`` table contains the orbital parameters calculated by the MPC for all known solar system objects and the linked difference-image detections of moving objects submitted by Rubin (i.e., this catalog is not limited to Rubin discoveries or observations only).
