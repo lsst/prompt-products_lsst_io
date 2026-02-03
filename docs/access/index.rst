@@ -16,6 +16,21 @@ Software systems that ingest and process astronomical alerts from the LSST (and 
     brokers
 
 
+Minor Planets Center (MPC)
+==========================
+
+All solar system objects discovered by Rubin Observatory with LSSTCam are reported to and available via the `Minor Planets Center <https://minorplanetcenter.net/>`_.
+
+
+B612
+----
+
+A subset of MPC entries that include only Rubin observations (`"observatory code" <https://minorplanetcenter.net/iau/lists/ObsCodesF.html>`_ ``X05``) is maintained by the Asteriod Institute, a program of the `B612 Foundation <https://b612foundation.org/>`_, and available at `ls.st/ast <http://ls.st/ast>`_.
+
+|b612_mpc_x05|
+
+
+
 Rubin Science Platform (RSP)
 ============================
 
