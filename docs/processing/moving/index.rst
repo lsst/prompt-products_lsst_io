@@ -4,12 +4,12 @@
 Solar System processing (SSP)
 #############################
 
+Solar System Processing includes both the association of known Solar System Objects (SSOs) during nighttime observations as well as the discovery of new SSOs by linking unassociated ``DiaSources`` during daytime processing.
+All Rubin SSO observations and discoveries are reported to the Minor Planet Center (MPC).
+
+
 .. important::
 
-   Prompt data processing is under construction.
+   More information about the SSP pipelines is forthcoming.
 
 
-The Solar System processing (SSP) pipeline links together detections of new and known solar system objects,
-and interfaces with the Minor Planet Center (MPC) for physical parameter derivation and orbit fitting.
-
-*Details to be added here.*
