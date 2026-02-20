@@ -13,7 +13,8 @@ Tutorials demonstrating how to access and analyze data via the Rubin Science Pla
 All scientists and students in the US and Chile, plus named members of international in-kind teams, have Rubin data rights.
 `Learn more about the Rubin data policy <https://rubinobservatory.org/for-scientists/data-products/data-policy>`_.
 
-**Alerts are world public and accessible by everyone via the** :doc:`/access/brokers`.
+**Alerts are world public and accessible by everyone via the brokers.**
+See :doc:`/access/index`.
 
 
 Get started
@@ -40,6 +41,16 @@ Notebook Aspect
 ===============
 
 Get executable versions of these notebooks in the RSP using the "Tutorials" drop-down menu.
+
+MPC data access
+---------------
+
+.. toctree::
+    :titlesonly:
+    :glob:
+
+    notebook/notebook-mpc.rst
+
 
 Commissioning metadata
 ----------------------
