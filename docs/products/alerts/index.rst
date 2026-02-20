@@ -21,7 +21,8 @@ Brokers
 -------
 
 Realtime access to alerts is available through community alert brokers.
-Alerts are delivered to :doc:`/access/brokers` and accessed via individual brokers' interfaces.
+Alerts are delivered to brokers and accessed via individual brokers' interfaces.
+See :doc:`/access/index`.
 
 
 Alert archive

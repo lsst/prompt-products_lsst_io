@@ -7,13 +7,23 @@ Services and tools for accessing the alerts and the Prompt data products.
 Alert brokers
 =============
 
-Software systems that ingest and process astronomical alerts from the LSST (and other surveys).
+**Alert broker:** Software systems that ingest and process astronomical alerts from the LSST and other surveys, and serve them to the scientific community.
 
-.. toctree::
-    :maxdepth: 1
-    :glob:
+**Alert filter:** A set of rules that an alert packet either passes or fails.
+E.g., "if brighter than 21st magnitude, and if discovered less than 6 days ago, and if two detections exist, then pass" would be is a very simple filter.
 
-    brokers
+Find more information about the nine alert brokers and how to access them on the `Alerts and brokers for scientists webpage <https://rubinobservatory.org/for-scientists/data-products/alerts-and-brokers>`_.
+
+
+Community filters
+-----------------
+
+Up to 20 community alert filters will be defined, implemented, validated, and maintained by Rubin staff with input from the broad Rubin science community, and with support from the ANTARES broker.
+
+These community filters will be designed to serve a variety of common time-domain science goals, and lower the barrier to entry into alert-based science.
+
+See the "Roadmap for Community Alert Filters with the ANTARES Broker" `RTN-090 <https://rtn-090.lsst.io/>`_.
+
 
 
 Minor Planets Center (MPC)
@@ -21,11 +31,7 @@ Minor Planets Center (MPC)
 
 All solar system objects discovered by Rubin Observatory with LSSTCam are reported to and available via the `Minor Planets Center <https://minorplanetcenter.net/>`_.
 
-
-B612
-----
-
-A subset of MPC entries that include only Rubin observations (`"observatory code" <https://minorplanetcenter.net/iau/lists/ObsCodesF.html>`_ ``X05``) is maintained by the Asteriod Institute, a program of the `B612 Foundation <https://b612foundation.org/>`_, and available at `ls.st/ast <http://ls.st/ast>`_.
+**B612**: A subset of MPC entries that include only Rubin observations (`"observatory code" <https://minorplanetcenter.net/iau/lists/ObsCodesF.html>`_ ``X05``) is maintained by the Asteriod Institute, a program of the `B612 Foundation <https://b612foundation.org/>`_, and available at `ls.st/ast <http://ls.st/ast>`_.
 
 |b612_mpc_x05|
 
