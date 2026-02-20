@@ -72,8 +72,6 @@ jobs:
   upload:
     runs-on: ubuntu-latest
     needs: [lint, build, linkcheck]
-    # Set to true to enable uploads
-    if: ${{ false }}
 
     steps:
       - uses: actions/download-artifact@v4
