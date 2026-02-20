@@ -4,12 +4,10 @@
 Template generation
 ###################
 
-
-
 Template coadded images are created by combining multiple calibrated images obtained in the same filter and of the same region of the sky.
 This coaddition reduces noise, gaps, and artifacts.
 
-Incremental Template Generation
+Incremental template generation
 ===============================
 
 In steady state operations, templates for alert production will be produced by the annual Data Releases.
@@ -17,22 +15,7 @@ In steady state operations, templates for alert production will be produced by t
 During Early Operations prior to DR1, templates will be built incrementally when sufficient suitable images are available in a given area of the sky.
 Once produced, templates will remain in place as long as possible to avoid repeated shifts of the difference light curves.
 
-Template Availability
-=====================
-
-As of 2026 February, templates are deployed in the following discrete fields:
-
-* COSMOS ``u``, ``g``, ``r``, ``i``, ``z``, ``y``
-* ECDFS ``r``, ``i``, ``z``
-* ELAISS1 ``g``, ``r``, ``i``, ``z``
-* EDFS_A_B ``g``, ``r``, ``i``, ``z``
-* XMM-LSS ``i``, ``z``
-* M49 ``u``, ``g``, ``r``, ``i``
-
-
-.. important::
-
-   Tools for visualizing the current template holdings are under development.
+For a list of the available templates, see the :doc:`/observations/index` page.
 
 Coadds by patch
 ===============
