@@ -4,7 +4,7 @@
 Alert packets
 #############
 
-Ascii files of measurements for 5-sigma source detections in difference images.
+`Avro <https://avro.apache.org/>`_ files of measurements for 5-sigma source detections in difference images.
 
 |alerts_doi|
 
@@ -45,19 +45,28 @@ Contents
 
 Each alert packet contains:
 
-* unique identifier
+* a unique identifier (the ``diaSourceId`` of the triggering ``DiaSource``)
+* scheduler metadata for the visit that produced the triggering ``DiaSource``
 * the :doc:`/products/catalogs/dia_source` record that triggered the alert
 * the associated :doc:`/products/catalogs/dia_object` or :doc:`/products/catalogs/ss_object` record
+* if associated with an ``SSObject``, the corresponding ``mpc_orbits`` record
 * associated :doc:`/products/catalogs/dia_source` and :doc:`/products/catalogs/dia_forced_source` records from the past 12 months
 * FITS-formatted cutout postage stamps from the :doc:`/products/images/visit_image`, :doc:`/products/images/difference_image`, :doc:`/products/images/template_coadd`
 
+.. important::
+
+   Estimates of upper limits for prior nondetections will be provided in the future for ``DiaObjects`` that do not yet have forced photometry measurements.
 
 Schema
 ------
 
 A detailed description of the records contained within the alert packet is available at `sdm-schemas.lsst.io <https://sdm-schemas.lsst.io/apdb.html>`_.
 
-Alert packets are serialized in the binary Apache Avro format.
+.. important::
+
+   Some fields in the records are not yet populated.
+
+Alert packets are serialized in the binary `Apache Avro <https://avro.apache.org/>`_ format.
 The Avro schema is `alert packet schema <https://github.com/lsst/alert_packet/tree/main/python/lsst/alert/packet/schema>`_.
 
 

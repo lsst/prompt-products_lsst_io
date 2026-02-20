@@ -4,9 +4,5 @@
 Alert generation
 ################
 
-.. important::
 
-   Prompt data processing is under construction.
-
-
-This includes the creation of packets from the APDB, and alert distribution to brokers.
+Each triggering ``DiaSource`` is packaged into an Avro alert and transmitted to the selected community alert brokers using Apache Kafka.

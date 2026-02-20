@@ -4,9 +4,6 @@
 Template generation
 ###################
 
-.. important::
-
-   Prompt data processing is under construction.
 
 
 Template coadded images are created by combining multiple calibrated images obtained in the same filter and of the same region of the sky.
@@ -15,9 +12,27 @@ This coaddition reduces noise, gaps, and artifacts.
 Incremental Template Generation
 ===============================
 
+In steady state operations, templates for alert production will be produced by the annual Data Releases.
+
+During Early Operations prior to DR1, templates will be built incrementally when sufficient suitable images are available in a given area of the sky.
+Once produced, templates will remain in place as long as possible to avoid repeated shifts of the difference light curves.
+
 Template Availability
 =====================
 
+As of 2026 February, templates are deployed in the following discrete fields:
+
+* COSMOS ``u``, ``g``, ``r``, ``i``, ``z``, ``y``
+* ECDFS ``r``, ``i``, ``z``
+* ELAISS1 ``g``, ``r``, ``i``, ``z``
+* EDFS_A_B ``g``, ``r``, ``i``, ``z``
+* XMM-LSS ``i``, ``z``
+* M49 ``u``, ``g``, ``r``, ``i``
+
+
+.. important::
+
+   Tools for visualizing the current template holdings are under development.
 
 Coadds by patch
 ===============
@@ -35,9 +50,8 @@ Unobserved sections of the deep coadd image have pixels with no data flagged as 
 Input image selection
 =====================
 
-For template coadds, good seeing (low PSF FWHM) is more important than depth.
-
-*More details to be added here.*
+Image selection for coaddition must balance the desire for early templates (which necessarily have fewer images) with the need for good seeing, depth, artifact rejection, and spatial coverage to produce high-quality alerts.
+Details of the image selection for incremental template building are still in development.
 
 
 Image combination algorithm
@@ -48,9 +62,3 @@ A mean stacking algorithm, weighted by inverse variance, combines selected expos
 To mitigate transient artifacts before coaddition, an artifact rejection procedure first identifies and masks features such as satellite trails, optical ghosts, and cosmic rays.
 
 See "Coaddition Artifact Rejection and CompareWarp" (`dmtn-080.lsst.io <https://dmtn-080.lsst.io/>`_).
-
-
-Coadd background subtraction
-============================
-
-After image coaddition, a constant background residual is fit and subtracted.
