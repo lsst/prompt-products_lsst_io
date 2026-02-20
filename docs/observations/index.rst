@@ -33,12 +33,13 @@ The projected Rubin schedule can be obtained via ObsLocTAP `programatically <htt
 A :ref:`tutorial notebook <tutorials-notebook>` for the Rubin Schedule Viewer is available.
 
 
-Incremental templates
----------------------
+Template coverage
+-----------------
 
-During early Alert Production, templates (and thus alerts) only exist in the `Deep Drilling Fields <https://survey-strategy.lsst.io/baseline/ddf.html>`_.
+During early Alert Production, templates (and thus alerts) primarily exist in the `Deep Drilling Fields <https://survey-strategy.lsst.io/baseline/ddf.html>`_.
 
-As of the end of January 2026, templates had been deployed in Alert Production in the DDF listed in the table below.
+As of February 2026, templates had been deployed in Alert Production for the fields listed in the table below.
+All of these are DDFs except the M49 (Virgo) field, which was part of the Rubin First Look images.
 
 .. list-table:: DDF templates
    :widths: 20 20 20
@@ -63,9 +64,21 @@ As of the end of January 2026, templates had been deployed in Alert Production i
    * - EDFS_b
      - 63.6, -47.6 deg
      - griz
+   * - XMM-LSS
+     - 35.57, -4.82 deg
+     - iz
+   * - M49 (Virgo)
+     - 187.4, +8 deg
+     - ugri
 
 
 Additional template images will be generated incrementally during the early science phase, and information about template regions will be added here.
+Details are available in :doc:`/processing/templates/index`.
+
+.. important::
+
+   Tools for visualizing the current template holdings are under development.
+
 
 
 Alert stream status
