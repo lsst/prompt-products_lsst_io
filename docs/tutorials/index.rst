@@ -41,8 +41,8 @@ Notebook Aspect
 
 Get executable versions of these notebooks in the RSP using the "Tutorials" drop-down menu.
 
-Minor Planet Center (MPC)
--------------------------
+MPC data access
+---------------
 
 .. toctree::
     :titlesonly:
