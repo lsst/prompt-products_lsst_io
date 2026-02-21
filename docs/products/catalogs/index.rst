@@ -58,10 +58,10 @@ Observational metadata for visits and detectors.
     detector_visit_table
 
 
-Visit image sources
-===================
+Visit image source
+==================
 
-Sources detected in the visit images.
+Measurements for sources detected in the visit images.
 
 .. toctree::
     :maxdepth: 1
