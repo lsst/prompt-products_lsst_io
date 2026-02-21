@@ -43,3 +43,15 @@ Commissioning metadata
     notebook/notebook-102.rst
 
 
+Contributing
+============
+
+Anyone from across the Rubin community is welcome to suggest a tutorial, or to volunteer to work with the Rubin Community Science team to contribute a tutorial, by posting a new topic in the Rubin Community Forum's `Support category <https://community.lsst.org/c/support/6>`_.
+
+
+Citing
+======
+
+When citing the tutorials please use:
+
+|tutorials_doi| [:download:`BibTeX <../bib/tutorials.bib>`]

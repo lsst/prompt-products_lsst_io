@@ -34,11 +34,8 @@ Community filters
 -----------------
 
 Up to 20 community alert filters will be defined, implemented, validated, and maintained by Rubin staff with input from the broad Rubin science community, and with support from the ANTARES broker.
-
 These community filters will be designed to serve a variety of common time-domain science goals, and lower the barrier to entry into alert-based science.
-
 See the "Roadmap for Community Alert Filters with the ANTARES Broker" `RTN-090 <https://rtn-090.lsst.io/>`_.
-
 
 
 Minor Planets Center (MPC)
@@ -60,9 +57,10 @@ Rubin Science Platform (RSP)
    The alert archive, PPDB, and prompt images are not yet available.
 
 
-Past alerts and Prompt data products will be accessable via the RSP, as demonstrated in the :doc:`/tutorials/index`.
+Get started
+-----------
 
-**Get started:** Follow these `instructions to sign up for an RSP account <https://rsp.lsst.io/guides/getting-started/get-an-account.html>`_, then work through the :doc:`/tutorials/index`.
+Follow these `instructions to sign up for an RSP account <https://rsp.lsst.io/guides/getting-started/get-an-account.html>`_, then work through the :doc:`/tutorials/index`.
 
 Alert archive
 -------------
@@ -80,6 +78,9 @@ Prompt images
 -------------
 
 The promptly-processed visit and difference images will be available after an 80 hour embargo period via the RSP.
+
+Measurements for sources detected in the prompt visit images will be also available after an 80 hour embargo period via the RSP.
+
 
 
 Get support
