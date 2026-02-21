@@ -11,7 +11,7 @@ Data policy
 Anyone, anywhere, worldwide, may share, analyze, and publish papers based on public data.
 Alerts are publicly accessible via the brokers.
 
-**Proprietary:** The promptly-processed images and the direct-image source catalogs are proprietary, and are subject to an initial 80-hour embargo.
+**Proprietary:** The promptly-processed images and the visit image source catalogs are proprietary, and are subject to an initial 80-hour embargo.
 Only Rubin data rights holders may access and analyze proprietary data after the embargo period.
 Access to the Rubin Science Platform (RSP) is also proprietary.
 
@@ -62,6 +62,8 @@ Rubin Science Platform (RSP)
 
 Past alerts and Prompt data products will be accessable via the RSP, as demonstrated in the :doc:`/tutorials/index`.
 
+**Get started:** Follow these `instructions to sign up for an RSP account <https://rsp.lsst.io/guides/getting-started/get-an-account.html>`_, then work through the :doc:`/tutorials/index`.
+
 Alert archive
 -------------
 
@@ -79,14 +81,10 @@ Prompt images
 
 The promptly-processed visit and difference images will be available after an 80 hour embargo period via the RSP.
 
-Get started
------------
-
-Follow these `instructions to sign up for an RSP account <https://rsp.lsst.io/guides/getting-started/get-an-account.html>`_, then work through the :doc:`/tutorials/index`.
-
-.. _access-getsupport:
 
 Get support
------------
+===========
 
 To ask question and get help with any aspect of the Rubin data products, services, and tools, please post a new topic in the Rubin Community Forum's `Support category <https://community.lsst.org/c/support/6>`_.
+
+Weekly `Rubin Science Assemblies <https://rubinobservatory.org/for-scientists/events-deadlines/events-rsa>`_ offer presentations, hands-on tutorials, and drop-in office hours as live support.
