@@ -7,15 +7,15 @@ Services, tools, and policies for accessing the alerts and the Prompt data produ
 Data policy
 ===========
 
-The contents of the alert packets and the Prompt Products Database (PPDB), plus all data submitted to the MPC, are public.
+**Public:** The contents of the alert packets and the Prompt Products Database (PPDB), plus all data submitted to the MPC, are public.
 Anyone, anywhere, worldwide, may share, analyze, and publish papers based on public data.
 Alerts are publicly accessible via the brokers.
 
-The promptly-processed images and the direct-image source catalogs are proprietary, and are subject to an initial 80-hour embargo.
+**Proprietary:** The promptly-processed images and the direct-image source catalogs are proprietary, and are subject to an initial 80-hour embargo.
 Only Rubin data rights holders may access and analyze proprietary data after the embargo period.
 Access to the Rubin Science Platform (RSP) is also proprietary.
 
-All scientists and students in the US and Chile, plus named members of international in-kind teams, have Rubin data rights.
+**Data rights:** All scientists and students in the US and Chile, plus named members of international in-kind teams, are Rubin data rights holders.
 `Learn more about the Rubin data policy <https://rubinobservatory.org/for-scientists/data-products/data-policy>`_.
 
 
