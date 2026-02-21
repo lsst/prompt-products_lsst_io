@@ -2,7 +2,22 @@
 Data access
 ###########
 
-Services and tools for accessing the alerts and the Prompt data products.
+Services, tools, and policies for accessing the alerts and the Prompt data products.
+
+Data policy
+===========
+
+**Public:** The contents of the alert packets and the Prompt Products Database (PPDB), plus all data submitted to the MPC, are public.
+Anyone, anywhere, worldwide, may share, analyze, and publish papers based on public data.
+Alerts are publicly accessible via the brokers.
+
+**Proprietary:** The promptly-processed images and the visit image source catalogs are proprietary, and are subject to an initial 80-hour embargo.
+Only Rubin data rights holders may access and analyze proprietary data after the embargo period.
+Access to the Rubin Science Platform (RSP) is also proprietary.
+
+**Data rights:** All scientists and students in the US and Chile, plus named members of international in-kind teams, are Rubin data rights holders.
+`Learn more about the Rubin data policy <https://rubinobservatory.org/for-scientists/data-products/data-policy>`_.
+
 
 Alert brokers
 =============
@@ -19,11 +34,8 @@ Community filters
 -----------------
 
 Up to 20 community alert filters will be defined, implemented, validated, and maintained by Rubin staff with input from the broad Rubin science community, and with support from the ANTARES broker.
-
 These community filters will be designed to serve a variety of common time-domain science goals, and lower the barrier to entry into alert-based science.
-
 See the "Roadmap for Community Alert Filters with the ANTARES Broker" `RTN-090 <https://rtn-090.lsst.io/>`_.
-
 
 
 Minor Planets Center (MPC)
@@ -45,7 +57,10 @@ Rubin Science Platform (RSP)
    The alert archive, PPDB, and prompt images are not yet available.
 
 
-Past alerts and Prompt data products will be accessable via the RSP, as demonstrated in the :doc:`/tutorials/index`.
+Get started
+-----------
+
+Follow these `instructions to sign up for an RSP account <https://rsp.lsst.io/guides/getting-started/get-an-account.html>`_, then work through the :doc:`/tutorials/index`.
 
 Alert archive
 -------------
@@ -63,3 +78,14 @@ Prompt images
 -------------
 
 The promptly-processed visit and difference images will be available after an 80 hour embargo period via the RSP.
+
+Measurements for sources detected in the prompt visit images will be also available after an 80 hour embargo period via the RSP.
+
+
+
+Get support
+===========
+
+To ask question and get help with any aspect of the Rubin data products, services, and tools, please post a new topic in the Rubin Community Forum's `Support category <https://community.lsst.org/c/support/6>`_.
+
+Weekly `Rubin Science Assemblies <https://rubinobservatory.org/for-scientists/events-deadlines/events-rsa>`_ offer presentations, hands-on tutorials, and drop-in office hours as live support.

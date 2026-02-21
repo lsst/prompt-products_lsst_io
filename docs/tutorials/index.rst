@@ -7,32 +7,12 @@ Tutorials
    Tutorials are currently under development.
 
 
-Tutorials demonstrating how to access and analyze data via the Rubin Science Platform (RSP).
+Tutorials demonstrating :doc:`/access/index` and analysis via the Rubin Science Platform (RSP).
 
-**Data Policy:** Only Rubin data rights holders may have an account in the Rubin Science Platform (RSP).
-All scientists and students in the US and Chile, plus named members of international in-kind teams, have Rubin data rights.
-`Learn more about the Rubin data policy <https://rubinobservatory.org/for-scientists/data-products/data-policy>`_.
+Find general information about the RSP's Portal, Notebook, and API aspects in the `RSP User Guides <https://rsp.lsst.io/guides/index.html>`_.
 
-**Alerts are world public and accessible by everyone via the brokers.**
-See :doc:`/access/index`.
-
-
-Get started
-===========
-
-**Get an RSP account:** follow these `instructions to sign up <https://rsp.lsst.io/guides/getting-started/get-an-account.html>`_.
-
-**Learn about the RSP:** visit the Portal, Notebook, and API aspects’ `User Guides <https://rsp.lsst.io/guides/index.html>`_.
-
-Then work through the tutorials.
-
-
-Get support
-===========
-
-To ask question and get help with any aspect of Rubin Observatory please post a new topic in the Rubin Community Forum's `Support category <https://community.lsst.org/c/support/6>`_.
-
-Weekly `Rubin Science Assemblies <https://rubinobservatory.org/for-scientists/events-deadlines/events-rsa>`_ offer presentations, hands-on tutorials, and drop-in office hours to support use of the Rubin data products, services, and tools.
+**Broker tutorials are not included here,** as they are provided by the individual brokers.
+Visit the `Alerts and brokers for scientists webpage <https://rubinobservatory.org/for-scientists/data-products/alerts-and-brokers>`_ for links to broker websites.
 
 
 .. _tutorials-notebook:
@@ -63,3 +43,15 @@ Commissioning metadata
     notebook/notebook-102.rst
 
 
+Contributing
+============
+
+Anyone from across the Rubin community is welcome to suggest a tutorial, or to volunteer to work with the Rubin Community Science team to contribute a tutorial, by posting a new topic in the Rubin Community Forum's `Support category <https://community.lsst.org/c/support/6>`_.
+
+
+Citing
+======
+
+When citing the tutorials please use:
+
+|tutorials_doi| [:download:`BibTeX <../bib/tutorials.bib>`]

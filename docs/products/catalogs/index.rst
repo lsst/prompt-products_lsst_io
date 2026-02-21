@@ -11,7 +11,7 @@ Catalogs (coming soon)
 
 Tables of measurements for detections in difference images.
 
-The Prompt catalogs together are referred to as the Prompt Products Database (PPDB).
+The DIA and moving objects catalogs together are referred to as the Prompt Products Database (PPDB).
 
 
 Difference image analysis (DIA)
@@ -56,3 +56,16 @@ Observational metadata for visits and detectors.
     :glob:
 
     detector_visit_table
+
+
+Visit image source
+==================
+
+Measurements for sources detected in the visit images.
+
+.. toctree::
+    :maxdepth: 1
+    :titlesonly:
+    :glob:
+
+    source
