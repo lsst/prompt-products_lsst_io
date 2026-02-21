@@ -2,7 +2,22 @@
 Data access
 ###########
 
-Services and tools for accessing the alerts and the Prompt data products.
+Services, tools, and policies for accessing the alerts and the Prompt data products.
+
+Data policy
+===========
+
+The contents of the alert packets and the Prompt Products Database (PPDB), plus all data submitted to the MPC, are public.
+Anyone, anywhere, worldwide, may share, analyze, and publish papers based on public data.
+Alerts are publicly accessible via the brokers.
+
+The promptly-processed images and the direct-image source catalogs are proprietary, and are subject to an initial 80-hour embargo.
+Only Rubin data rights holders may access and analyze proprietary data after the embargo period.
+Access to the Rubin Science Platform (RSP) is also proprietary.
+
+All scientists and students in the US and Chile, plus named members of international in-kind teams, have Rubin data rights.
+`Learn more about the Rubin data policy <https://rubinobservatory.org/for-scientists/data-products/data-policy>`_.
+
 
 Alert brokers
 =============
@@ -63,3 +78,15 @@ Prompt images
 -------------
 
 The promptly-processed visit and difference images will be available after an 80 hour embargo period via the RSP.
+
+Get started
+-----------
+
+Follow these `instructions to sign up for an RSP account <https://rsp.lsst.io/guides/getting-started/get-an-account.html>`_, then work through the :doc:`/tutorials/index`.
+
+.. _access-getsupport:
+
+Get support
+-----------
+
+To ask question and get help with any aspect of the Rubin data products, services, and tools, please post a new topic in the Rubin Community Forum's `Support category <https://community.lsst.org/c/support/6>`_.

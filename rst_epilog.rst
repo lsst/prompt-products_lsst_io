@@ -30,4 +30,6 @@
 .. |ss_object_doi| replace:: *Citation*: ``<placeholder ss object catalog DOI>``
 .. |detector_visit_doi| replace:: *Citation*: ``<placeholder detector visit processing summary catalog DOI>``
 
+.. |source_doi| replace:: *Citation*: ``<placeholder for direct-image source catalog DOI>``
+
 .. |b612_mpc_x05| replace:: *Citation*: Koumjian, A., & B612 Foundation | Asteroid Institute (2025); *Vera C. Rubin Observatory Observations in the Minor Planet Center* |doi_image| https://doi.org/10.5281/zenodo.17047589
