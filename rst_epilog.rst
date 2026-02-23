@@ -11,12 +11,12 @@
 .. |lsstcam_doi| replace:: *Citation:* SLAC National Accelerator Laboratory & NSF-DOE Vera C. Rubin Observatory (2025); *The LSST Camera (LSSTCam)* |doi_image| https://doi.org/10.71929/rubin/2571927
 .. |osprae_doi| replace:: *Citation:* Rubin Observatory Science Pipelines Developers (2025); *The LSST Science Pipelines Software: Optical Survey Pipeline Reduction and Analysis Environment* |doi_image| https://doi.org/10.71929/rubin/2570545
 .. |tutorials_doi| replace:: *Citation*: NSF-DOE Vera C. Rubin Observatory (2025); *Rubin Observatory LSST Tutorials* |doi_image| https://doi.org/10.11578/rubin/dc.20250909.20
-.. |bandpasses_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2025); Legacy Survey of Space and Time Data Preview 1 |doi_image| https://doi.org/10.71929/rubin/2587407
 
-.. |pp_paper| replace:: *Citation:* ``<placeholder Prompt paper DOI>``
-.. |prompt_doi| replace:: *Citation:* ``<placeholder Prompt dataset DOI>``
+.. |pp_paper| replace:: *Citation:* **NSF-DOE Vera C. Rubin Observatory** (2026); Alert Production with the Vera C. Rubin Observatory |doi_image| https://doi.org/10.71929/rubin/3019817
 
-.. |alerts_doi| replace:: *Citation:* ``<placeholder alerts DOI>``
+.. |prompt_doi| replace:: *Citation:* **NSF-DOE Vera C. Rubin Observatory** (2026); Legacy Survey of Space and Time Prompt Products |doi_image| https://doi.org/10.71929/rubin/3020138
+
+.. |alerts_doi| replace:: *Citation:* **NSF-DOE Vera C. Rubin Observatory** (2026); Legacy Survey of Space and Time Prompt Products: alerts |doi_image| https://doi.org/10.71929/rubin/3020139
 
 .. |raw_image_doi| replace:: *Citation*: ``<placeholder raw images DOI>``
 .. |visit_image_doi| replace:: *Citation*: ``<placeholder visit images DOI>``
