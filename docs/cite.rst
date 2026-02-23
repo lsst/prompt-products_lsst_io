@@ -85,6 +85,5 @@ please remember to use "LSSTCam" as the instrument name and "Rubin:Simonyi"
 (or just "Rubin" if that's not available) as the observatory/facility/telescope name,
 and please look for an option to report filters as "LSST" and not "Sloan", despite the similarity in photometric systems.
 
-If you encounter a service where these metadata options are not yet available,
-we ask that you bring this to our attention;
-a post on the "Support" category on https://community.lsst.org/ would be very much appreciated.
+If you encounter a service where these metadata options are not yet available we ask that you bring this to our attention.
+A post in the "Support" category of the `Rubin Community Forum <https://community.lsst.org/>`_ would be very much appreciated.
