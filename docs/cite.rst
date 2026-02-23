@@ -13,7 +13,7 @@ DOI and publications
 Data products
 -------------
 
-When citing the Prompt Products please reference this paper:
+When citing the Prompt Products please reference this paper (which is still in preparation):
 
 |pp_paper|
 
