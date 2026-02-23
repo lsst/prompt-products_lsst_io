@@ -41,5 +41,29 @@ Users may select alerts with higher reliability scores to maximize purity.
 
 .. important::
 
-   Detailed performance information about the reliability model as well as suggested thresholds are forthcoming.
+   The performance information below is for the reliability model generated on 2026-02-13.  Continued training and refinement is underway.
+
+
+The current (2026-02-13) reliability model was retrained using detections collected between August and October of 2025.
+The detections are from both the AP and DRP pipeline products.
+The detections had a spatial crossmatch with either the Gaia variables catalog (`Rimoldini et al. 2023 <https://doi.org/10.1051/0004-6361/202245591>`_), the TNS catalog, Solar System objects detected by Rubin, and sources from the Rubin source catalog with an extendedness of 1.
+Additionally, some detections where the DP1 reliability model assigned a score between 0.5 and 0.9 were also used.
+The detections were labeled as Real or Bogus by volunteers through `Rubin Difference Detectives <https://www.zooniverse.org/projects/ebellm/rubin-difference-detectives>`_, a citizen science project on the Zooniverse platform.
+
+A series of analyses was performed on all the classifications provided by the volunteers. An approach similar to the one described in `Marshall et al. (2016) <https://ui.adsabs.harvard.edu/abs/2016MNRAS.455.1171M/abstract>`_ was implemented here; the main idea was to understand how the volunteers performed in the classification task by comparing the label provided by experts and the one provided by volunteers for the same detection.
+
+The initial classification used only detections with high-confidence labels assigned by volunteers.
+In total, 13,178 sources were used to fine-tune the DP1 model: 6,630 real and 6,548 bogus. 1,647 were used to validate, and another 1,647 to test the model.
+Given the small size of the training data set, in addition to the original images, two augmentations (vertical and horizontal flipping) were added to the training.
+
+For the test data set, at a threshold of 0.552, the purity (precision) is 95.0%, and completeness (recall) is 93.4%.
+Users can choose their own reliability threshold to trade off completeness vs. purity.
+
+
+.. figure:: figures/precision_recall_reliability_2026-02-13.png
+    :name: precision_recall_reliability_2026-02-13
+    :alt: Precision vs. Recall curves illustrating the performance of the machine learned reliability model.
+
+    Figure 1: Purity (precision) vs. completeness (recall) as a function of reliability threshold value for the 2026-02-13 model.
+
 
