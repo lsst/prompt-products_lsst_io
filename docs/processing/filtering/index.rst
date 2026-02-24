@@ -35,7 +35,7 @@ Reliability
 A Convolutional Neural Network (CNN) was trained with a mixture of simulated data and human-labeled transients, variables, and moving objects.
 It uses cutout science, template, and difference images to estimate whether a ``DiaSource`` is likely astrophysical.
 The resulting ``reliability`` score ranges from 0-1, with larger scores corresponding to more likely real objects.
-To minimize the number of false positives, ``DiaSources`` with reliability scores less than 0.1 are filtered out.
+To minimize the number of false positives, ``DiaSources`` with reliability scores less than 0.5 are filtered out.
 Users may select alerts with higher reliability scores to maximize purity.
 
 
@@ -65,5 +65,6 @@ Users can choose their own reliability threshold to trade off completeness vs. p
     :alt: Precision vs. Recall curves illustrating the performance of the machine learned reliability model.
 
     Figure 1: Purity (precision) vs. completeness (recall) as a function of reliability threshold value for the 2026-02-13 model.
+    Note that performance is calculated on a test set and may not be fully representative of on-sky performance.
 
 
