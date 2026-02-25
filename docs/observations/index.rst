@@ -20,6 +20,12 @@ Find a description, key numbers, filter bandpasses, and more in the `LSSTCam doc
 |lsstcam_doi|
 
 
+Alert stream status
+===================
+
+A live dashboard showing alert processing over the last twelve hours is available at `ls.st/alert-stream-status <https://ls.st/alert-stream-status>`_.
+
+
 Survey strategy
 ===============
 
@@ -86,8 +92,3 @@ Details are available in :doc:`/processing/templates/index`.
    Tools for visualizing the current template holdings are under development.
 
 
-
-Alert stream status
-===================
-
-A live dashboard showing alert processing over the last twelve hours is available at `ls.st/alert-stream-status <https://ls.st/alert-stream-status>`_.
