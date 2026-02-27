@@ -175,3 +175,7 @@ cython_debug/
 
 # Sphinx documentation build directory
 _build
+
+# mac noise
+*.DS_Store
+
