@@ -63,16 +63,16 @@ When citing the tutorials please use:
 How to refer to single objects
 ==============================
 
-If you are referring to individual sources or objects from the Prompt alerts or catalogs, please use the naming convention described here, which has been registered with the International Astronomical Union (IAU) and was developed following `IAU specifications <https://cdsweb.u-strasbg.fr/Dic/iau-spec.html>`_.
-All designations should begin with "LSST-P" (denoting the Legacy Survey of Space and Time, Prompt products), followed by a string that specifies which table the object was obtained from.
+If you are referring to individual sources or objects from the Prompt alerts or catalogs, please use the naming convention described here, which has been registered with the International Astronomical Union (IAU) and was developed following `IAU specifications <https://cds.unistra.fr/cgi-bin/Dic-Simbad?LSST-AP>`_.
+All designations should begin with "LSST-AP" (denoting the Legacy Survey of Space and Time, Alert Production), followed by a string that specifies which table the object was obtained from.
 These strings should be "DO" (``DiaObject``), "DS" (``DiaSource``), or "SSO" (``SSObject``).
 Following this table identifier, the (18-digit for all tables except ``SSObject``, for which the ID is 17 digits long) unique numeric identifier from the specified table (i.e., the ``diaObjectId``, ``diaSourceId``, or ``ssObjectId``) should be included.
-The "fields" of the identifier should be separated by dashes, so that the designation appears like "LSST-P-TAB-123456789012345678."
+The "fields" of the identifier should be separated by dashes, so that the designation appears like "LSST-AP-TAB-123456789012345678."
 To summarize, here are examples for objects from each table:
 
-* ``DiaObject``: LSST-P-DO-609788942606140532 (for ``diaObjectId`` 609788942606140532)
-* ``DiaSource``: LSST-P-DS-600359758253260853 (for ``diaSourceId`` 600359758253260853)
-* ``SSObject``: LSST-P-SSO-21163611375481943 (for ``ssObjectId`` 21163611375481943)
+* ``DiaObject``: LSST-AP-DO-609788942606140532 (for ``diaObjectId`` 609788942606140532)
+* ``DiaSource``: LSST-AP-DS-600359758253260853 (for ``diaSourceId`` 600359758253260853)
+* ``SSObject``: LSST-AP-SSO-21163611375481943 (for ``ssObjectId`` 21163611375481943)
 
 All catalog entries reported in Prompt tables will have at least one of these three types of IDs.
 
