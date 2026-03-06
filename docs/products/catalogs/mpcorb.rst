@@ -27,7 +27,7 @@ TAP
 Description
 ===========
 
-All solar system objects discovered by Rubin Observatory with LSSTCam are reported to the `Minor Planets Center <https://minorplanetcenter.net/>`_ (MPC).
+All solar system objects discovered by Rubin Observatory with LSSTCam are reported to the `Minor Planet Center <https://minorplanetcenter.net/>`_ (MPC).
 The MPC has assigned `"observatory code" <https://minorplanetcenter.net/iau/lists/ObsCodesF.html>`_ ``X05`` to the Rubin Observatory.
 
 The MPC is the single worldwide location for receipt and distribution of positional measurements of small bodies in the Solar System.
