@@ -60,8 +60,8 @@ When citing the tutorials please use:
 |tutorials_doi| [:download:`BibTeX </bib/tutorials.bib>`]
 
 
-How to refer to single objects
-==============================
+How to refer to alerts and single objects
+=========================================
 
 If you are referring to individual sources or objects from the Prompt alerts or catalogs, please use the naming convention described here, which has been registered with the International Astronomical Union (IAU) and was developed following `IAU specifications <https://cds.unistra.fr/cgi-bin/Dic-Simbad?LSST-AP>`_.
 All designations should begin with "LSST-AP" (denoting the Legacy Survey of Space and Time, Alert Production), followed by a string that specifies which table the object was obtained from.
@@ -75,6 +75,12 @@ To summarize, here are examples for objects from each table:
 * ``SSObject``: LSST-AP-SSO-21163611375481943 (for ``ssObjectId`` 21163611375481943)
 
 All catalog entries reported in Prompt tables will have at least one of these three types of IDs.
+
+When referring directly to a specific alert, the ID of the alert is the same as the ID of the underlying ``DiaSource`` that triggered the alert,
+so the IAU-registered designation for the alert is simply the ``DiaSource`` designation, e.g., LSST-AP-DS-600359758253260853,
+where the numeric part is just the alert ID.
+There is no separate "alert" designation.
+Whether to refer to the alert (and thus the DiaSource) or to the corresponding DiaObject is a matter of context.
 
 Reporting data to external systems
 ==================================
