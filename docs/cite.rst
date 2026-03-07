@@ -80,7 +80,7 @@ When referring directly to a specific alert, the ID of the alert is the same as 
 so the IAU-registered designation for the alert is simply the ``DiaSource`` designation, e.g., LSST-AP-DS-600359758253260853,
 where the numeric part is just the alert ID.
 There is no separate "alert" designation.
-Whether to refer to the alert (and thus the DiaSource) or to the corresponding DiaObject is a matter for context.
+Whether to refer to the alert (and thus the DiaSource) or to the corresponding DiaObject is a matter of context.
 
 Reporting data to external systems
 ==================================
