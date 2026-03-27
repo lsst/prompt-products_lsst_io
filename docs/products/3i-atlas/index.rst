@@ -1,4 +1,4 @@
-.. _alerts:
+.. _3i-atlas:
 
 #####################
 3I/ATLAS image stamps
