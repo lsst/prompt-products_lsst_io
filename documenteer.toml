@@ -20,5 +20,6 @@ ignore = [
     "https://minorplanetcenter.net",
     "https://docushare.lsstcorp.org/docushare/dsweb/Get/LSE-163/LSE-163_DataProductsDefinitionDocumentDPDD.pdf",
     "http://ls.st/doc-29545",
-    "https://doi.org/10.5281/zenodo.17047589" #MLG: fails linkcheck but works fine
+    "https://doi.org/10.5281/zenodo.17047589", #MLG: fails linkcheck but works fine
+    "https://zenodo.org/records/19244429" #MLG: fails linkcheck but works fine
 ]
