@@ -32,8 +32,8 @@ MPC data access
     notebook/notebook-mpc.rst
 
 
-Commissioning metadata
-----------------------
+Commissioning data
+------------------
 
 .. toctree::
     :titlesonly:
@@ -41,6 +41,7 @@ Commissioning metadata
 
     notebook/notebook-101.rst
     notebook/notebook-102.rst
+    notebook/notebook-103.rst
 
 
 Contributing

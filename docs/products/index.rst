@@ -38,3 +38,14 @@ Science, difference, and coadded template images of the sky.
 
     images/index
 
+
+3I/ATLAS
+========
+
+Stamps from commissioning images that include 3I/ATLAS.
+
+.. toctree::
+    :maxdepth: 1
+    :glob:
+
+    3i-atlas/index

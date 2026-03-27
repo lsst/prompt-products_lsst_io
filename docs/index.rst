@@ -71,7 +71,7 @@ Tutorials
 Tutorials demonstrating how to access and analyze data.
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
    :titlesonly:
 
    Tutorials <tutorials/index>
