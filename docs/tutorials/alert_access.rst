@@ -17,6 +17,7 @@ Use ``pip`` to install the client and devkit by running the following on the com
 
 ```
 pip install --user antares_client
+
 pip install --user antares_devkit
 ```
 
