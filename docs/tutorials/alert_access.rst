@@ -26,6 +26,7 @@ Retrieve an alert locus
 
 The following snippet will retrieve the locus for a known Antares ID.
 The locus is returned as a Python dict; the last line of this snippet prints the available dict keys.
+The lightcurve example below illustrates accessing the "alerts" entries in the dict; other items can be extracted in a similar way.
 
 .. code-block:: Python
 
