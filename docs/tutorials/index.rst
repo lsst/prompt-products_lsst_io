@@ -22,6 +22,16 @@ Notebook Aspect
 
 Get executable versions of these notebooks in the RSP using the "Tutorials" drop-down menu.
 
+Alerts access
+-------------
+
+.. toctree::
+    :titlesonly:
+    :glob:
+
+    alert_access.rst
+
+
 MPC data access
 ---------------
 
