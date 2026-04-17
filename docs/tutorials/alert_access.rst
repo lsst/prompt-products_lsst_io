@@ -15,11 +15,11 @@ Installing the client and devkit
 
 Use ``pip`` to install the client and devkit by running the following on the command line (or, in a notebook cell, prepend a "!" for command-line access):
 
-```
-pip install --user antares_client
+.. code-block:: text
 
-pip install --user antares_devkit
-```
+    pip install --user antares_client
+    pip install --user antares_devkit
+
 
 Retrieve an alert locus
 =======================
