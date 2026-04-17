@@ -82,3 +82,12 @@ When plotting lightcurves, one should multiply fluxes with the "isNegative" flag
     plt.legend(loc='upper right')
     plt.title(my_locus_id)
     plt.show()
+
+The figure that is produced should look like the following:
+
+.. figure:: figures/alerts_lightcurve_example.png
+    :name: alerts_lightcurve_example
+    :alt: Lightcurve illustrating flux vs. time (in MJD) for an alert locus from Antares. The brightness sharply rises, then gradually decays, as is typical of supernovae.
+
+    Figure 1: Lightcurve showing the flux measured on difference images as a function of time (in MJD) for a single Antares locus.
+
