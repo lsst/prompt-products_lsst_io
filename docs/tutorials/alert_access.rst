@@ -45,6 +45,7 @@ Note that in the properties, negative fluxes are reported as positive values, bu
 When plotting lightcurves, one should multiply fluxes with the "isNegative" flag by -1.
 
 .. code-block:: Python
+
     import matplotlib.pyplot as plt
     import numpy as np
     from lsst.utils.plotting import (get_multiband_plot_colors,
