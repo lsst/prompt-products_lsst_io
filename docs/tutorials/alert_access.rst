@@ -5,7 +5,7 @@ Accessing alerts via the Antares client
 #######################################
 
 The contents of an alert locus can be accessed via the various brokers' API clients.
-This brief tutorial shows how to access an alert locus using the `Antares <https://antares.noirlab.edu/>_` client and `Devkit <https://nsf-noirlab.gitlab.io/csdc/antares/devkit/>`_.
+This brief tutorial shows how to access an alert locus using the `Antares <https://antares.noirlab.edu/>`_ client and `Devkit <https://nsf-noirlab.gitlab.io/csdc/antares/devkit/>`_.
 Other alert brokers have their own clients; consult their websites for documentation.
 
 All of the following can be executed within a notebook in the RSP, or from a python prompt (or notebook) on your local computer.
@@ -13,7 +13,7 @@ All of the following can be executed within a notebook in the RSP, or from a pyt
 Installing the client and devkit
 ================================
 
-Use `pip` to install the client and devkit by running the following on the command line (or, in a notebook cell, prepend a "!" for command-line access):
+Use ``pip`` to install the client and devkit by running the following on the command line (or, in a notebook cell, prepend a "!" for command-line access):
 
 ```
 pip install --user antares_client
@@ -40,7 +40,7 @@ The locus is returned as a Python dict; the last line of this snippet prints the
 Plot a lightcurve from diaSource measurements
 =============================================
 
-The following snippet extracts the flux measurements from the `diaSource` properties associated with each alert, then plots a lightcurve.
+The following snippet extracts the flux measurements from the ``diaSource`` properties associated with each alert, then plots a lightcurve.
 Note that in the properties, negative fluxes are reported as positive values, but flagged with an "isNegative" flag.
 When plotting lightcurves, one should multiply fluxes with the "isNegative" flag by -1.
 
