@@ -1,8 +1,8 @@
 .. _notebook-103:
 
 ##########################
-103. 3I/ATLAS image stamps
+103. Rubin Schedule Viewer
 ##########################
 
 .. raw:: html
-    :file: 103_3I_ATLAS_image_stamps.html
+    :file: 103_Rubin_Schedule_Viewer.html
