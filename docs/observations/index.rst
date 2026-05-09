@@ -35,14 +35,14 @@ Information about the strategy and cadence for the Legacy Survey of Space and Ti
 Nightly projection
 ------------------
 
-The projected Rubin schedule can be obtained via ObsLocTAP `programatically <https://usdf-rsp.slac.stanford.edu/obsloctap/schedule?time=24>`_ or with the browser-based `viewer <https://usdf-rsp.slac.stanford.edu/obsloctap/static/viewer.html>`_.
-A :ref:`tutorial notebook <tutorials-notebook>` for the Rubin Schedule Viewer is available.
+The projected Rubin schedule can be obtained via ObsLocTAP with the browser-based `static viewer <https://usdf-rsp.slac.stanford.edu/obsloctap/static/viewer.html>`_
+or `all-sky map interface <https://usdf-rsp.slac.stanford.edu/obsloctap/skymap>`_, and programmatically as demonstrated in the Commissioning :ref:`tutorials <tutorials-notebook>`.
 
 Nightly reports
 ---------------
 
 Automated per-night reports are publicly available as `scheduler viewer reports <https://s3df.slac.stanford.edu/data/rubin/sim-data/schedview/reports/>`_.
-
+Static files of LSSTCam visits metadata are available in the Commissioning :ref:`tutorials <tutorials-notebook>`.
 In the future, observational metadata will be available as queryable tables and documented under :doc:`/products/index`.
 
 Template coverage
