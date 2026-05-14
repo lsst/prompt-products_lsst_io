@@ -1,7 +1,7 @@
 .. _portal-101-1:
 
 #######################################
-101.1. Use the Alerts Viewer interface
+101.1. Navigate the Alerts Viewer interface
 #######################################
 
 For the Portal Aspect of the Rubin Science Platform (RSP) at data.lsst.cloud.
@@ -34,20 +34,29 @@ Click on the tab labeled "Alert Viewer". The Alert Viewer requires a known Alert
 
     Figure 1: The Alert Viewer search interface.
 
-**3. Retrieve the contents of a single alert.**
+**3. Retrieve the contents of a single alert packet.**
 Enter alert id 170059317401616524 and hit "load". The pencil button next to the "load" button shows Alert IDs from recent searches. 
 
-**4. Examine the results for the alert.** 
-The results include the full alert packet, image stamps, contents from the diaSource table, and a light curve. The top left panel includes shows the full alert packet. The top right panel shows the results from the diaSource table for the diaObjectId associated with the alert. The bottom panel shows 3 image staps: the science image, the template image, and the difference image.  
+**4. Examine the results for the alert packet.** 
+The results include the full alert packet which contains a table with records of the triggering DiaSource (top left panel), a table with associated DiaSource records (top right panel), a chart for the light curve (top right panel), and cutout postage stamps (bottom panel). 
 
 .. figure:: images/portal-101-1-2.png
     :name: portal-101-1-2
     :alt: 
 
-    Figure 2: The default view for the results interface for the Alert Viewer.  
+    Figure 2: The default view for the results interface for the Alert Viewer. 
 
-**5. View the light curve.**
-Click on 'Chart' to change the view to the light curve for the diaObject associated with the alert. 
+**4.1. Examine the triggering DiaSource records:** 
+The results table includes triggering DiaSource records, scheduler metadata, and associated DiaObject or SSObject. If the alert is associated with a SSObject, then this table includes records from mpc_orbits as shown in Figure 3.
+
+**4.2. Examine the DiaSource records.** 
+The results table includes records from the DiaSource table for the past 12 months for the diaObjectId associated with the alert.
+
+**4.3. Examine the cutout stamps.** 
+The cutout stamps include a science image cutout, a template image cutout, and a difference image cutout.  
+
+**4.4. Examine the light curve.**
+Click on 'Chart' to change the view to the light curve for the diaObject associated with the alert. The default chart shows the light curve with psfFlux vs midpointMjdTai for all bands.
 
 .. figure:: images/portal-101-1-3.png
     :name: portal-101-1-3
