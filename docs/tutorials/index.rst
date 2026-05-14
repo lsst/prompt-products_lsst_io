@@ -54,6 +54,15 @@ Commissioning data
     notebook/notebook-103.rst
     notebook/notebook-104.rst
 
+Alert archive
+-------------
+
+.. toctree::
+    :titlesonly:
+    :glob:
+
+    portal/101/portal-101-1.rst
+
 
 Contributing
 ============
