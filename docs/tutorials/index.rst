@@ -30,7 +30,7 @@ Alerts access
     :glob:
 
     alert_access.rst
-
+    portal/101/portal-101-1.rst
 
 MPC data access
 ---------------
@@ -53,15 +53,6 @@ Commissioning data
     notebook/notebook-102.rst
     notebook/notebook-103.rst
     notebook/notebook-104.rst
-
-Alert archive
--------------
-
-.. toctree::
-    :titlesonly:
-    :glob:
-
-    portal/101/portal-101-1.rst
 
 
 Contributing
