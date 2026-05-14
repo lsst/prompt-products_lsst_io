@@ -26,7 +26,7 @@ Rubin staff will respond to all questions posted there.
 In a web browser go to `data.lsst.cloud <https://data.lsst.cloud/>`_, log in and click on the "Portal" panel.
 
 **2. Select the Alert Viewer.**
-Click on the tab labeled "Alert Viewer". The Alert Viewer requires a known Alert ID. For the purpose of this tutorial, use the Alert ID 170059317401616524. The ALeRCE broker identified the ``DiaObject`` associated with this `alert <https://lsst.alerce.online/object/170059286935240883?oid=170059286935240883&survey=lsst&page=1&page_size=20&count=false&selected_oid=170059286935240883>`_ as a potential Active Galactic Nucleus (AGN).
+Click on the tab labeled "Alert Viewer". The Alert Viewer requires a known Alert ID. For the purpose of this tutorial, use the Alert ID 170059317401616524. The ALeRCE broker identified the ``DiaObject`` associated with this alert as a potential Active Galactic Nucleus (AGN).
 
 .. figure:: images/portal-101-1-1.png
     :name: portal-101-1-1
