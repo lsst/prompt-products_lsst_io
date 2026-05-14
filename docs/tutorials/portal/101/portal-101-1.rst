@@ -25,8 +25,8 @@ Rubin staff will respond to all questions posted there.
 **1. Log into the RSP and enter the Portal Aspect.**
 In a web browser go to `data.lsst.cloud <https://data.lsst.cloud/>`_, log in and click on the "Portal" panel. 
 
-**2. Select the alert viewer.** 
-Click on the tab labeled "Alert Viewer". The Alert Viewer requires a known Alert ID. For the purpose of this tutorial, use the Alert ID 170059317401616524. The ALeRCE broker identified the ``DiaObject`` associated with this alert<https://lsst.alerce.online/object/170059286935240883?survey=lsst>` as a potential Active Galactic Nucleus (AGN).   
+**2. Select the Alert Viewer.** 
+Click on the tab labeled "Alert Viewer". The Alert Viewer requires a known Alert ID. For the purpose of this tutorial, use the Alert ID 170059317401616524. The ALeRCE broker identified the ``DiaObject`` associated with this `alert<https://lsst.alerce.online/object/170059286935240883?survey=lsst>`_ as a potential Active Galactic Nucleus (AGN).   
 
 .. figure:: images/portal-101-1-1.png
     :name: portal-101-1-1
@@ -55,7 +55,7 @@ The results table includes triggering ``DiaSource`` records, scheduler metadata,
 
     Figure 3: The results table for Alert ID 170059294376985743, associated with a Solar System object. 
 
-**4.2. Examine the ``DiaSource`` records.** 
+**4.2. Examine the DiaSource records.** 
 The results table includes records from the ``DiaSource`` table for the past 12 months for the ``DiaObject`` associated with the alert.
 
 **4.3. Examine the cutout stamps.** 
@@ -64,8 +64,8 @@ The cutout stamps include a science image cutout, a template image cutout, and a
 **4.4. Examine the light curve.**
 Click on 'Chart' to change the view to the light curve for the ``DiaObject`` associated with the alert. The default chart shows the light curve with psfFlux vs midpointMjdTai for all bands.
 
-.. figure:: images/portal-101-1-3.png
-    :name: portal-101-1-3
+.. figure:: images/portal-101-1-4.png
+    :name: portal-101-1-4
     :alt: The Alert Viewer results interface showing 3 panels with 1 table, a chart with a light curve, and 3 cutout image stamps.
 
     Figure 4: The results interface showing the chart with the light curve for Alert ID 170059317401616524, a potential AGN.
