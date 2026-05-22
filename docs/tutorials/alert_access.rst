@@ -53,9 +53,11 @@ When plotting lightcurves, one should multiply fluxes with the "isNegative" flag
     import matplotlib.pyplot as plt
     import numpy as np
 
-    filter_colors = {'u': '#1600EA', 'g': '#31DE1F', 'r': '#B52626', 'i': '#370201', 'z': '#BA52FF', 'y': '#61A2B3'}
+    filter_colors = {'u': '#1600EA', 'g': '#31DE1F', 'r': '#B52626',
+                     'i': '#370201', 'z': '#BA52FF', 'y': '#61A2B3'}
     filter_names = list(filter_colors.keys())
-    filter_symbols = {'u': 'o', 'g': '^', 'r': 'v', 'i': 's', 'z': '*', 'y': 'p'}
+    filter_symbols = {'u': 'o', 'g': '^', 'r': 'v',
+                      'i': 's', 'z': '*', 'y': 'p'}
 
     temp_mjd = []
     temp_band = []
