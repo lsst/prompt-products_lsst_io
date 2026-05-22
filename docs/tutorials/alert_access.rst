@@ -4,8 +4,8 @@
 Accessing alerts via the Antares client
 #######################################
 
-The contents of an alert locus can be accessed via the various brokers' API clients.
-This brief tutorial shows how to access an alert locus using the `Antares <https://antares.noirlab.edu/>`_ client and `Devkit <https://nsf-noirlab.gitlab.io/csdc/antares/devkit/>`_.
+The alerts and additional properties about an object can be accessed via the various brokers' API clients.
+This brief tutorial shows how to access alerts using the `Antares <https://antares.noirlab.edu/>`_ client and `Devkit <https://nsf-noirlab.gitlab.io/csdc/antares/devkit/>`_.
 Other alert brokers have their own clients; consult their websites for documentation.
 
 All of the following can be executed within a notebook in the RSP, or from a python prompt (or notebook) on your local computer.
@@ -24,6 +24,8 @@ Use ``pip`` to install the client and devkit by running the following on the com
 Retrieve an alert locus
 =======================
 
+Antares groups alerts and additional properties at a given position on the sky (i.e., associated with a particular astrophysical object) into an object called a "locus."
+Each locus is given a unique ID in Antares.
 The following snippet will retrieve the locus for a known Antares ID.
 The locus is returned as a Python dict; the last line of this snippet prints the available dict keys.
 The lightcurve example below illustrates accessing the "alerts" entries in the dict; other items can be extracted in a similar way.
@@ -50,12 +52,10 @@ When plotting lightcurves, one should multiply fluxes with the "isNegative" flag
 
     import matplotlib.pyplot as plt
     import numpy as np
-    from lsst.utils.plotting import (get_multiband_plot_colors,
-                                     get_multiband_plot_symbols)
 
-    filter_colors = get_multiband_plot_colors()
+    filter_colors = {'u': '#1600EA', 'g': '#31DE1F', 'r': '#B52626', 'i': '#370201', 'z': '#BA52FF', 'y': '#61A2B3'}
     filter_names = list(filter_colors.keys())
-    filter_symbols = get_multiband_plot_symbols()
+    filter_symbols = {'u': 'o', 'g': '^', 'r': 'v', 'i': 's', 'z': '*', 'y': 'p'}
 
     temp_mjd = []
     temp_band = []
@@ -75,9 +75,9 @@ When plotting lightcurves, one should multiply fluxes with the "isNegative" flag
     flux = np.asarray(temp_flux, dtype='float')
 
     fig = plt.figure(figsize=(6, 4))
-        for f, filt in enumerate(filter_names):
-            fx = np.where(band == filt)[0]
-            plt.plot(mjd[fx], flux[fx], filter_symbols[filt], color=filter_colors[filt], label=filt)
+    for f, filt in enumerate(filter_names):
+        fx = np.where(band == filt)[0]
+        plt.plot(mjd[fx], flux[fx], filter_symbols[filt], color=filter_colors[filt], label=filt)
     plt.xlabel('MJD')
     plt.ylabel('PSF Flux [nJy]')
     plt.legend(loc='upper right')
