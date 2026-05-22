@@ -38,7 +38,7 @@ Current template coverage can be visualized with the `interactive alert producti
 More detailed programatic access to template coverage under development.
 
 .. list-table:: Current alert production coverage by filter.
-   :widths: 20 20
+   :widths: auto
    :header-rows: 1
    :class: tight-table
 
