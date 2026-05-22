@@ -1,6 +1,6 @@
-#######################
-Observations and status
-#######################
+############
+Observations
+############
 
 .. important::
 
@@ -26,11 +26,47 @@ Alert stream status
 A live dashboard showing alert processing over the last twelve hours is available at `ls.st/alert-stream-status <https://ls.st/alert-stream-status>`_.
 
 
+Template coverage
+=================
+
+On May 21 2026, a significant expansion to the template coverage available to Alert Production was deployed, extending it beyond the original `Deep Drilling Fields <https://survey-strategy.lsst.io/baseline/ddf.html>`_ templates.
+
+The best-covered subset of the templates generated as part of the forthcoming Data Preview 2 were selected.
+This increased the total sky area for alert production by more than a factor of ten (depending on the band).
+
+Current template coverage can be visualized with the `interactive alert production template coverage interface <https://s3df.slac.stanford.edu/people/ebellm/template_coverage/template_coverage.html>`_.
+More detailed programatic access to template coverage under development.
+
+.. list-table:: Current alert production coverage by filter.
+   :widths: 20 20
+   :header-rows: 1
+   :class: tight-table
+
+   * - Filter
+     - Sky area (sq. deg)
+   * - u
+     - 53
+   * - g
+     - 211
+   * - r
+     - 905
+   * - i
+     - 1444
+   * - z
+     - 1197
+   * - y
+     - 25
+
+
+
+Additional template images will be generated incrementally during the early science phase, and information about template regions will be added here.
+Details are available in :doc:`/processing/templates/index`.
+
+
 Survey strategy
 ===============
 
 Information about the strategy and cadence for the Legacy Survey of Space and Time can be found at `survey-strategy.lsst.io <https://survey-strategy.lsst.io/>`_.
-
 
 Nightly projection
 ------------------
@@ -45,50 +81,6 @@ Automated per-night reports are publicly available as `scheduler viewer reports 
 Static files of LSSTCam visits metadata are available in the Commissioning :ref:`tutorials <tutorials-notebook>`.
 In the future, observational metadata will be available as queryable tables and documented under :doc:`/products/index`.
 
-Template coverage
------------------
 
-During early Alert Production, templates (and thus alerts) primarily exist in the `Deep Drilling Fields <https://survey-strategy.lsst.io/baseline/ddf.html>`_.
-
-As of February 2026, templates had been deployed in Alert Production for the fields listed in the table below.
-All of these are DDFs except the M49 (Virgo) field, which was part of the Rubin First Look images.
-
-.. list-table:: DDF templates
-   :widths: 20 20 20
-   :header-rows: 1
-   :class: tight-table
-
-   * - Name
-     - Coordinates
-     - Filters
-   * - COSMOS
-     - 150.11, 2.23
-     - ugrizy
-   * - ECDFS
-     - 52.98, -28.12 deg
-     - riz
-   * - ELAIS-S1
-     - 9.45, -44.02 deg
-     - griz
-   * - EDFS_a
-     - 58.9, -49.32 deg
-     - griz
-   * - EDFS_b
-     - 63.6, -47.6 deg
-     - griz
-   * - XMM-LSS
-     - 35.57, -4.82 deg
-     - iz
-   * - M49 (Virgo)
-     - 187.4, +8 deg
-     - ugri
-
-
-Additional template images will be generated incrementally during the early science phase, and information about template regions will be added here.
-Details are available in :doc:`/processing/templates/index`.
-
-.. important::
-
-   Tools for visualizing the current template holdings are under development.
 
 
