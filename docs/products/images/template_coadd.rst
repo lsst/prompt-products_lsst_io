@@ -7,6 +7,7 @@ Template coadd (coming soon)
 .. important::
 
    Prompt images are not yet available.
+   Template coverage information is available on the :doc:`/overview/observations/index` page.
 
 
 The combination of processed images with the best seeing, for a patch of sky and for each of the six LSST filters, used as a template for difference imaging.

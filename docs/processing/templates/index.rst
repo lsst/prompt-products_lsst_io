@@ -15,7 +15,7 @@ In steady state operations, templates for alert production will be produced by t
 During Early Operations prior to DR1, templates will be built incrementally when sufficient suitable images are available in a given area of the sky.
 Once produced, templates will remain in place as long as possible to avoid repeated shifts of the difference light curves.
 
-For a list of the available templates, see the :doc:`/observations/index` page.
+For a list of the available templates, see the :doc:`/overview/observations/index` page.
 
 Coadds by patch
 ===============
