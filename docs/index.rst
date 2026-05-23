@@ -24,8 +24,7 @@ Observational progress, live status reports, and known issues.
    :maxdepth: 2
    :titlesonly:
 
-   Observations <observations/index>
-   Known issues <known-issues/index>
+   Overview <overview/index>
 
 
 Data products
