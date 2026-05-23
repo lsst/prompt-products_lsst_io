@@ -38,27 +38,9 @@ The resulting ``reliability`` score ranges from 0-1, with larger scores correspo
 To minimize the number of false positives, ``DiaSources`` with reliability scores less than 0.5 are filtered out.
 Users may select alerts with higher reliability scores to maximize purity.
 
-
 .. important::
 
-   The performance information below is for the reliability model generated in May 2026.  Continued training and refinement is underway.
+   Continued training and refinement of the reliability model is underway, and the version of the model is reported in the alert packets.
 
-
-The current (v0.3) reliability model was retrained using detections collected in the COSMOS field (`DMTN-337 <https://dmtn-337.lsst.io/>`_).
-The detections are from both the AP and DRP pipeline products.
-The detections had a spatial crossmatch with either the Gaia variables catalog (`Rimoldini et al. 2023 <https://doi.org/10.1051/0004-6361/202245591>`_), the TNS catalog, Solar System objects detected by Rubin, and sources from the Rubin source catalog with an extendedness of 1.
-The detections were labeled as Real or Bogus by volunteers through `Rubin Difference Detectives <https://www.zooniverse.org/projects/ebellm/rubin-difference-detectives>`_, a citizen science project on the Zooniverse platform.
-
-A series of analyses was performed on all the classifications provided by the volunteers. An approach similar to the one described in `Marshall et al. (2016) <https://ui.adsabs.harvard.edu/abs/2016MNRAS.455.1171M/abstract>`_ was implemented here; the main idea was to understand how the volunteers performed in the classification task by comparing the label provided by experts and the one provided by volunteers for the same detection.
-The initial classification used only detections with high-confidence labels assigned by volunteers.
-
-Users can choose their own reliability threshold to trade off completeness vs. purity, based on the relationships in Figure 1 (below).
-
-.. figure:: figures/cosmos_dp2_report_new_model.png
-    :name: cosmos_dp2_report_new_model
-    :alt: Precision vs. Recall curves illustrating the performance of the machine learned reliability model.
-
-    Figure 1: Purity (precision) vs. completeness (recall) as a function of reliability threshold value for the v0.3 model.
-    Note that performance is calculated on a test set and may not be fully representative of on-sky performance.
-
-
+A technote describing the training and performance of the reliability models is available at (`DMTN-337 <https://dmtn-337.lsst.io/>`_).
+Interested users are encouraged to consult it to understand the impact of reliability selections on their objects of interest.
