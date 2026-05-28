@@ -38,7 +38,7 @@ Click on the tab labeled "Alert Viewer". The Alert Viewer requires a known Alert
 Enter alert id 170059317401616524 and hit "load". The pencil button next to the "load" button shows Alert IDs from recent searches.
 
 **4. Examine the results for the alert packet.**
-The results include the full alert packet which contains a table with records of the triggering ``DiaSource`` (top left panel), a table with associated ``DiaSource`` records (top right panel), a chart for the light curve (top right panel), and cutout postage stamps (bottom panel).
+The results include the full alert packet which contains a table with records of the triggering ``DiaSource`` (top left panel), a table with associated ``DiaSource`` records (top right panel), a chart for the light curve (top right panel), and cutout postage stamps of the science, template, and difference images (bottom panel).
 
 .. figure:: images/portal-101-1-2.png
     :name: portal-101-1-2
@@ -47,7 +47,7 @@ The results include the full alert packet which contains a table with records of
     Figure 2: The Alert Viewer results interface showing the contents of the packet for Alert ID 170059317401616524.
 
 **4.1. Examine the triggering DiaSource records:**
-The results table includes triggering ``DiaSource`` records, scheduler metadata, and associated ``DiaObject`` or ``SSObject``. If the alert is associated with a ``SSObject``, then this table includes records from ``mpc_orbits`` as shown in Figure 3.
+The results table includes triggering ``DiaSource`` records, scheduler metadata, and associated ``DiaObject`` or ``SSObject``. If the alert is associated with a ``SSObject``, then this table includes records from ``mpc_orbits`` if available as shown in Figure 3.
 
 .. figure:: images/portal-101-1-3.png
     :name: portal-101-1-3
