@@ -59,7 +59,7 @@ The results table includes triggering ``DiaSource`` records, scheduler metadata,
 The results table includes records from the ``DiaSource`` table for the past 12 months for the ``DiaObject`` associated with the alert.
 
 **4.3. Examine the cutout stamps.**
-The cutout stamps include a science image cutout, a template image cutout, and a difference image cutout.
+The cutout stamps include a science image cutout, a template image cutout, and a difference image cutout. Note that the default greyscale shows negative flux as white in the difference image, rather than black. In the near future, negative fluxes will appear as black in the difference image and positive fluxes will appear as white.   
 
 **4.4. Examine the light curve.**
 Click on 'Chart' to change the view to the light curve for the ``DiaObject`` associated with the alert. The default chart shows the light curve with psfFlux vs midpointMjdTai for all bands.
