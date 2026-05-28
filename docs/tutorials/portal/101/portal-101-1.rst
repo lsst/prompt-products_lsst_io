@@ -47,7 +47,7 @@ The results include the full alert packet which contains a table with records of
     Figure 2: The Alert Viewer results interface showing the contents of the packet for Alert ID 170059317401616524.
 
 **4.1. Examine the triggering DiaSource records:**
-The results table includes triggering ``DiaSource`` records, scheduler metadata, and associated ``DiaObject`` or ``SSObject``. If the alert is associated with a ``SSObject``, then this table includes records from ``mpc_orbits`` if available as shown in Figure 3.
+The results table includes triggering ``DiaSource`` records, scheduler metadata, and associated ``DiaObject`` or ``SSObject``. If the alert is associated with a ``SSObject``, then this table includes records from ``mpc_orbits`` as shown in Figure 3 if available.
 
 .. figure:: images/portal-101-1-3.png
     :name: portal-101-1-3
