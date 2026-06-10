@@ -1,8 +1,8 @@
 .. _notebook-102:
 
-###################################
-102. LSSTCam visits metadata (2026)
-###################################
+##########################
+102. Rubin Schedule Viewer
+##########################
 
 .. raw:: html
-    :file: 102_LSSTCam_visits_metadata_2026.html
+    :file: 102_Rubin_Schedule_Viewer.html
