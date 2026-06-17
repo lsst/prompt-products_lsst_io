@@ -15,6 +15,21 @@ Find general information about the RSP's Portal, Notebook, and API aspects in th
 Visit the `Alerts and brokers for scientists webpage <https://rubinobservatory.org/for-scientists/data-products/alerts-and-brokers>`_ for links to broker websites.
 
 
+.. _tutorials-portal:
+
+Portal Aspect
+=============
+
+Interact with Prompt Products via the RSP Portal.
+
+.. toctree::
+    :titlesonly:
+    :glob:
+
+    portal/101/portal-101-1.rst
+
+
+
 .. _tutorials-notebook:
 
 Notebook Aspect
@@ -30,7 +45,7 @@ Alerts access
     :glob:
 
     alert_access.rst
-    portal/101/portal-101-1.rst
+
 
 MPC data access
 ---------------
