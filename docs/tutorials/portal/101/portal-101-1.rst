@@ -1,14 +1,14 @@
 .. _portal-101-1:
 
-############################################
+###########################################
 101.1. Navigate the Alerts Viewer interface
-############################################
+###########################################
 
 For the Portal Aspect of the Rubin Science Platform (RSP) at data.lsst.cloud.
 
 **Data Release:** Prompt Products
 
-**Last verified to run:** 05/13/2026
+**Last verified to run:** 2026-06-17
 
 **Learning objective:** Use the Alert Viewer to access the contents of a single alert packet retrieved by alert ID.
 
@@ -36,9 +36,10 @@ Click on the tab labeled "Alert Viewer". The Alert Viewer requires a known Alert
 
 **3. Retrieve the contents of a single alert packet.**
 Enter alert id 170059317401616524 and hit "load". The pencil button next to the "load" button shows Alert IDs from recent searches.
+The Alert Viewer interface will open in a new browser tab.
 
 **4. Examine the results for the alert packet.**
-The results include the full alert packet which contains a table with records of the triggering ``DiaSource`` (top left panel), a table with associated ``DiaSource`` records (top right panel), a chart for the light curve (top right panel), and cutout postage stamps of the science, template, and difference images (bottom panel).
+The results include the full alert packet which contains a table with records of the triggering ``DiaSource`` (top left panel), a table with associated ``DiaSource`` records (top right panel), a chart for the light curve (top right panel; use the chart/table toggle to switch between views), and cutout postage stamps of the science, template, and difference images (bottom panel).
 
 .. figure:: images/portal-101-1-2.png
     :name: portal-101-1-2
@@ -46,8 +47,8 @@ The results include the full alert packet which contains a table with records of
 
     Figure 2: The Alert Viewer results interface showing the contents of the packet for Alert ID 170059317401616524.
 
-**4.1. Examine the triggering DiaSource records:**
-The results table includes triggering ``DiaSource`` records, scheduler metadata, and associated ``DiaObject`` or ``SSObject``. If the alert is associated with a ``SSObject``, then this table includes records from ``mpc_orbits`` as shown in Figure 3 if available.
+**4.1. Examine the triggering DiaSource record:**
+The results table includes triggering ``DiaSource`` record, scheduler metadata, and associated ``DiaObject`` or ``SSObject``. If the alert is associated with a ``SSObject``, then this table includes records from ``mpc_orbits`` as shown in Figure 3.
 
 .. figure:: images/portal-101-1-3.png
     :name: portal-101-1-3
@@ -55,14 +56,16 @@ The results table includes triggering ``DiaSource`` records, scheduler metadata,
 
     Figure 3: The results table for Alert ID 170059294376985743, associated with a Solar System object.
 
-**4.2. Examine the DiaSource records.**
+**4.2. Examine the associated DiaSource records.**
+Ensure "table" is selected for the top right panel.
 The results table includes records from the ``DiaSource`` table for the past 12 months for the ``DiaObject`` associated with the alert.
 
-**4.3. Examine the cutout stamps.**
-The cutout stamps include a science image cutout, a template image cutout, and a difference image cutout. Note that the inverted greyscale colormap is currently used for all three image stamps, which is not the convention for time-domain science because it shows negative flux as white in the difference image. In the near future the colormap will be switched to regular greyscale for all three image stamps.
+**4.3. Examine the associated light curve.**
+Ensure "Chart" is selected for the top right panel.
+This changes the view to the light curve for the ``DiaObject`` associated with the alert. The default chart shows the light curve with difference-image ``psfFlux`` vs ``midpointMjdTai`` for all bands.
 
-**4.4. Examine the light curve.**
-Click on 'Chart' to change the view to the light curve for the ``DiaObject`` associated with the alert. The default chart shows the light curve with psfFlux vs midpointMjdTai for all bands.
+**4.4. Examine the cutout stamps.**
+The cutout stamps include a science image cutout, a template image cutout, and a difference image cutout. The default greyscale colormap used for all three image stamps shows positive flux as white, and negative as black. The colormap and scale can be changed using the palette and histogram buttons in the upper right corner of the bottom panel.
 
 .. figure:: images/portal-101-1-4.png
     :name: portal-101-1-4
