@@ -102,3 +102,16 @@ Citing
 When citing the tutorials please use:
 
 |tutorials_doi| [:download:`BibTeX <../bib/tutorials.bib>`]
+
+
+
+.. _tutorials-log:
+
+Log of major updates
+====================
+
+.. toctree::
+    :maxdepth: 1
+    :glob:
+
+    log

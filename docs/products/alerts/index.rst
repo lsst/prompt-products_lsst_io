@@ -25,14 +25,11 @@ Alerts are delivered to brokers and accessed via individual brokers' interfaces.
 See :doc:`/access/index`.
 
 
-Alert archive
--------------
-
-.. important::
-
-   The Alert Archive interface is not yet available.
+Alert Retrieval Service
+-----------------------
 
 As-transmitted alerts are stored in an archive accessible to Data Rights holders via the Rubin Science Platform.
+See :doc:`/access/index`.
 
 
 Description
@@ -76,3 +73,8 @@ Processing
 
 Alert packets are the result of :doc:`/processing/alert-gen/index`.
 
+
+Tutorials
+---------
+
+See the Portal and Notebook :doc:`/tutorials/index` for demonstrations of how access and visualize alerts.

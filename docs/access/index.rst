@@ -23,6 +23,7 @@ Alert brokers
 =============
 
 **Alert broker:** Software systems that ingest and process astronomical alerts from the LSST and other surveys, and serve them to the scientific community.
+Brokers are the primary and optimal interface for real-time science analyses of LSST alerts.
 
 **Alert filter:** A set of rules that an alert packet either passes or fails.
 E.g., "if brighter than 21st magnitude, and if discovered less than 6 days ago, and if two detections exist, then pass" would be is a very simple filter.
@@ -54,19 +55,23 @@ Rubin Science Platform (RSP)
 
 .. important::
 
-   The alert archive, PPDB, and prompt images are not yet available.
+   The PPDB and Prompt images are not yet available, but individual alerts can be accessed via the RSP.
 
 
-Get started
------------
+**Get started:** follow these `instructions to sign up for an RSP account <https://rsp.lsst.io/guides/getting-started/get-an-account.html>`_.
+Refer to the `RSP user guides <https://rsp.lsst.io/>`_ and work through the :doc:`/tutorials/index`.
 
-Follow these `instructions to sign up for an RSP account <https://rsp.lsst.io/guides/getting-started/get-an-account.html>`_, then work through the :doc:`/tutorials/index`.
+**Get support:** to ask question and get help with any aspect of the Rubin data products, services, and tools, please post a new topic in the Rubin Community Forum's `Support category <https://community.lsst.org/c/support/6>`_.
+Weekly `Rubin Science Assemblies <https://rubinobservatory.org/for-scientists/events-deadlines/events-rsa>`_ offer presentations, hands-on tutorials, and drop-in office hours as live support.
 
-Alert archive
--------------
 
-An archive of all past alerts will be available via the Rubin Science Platform.
-This archive will be queryable by the ``DIA Object`` identifier.
+Alert Retrieval Service
+-----------------------
+
+An archive of past :doc:`products/alerts/index` is available via Notebook and Portal aspects of the RSP.
+Alerts can be queried individually using the ``alertId`` (which is the same as the ``diaSourceId``).
+See the :doc:`/tutorials/index` for demonstrations of how to use the Alert Retrieval Service.
+
 
 Prompt Products Database (PPDB)
 -------------------------------
@@ -78,14 +83,4 @@ Prompt images
 -------------
 
 The promptly-processed visit and difference images will be available after an 80 hour embargo period via the RSP.
-
 Measurements for sources detected in the prompt visit images will be also available after an 80 hour embargo period via the RSP.
-
-
-
-Get support
-===========
-
-To ask question and get help with any aspect of the Rubin data products, services, and tools, please post a new topic in the Rubin Community Forum's `Support category <https://community.lsst.org/c/support/6>`_.
-
-Weekly `Rubin Science Assemblies <https://rubinobservatory.org/for-scientists/events-deadlines/events-rsa>`_ offer presentations, hands-on tutorials, and drop-in office hours as live support.
