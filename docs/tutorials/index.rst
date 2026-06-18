@@ -91,9 +91,6 @@ Remotely access Rubin asteroids via the Minor Planets Center, from the RSP Noteb
     notebook/notebook-mpc.rst
 
 
->>>>>>> 05f13c1 (add new nb html)
-
-
 Contributing
 ============
 
