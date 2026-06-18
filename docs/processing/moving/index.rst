@@ -19,7 +19,6 @@ General overview of SSP
 
     ss_prompt
     ss_linking
-    ss_drp
 
 
 
