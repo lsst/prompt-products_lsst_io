@@ -4,7 +4,7 @@
 Solar System processing (SSP)
 #############################
 
-Solar System Processing includes both the :ref:`association of known Solar System Objects (SSOs) </processing/association>` during nighttime observations as well as the discovery of new SSOs by linking unassociated ``DiaSources`` during daytime processing.
+Solar System Processing includes both the association of known Solar System Objects (SSOs) during nighttime observations (see the :doc:`/processing/associations/index` page) as well as the discovery of new SSOs by linking unassociated ``DiaSources`` during daytime processing.
 All Rubin SSO observations and discoveries are reported to the Minor Planet Center (MPC).
 
 
