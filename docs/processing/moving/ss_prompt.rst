@@ -9,7 +9,7 @@ Solar System prompt processing
 The goal of the nightly Solar System Processing (SSP) pipeline is to link (identify) previously unknown ``SSObjects``, given an additional night of observing, and report the discoveries to the `Minor Planet Center <https://minorplanetcenter.net>`_ (MPC), as well as to compute physical (e.g., absolute magnitudes) and other auxiliary properties (e.g., predicted apparent magnitudes and coordinates in various coordinate systems) for known Solar System objects and their LSST observations.
 
 The majority of the pipeline's processing occurs in daytime, after a night of observing.
-The pipeline will deliver daily data products for Solar System objects in the form of catalogs: ``SSObject``, ``SSSource``, ``DiaSource``, and ``mpc_orbits``, which are described in the :doc:`/products/catalogs/index` documentation and the `Data Products Definition Document <https://lse-163.lsst.io>`_ (DPDD).
+The pipeline will deliver daily data products for Solar System objects in the form of catalogs: ``SSObject``, ``SSSource``, ``DiaSource``, and ``mpc_orbits``, which are described in the :doc:`/products/catalogs/index` documentation.
 The SSP pipeline is illustrated in the infographic provided above.
 For more information on the moving object tracklet linking and orbit fitting algorithm, see :doc:`/processing/moving/ss_linking`.
 

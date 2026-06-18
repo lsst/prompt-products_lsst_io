@@ -28,7 +28,7 @@ Solar System processing
 Solar System processing consists of two key components: the association of observations (sources) with known solar system objects, and the discovery of previously unknown objects by linking sets of tracklets, where a tracklet is defined as two or more observations taken in close succession in a single night.
 
 To generate expected positions for known objects, ephemerides are computed for all objects found in the Minor Planet Center orbit catalog using the ``Sorcha`` survey simulation toolkit (`Merritt et al., in press <https://github.com/dirac-institute/sorcha>`_).
-To enable fast lookup of objects potentially present in an observed visit, we use the ``mpsky`` package (M. Juric 2025).
+To enable fast lookup of objects potentially present in an observed visit, ``Sorcha`` uses the ``mpsky`` package (M. Juric 2025).
 In each difference image resulting from :doc:`/processing/dia/index` processing, the closest ``DIASource`` within 1 arcsecond of a known solar system object’s predicted position is associated to that object (for details, see the :doc:`/processing/association/index` page).
 
 Solar system object discovery uses the ``heliolinx`` package of asteroid identification and linking tools (`A. Heinze et al. 2023 <https://ui.adsabs.harvard.edu/abs/2023DPS....5540503H/abstract>`_).
