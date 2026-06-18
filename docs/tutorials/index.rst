@@ -64,7 +64,6 @@ Early access to observational metadata and special releases.
     notebook/notebook-101.rst
     notebook/notebook-102.rst
     notebook/notebook-103.rst
-    notebook/notebook-104.rst
 
 
 Broker alerts access
