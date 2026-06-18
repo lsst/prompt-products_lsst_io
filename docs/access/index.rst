@@ -68,7 +68,7 @@ Weekly `Rubin Science Assemblies <https://rubinobservatory.org/for-scientists/ev
 Alert Retrieval Service
 -----------------------
 
-An archive of past :doc:`products/alerts/index` is available via Notebook and Portal aspects of the RSP.
+An archive of past :doc:`/products/alerts/index` is available via Notebook and Portal aspects of the RSP.
 Alerts can be queried individually using the ``alertId`` (which is the same as the ``diaSourceId``).
 See the :doc:`/tutorials/index` for demonstrations of how to use the Alert Retrieval Service.
 
