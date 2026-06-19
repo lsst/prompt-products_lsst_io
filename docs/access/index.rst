@@ -65,12 +65,14 @@ Refer to the `RSP user guides <https://rsp.lsst.io/>`_ and work through the :doc
 Weekly `Rubin Science Assemblies <https://rubinobservatory.org/for-scientists/events-deadlines/events-rsa>`_ offer presentations, hands-on tutorials, and drop-in office hours as live support.
 
 
-Alert Retrieval Service
------------------------
+Alert archive
+-------------
 
-An archive of past :doc:`/products/alerts/index` is available via Notebook and Portal aspects of the RSP.
+An archive of past :doc:`/products/alerts/index` is available in the RSP.
 Alerts can be queried individually using the ``alertId`` (which is the same as the ``diaSourceId``).
-See the :doc:`/tutorials/index` for demonstrations of how to use the Alert Retrieval Service.
+In the Notebook Aspect, individual alert packets can be retrieved via the Alert Retrieval Service, and their contents analyzed and visualized programmatically.
+In the Portal Aspect, individual alert packets can be loaded into the Alert Viewer and explored via the user interface.
+See the :doc:`/tutorials/index` for demonstrations of how to use these tools to access the alert archive.
 
 
 Prompt Products Database (PPDB)
