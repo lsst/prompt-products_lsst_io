@@ -52,7 +52,7 @@ Each alert packet contains:
 * FITS-formatted cutout postage stamps from the :doc:`/products/images/visit_image`, :doc:`/products/images/difference_image`, :doc:`/products/images/template_coadd`
 
 ``DiaSources`` are associated with known solar system objects and stationary objects using an association radius of 1 arcsecond.
-For details, see :doc:`/processing/association`.
+For details, see :doc:`/processing/association/index`.
 
 .. important::
 
