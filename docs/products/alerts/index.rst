@@ -51,6 +51,9 @@ Each alert packet contains:
 * associated :doc:`/products/catalogs/dia_source` and :doc:`/products/catalogs/dia_forced_source` records from the past 12 months
 * FITS-formatted cutout postage stamps from the :doc:`/products/images/visit_image`, :doc:`/products/images/difference_image`, :doc:`/products/images/template_coadd`
 
+``DiaSources`` are associated with known solar system objects and stationary objects using an association radius of 1 arcsecond.
+For details, see :doc:`/processing/association/index`.
+
 .. important::
 
    Estimates of upper limits for prior nondetections will be provided in the future for ``DiaObjects`` that do not yet have forced photometry measurements.
