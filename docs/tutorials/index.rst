@@ -90,6 +90,22 @@ Remotely access Rubin asteroids via the Minor Planets Center, from the RSP Noteb
     notebook/notebook-mpc.rst
 
 
+
+.. _tutorials-api:
+
+API Aspect
+==========
+
+Remotely access data through the RSP's API Aspect.
+
+.. toctree::
+    :titlesonly:
+    :glob:
+
+    api/api-alert-archive.rst
+
+
+
 Contributing
 ============
 
