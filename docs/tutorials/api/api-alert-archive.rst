@@ -37,10 +37,12 @@ Steps
 Follow the instructions in the RSP user guide for `Creating user tokens <https://rsp.lsst.io/guides/auth/creating-user-tokens.html>`_.
 The token must have a scope of ``read:image`` to access the Alert Retrieval Service.
 
+
 **2. Get the API endpoint.**
 
 All URL for data access via the RSP are available at `data.lsst.cloud/api-aspect <https://data.lsst.cloud/api-aspect>`_.
 The Alert Retrieval Service URL is listed under "Prompt".
+
 
 **3. Install python packages, if needed.**
 
@@ -48,7 +50,11 @@ This tutorial requires the ``requests``, ``fastavro``, and ``io`` python package
 The first two can be pip-installed and the latter is standard.
 These steps have been confirmed to work with, at minimum, python version 3.10, ``requests`` version 2.32.4, and ``fastavro`` version 1.12.0.
 
+
 **4. Python code for alert retrieval.**
+
+In the code block below, the ``requests`` package is used to create an authenticated access session using the token from step 1, and the URL from step 2.
+Then, the desired ``alertId`` number is passed and a response returned, and the content of the response is read with the ``fastavro.reader`` to return the packet in the Avro format.
 
 .. code-block:: python
 
@@ -64,6 +70,7 @@ These steps have been confirmed to work with, at minimum, python version 3.10, `
    response = session.get(url, params={"ID": alert_id})
    packet = fastavro.reader(io.BytesIO(response.content))
 
+
 **5. Interact with the alert contents.**
 
-From here, use the same code as in :doc:`/tutorials/notebook-prompt/notebook-101-1`.
+From here, use the same python code as in :doc:`/tutorials/notebook-prompt/notebook-101-1`.
