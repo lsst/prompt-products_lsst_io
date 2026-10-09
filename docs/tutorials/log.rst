@@ -4,6 +4,11 @@
 Log of major tutorial updates
 #############################
 
+2026-10-09
+==========
+
+Released two new Prompt products notebook tutorials, 102.1 "Rubin Schedule Viewer" and 102.2 "Rubin Schedule Viewer: advanced queries", covering the Rubin Schedule Viewer service's basic and advanced query options.
+
 2026-06-18
 ==========
 

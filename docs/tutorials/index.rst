@@ -48,6 +48,8 @@ Access, visualize, and analyze Prompt products.
     :glob:
 
     notebook-prompt/notebook-101-1.rst
+    notebook-prompt/notebook-102-1.rst
+    notebook-prompt/notebook-102-2.rst
     notebook-prompt/notebook-201-1.rst
 
 
