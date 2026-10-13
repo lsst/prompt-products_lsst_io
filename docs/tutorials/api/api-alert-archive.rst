@@ -73,4 +73,4 @@ Then, the desired ``alertId`` number is passed and a response returned, and the 
 
 **5. Interact with the alert contents.**
 
-From here, use the same python code as in :doc:`/tutorials/notebook-prompt/notebook-101-1`.
+From here, use the same python code as in :doc:`/tutorials/notebook/Prompt/101/notebook-101-1`.
