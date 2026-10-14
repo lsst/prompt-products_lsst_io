@@ -38,8 +38,8 @@ Notebook Aspect
 Get executable versions of these notebooks in the RSP using the "Tutorials" drop-down menu.
 
 
-Prompt products tutorials
--------------------------
+Prompt products
+---------------
 
 Access, visualize, and analyze Prompt products.
 
@@ -47,10 +47,10 @@ Access, visualize, and analyze Prompt products.
     :titlesonly:
     :glob:
 
-    notebook-prompt/notebook-101-1.rst
-    notebook-prompt/notebook-102-1.rst
-    notebook-prompt/notebook-102-2.rst
-    notebook-prompt/notebook-201-1.rst
+    notebook/Prompt/101/notebook-101-1.rst
+    notebook/Prompt/102/notebook-102-1.rst
+    notebook/Prompt/102/notebook-102-2.rst
+    notebook/Prompt/201/notebook-201-1.rst
 
 
 Commissioning data
@@ -63,9 +63,20 @@ Early access to observational metadata and special releases.
     :titlesonly:
     :glob:
 
-    notebook/notebook-101.rst
-    notebook/notebook-102.rst
-    notebook/notebook-103.rst
+    notebook/Commissioning/notebook-101.rst
+    notebook/Commissioning/notebook-103.rst
+
+
+MPC data
+--------
+
+Remotely access Rubin asteroids via the Minor Planets Center, from the RSP Notebook Aspect.
+
+.. toctree::
+    :titlesonly:
+    :glob:
+
+    notebook/MPC/notebook-mpc.rst
 
 
 Broker alerts access
@@ -80,16 +91,7 @@ Remotely access alerts via brokers, from the RSP Notebook Aspect.
     alert_access.rst
 
 
-MPC data access
----------------
 
-Remotely access Rubin asteroids via the Minor Planets Center, from the RSP Notebook Aspect.
-
-.. toctree::
-    :titlesonly:
-    :glob:
-
-    notebook/notebook-mpc.rst
 
 
 
