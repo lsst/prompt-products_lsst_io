@@ -46,8 +46,7 @@ Contents
    * - ``butler_repo/``
      - a read-only Butler repository with the export already imported (SQLite registry; files are symlinks into ``butler_export/``)
    * - ``tutorial-2026-ed138.ipynb``
-     - executed demo notebook: finds the 30 ADES observations in ``butler_repo/``, makes 20″ cutouts and plots them (source: ``noteboo
-ks/ed138_release_demo.ipynb`` in rubin-tno-attribution, PR #75 @ 5e2d44c)
+     - executed demo notebook: finds the 30 ADES observations in ``butler_repo/``, makes 20″ cutouts and plots them (source: ``notebooks/ed138_release_demo.ipynb`` in rubin-tno-attribution, PR #75 @ 5e2d44c)
    * - ``manifest.csv``
      - every exported file: dataset type, run, data ID, path, bytes, sha256, set
    * - ``metadata/``
@@ -150,12 +149,13 @@ Use of this release
 
 On the RSP, open the ready-made repository ``butler_repo/`` directly (LSST Science Pipelines ``w_2026_41`` or later; it was built with ``w_2026_43``):
 
-``python
-| from lsst.daf.butler import Butler
-| butler = Butler("/rubin/shared/datasets/2026-ED138/butler_repo", collections="2026-ED138")
-| refs = butler.query_datasets("preliminary_visit_image", where="instrument = 'LSSTCam' AND visit = 2026030300796")
-| image = butler.get(refs[0])
-| ``
+.. code-block:: markdown
+
+   python
+   * from lsst.daf.butler import Butler
+   * butler = Butler("/rubin/shared/datasets/2026-ED138/butler_repo", collections="2026-ED138")
+   * refs = butler.query_datasets("preliminary_visit_image", where="instrument = 'LSSTCam' AND visit = 2026030300796")
+   * image = butler.get(refs[0])
 
 The repository is read-only. ``2026-ED138`` is a chained collection of all 63 runs, in order of priority: Daytime AP (26 runs), Prompt Processing (31), nightly validation (4), ``LSSTCam/raw/all``, and the reference catalog.
 Some data IDs have datasets in more than one run: Prompt Processing and nightly validation both have ``single_visit_star_footprints`` for 44 detectors, and each Daytime AP run has its own ``singleFrameDetectAndMeasure_config``.
