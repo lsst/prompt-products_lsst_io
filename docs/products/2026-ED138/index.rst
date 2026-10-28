@@ -1,10 +1,10 @@
 .. _2026-ED138:
 
-####################################
-2026 ED138 image stamps and catalogs
-####################################
+##############################
+2026 ED138 images and catalogs
+##############################
 
-Release image cutouts and catalogs for Rubin Observatory LSSTCam data covering 2026 ED138.
+Release images and catalogs for Rubin Observatory LSSTCam data covering 2026 ED138.
 
 **Proprietary data: for Rubin data rights holders only.**
 
@@ -45,6 +45,8 @@ Contents
      - a Butler export (``export.yaml`` + files): 1,428 datasets in 63 runs, 24 GB
    * - ``butler_repo/``
      - a read-only Butler repository with the export already imported (SQLite registry; files are symlinks into ``butler_export/``)
+   * - ``tutorial-2026-ed138.ipynb``
+     - executed demo notebook: finds the 30 ADES observations in ``butler_repo/``, makes 20″ cutouts and plots them (source: ``notebooks/ed138_release_demo.ipynb`` in rubin-tno-attribution, PR #75 @ 5e2d44c)
    * - ``manifest.csv``
      - every exported file: dataset type, run, data ID, path, bytes, sha256, set
    * - ``metadata/``
@@ -105,9 +107,7 @@ Images
 ``preliminary_visit_image`` (+ background): Prompt Processing's calibrated single-visit images.
 
 - ``set=core`` in the manifest: every detector the object is on, with its ``raw``;
-- ``set=fixed``: every detector that, on another night, covers a sky position where the object was detected.
-
-These show the same patch of sky without the object, for checking for static sources underneath it.
+- ``set=fixed``: every detector that, on another night, covers a sky position where the object was detected. These show the same patch of sky without the object, for checking for static sources underneath it.
 
 Catalogs
 --------
@@ -126,7 +126,7 @@ Reference catalog
 Dimension records
 -----------------
 
-(``visit``, ``exposure``, ``visit_detector_region``, ...) of every visit near the track, including visits with no dataset here.
+The export includes the dimension records (``visit``, ``exposure``, ``visit_detector_region``, ...) of every visit near the track, including visits with no dataset here.
 Spatial and temporal queries (which visits covered a position, and when) therefore return every visit near the track, not only those with images in the release.
 
 These are preliminary, early-operations processings, not a Rubin data release product: calibrations and pipelines are those in use at the time,
@@ -147,13 +147,18 @@ Use of this release
 
 On the RSP, open the ready-made repository ``butler_repo/`` directly (LSST Science Pipelines ``w_2026_41`` or later; it was built with ``w_2026_43``):
 
-.. code-block:: markdown
+.. code-block:: python
 
-   python
-   * from lsst.daf.butler import Butler
-   * butler = Butler("/rubin/shared/datasets/2026-ED138/butler_repo", collections="2026-ED138")
-   * refs = butler.query_datasets("preliminary_visit_image", where="instrument = 'LSSTCam' AND visit = 2026030300796")
-   * image = butler.get(refs[0])
+   from lsst.daf.butler import Butler
+
+   butler = Butler(
+       "/rubin/shared/datasets/2026-ED138/butler_repo", collections="2026-ED138"
+   )
+   refs = butler.query_datasets(
+       "preliminary_visit_image",
+       where="instrument = 'LSSTCam' AND visit = 2026030300796",
+   )
+   image = butler.get(refs[0])
 
 The repository is read-only. ``2026-ED138`` is a chained collection of all 63 runs, in order of priority: Daytime AP (26 runs), Prompt Processing (31), nightly validation (4), ``LSSTCam/raw/all``, and the reference catalog.
 Some data IDs have datasets in more than one run: Prompt Processing and nightly validation both have ``single_visit_star_footprints`` for 44 detectors, and each Daytime AP run has its own ``singleFrameDetectAndMeasure_config``.
@@ -162,8 +167,10 @@ To see them all, pass ``find_first=False`` or query the individual runs (``butle
 
 Elsewhere, import the export into a new repository:
 
-butler create REPO
-| butler import REPO butler_export --export-file butler_export/export.yaml --transfer symlink
+.. code-block:: bash
+
+   butler create REPO
+   butler import REPO butler_export --export-file butler_export/export.yaml --transfer symlink
 
 and use it in the same way, with ``collections="*"`` or the run names in place of ``2026-ED138``.
 
