@@ -29,38 +29,10 @@ A live dashboard showing alert processing over the last twelve hours is availabl
 Template coverage
 =================
 
-On May 21 2026, a significant expansion to the template coverage available to Alert Production was deployed, extending it beyond the original `Deep Drilling Fields <https://survey-strategy.lsst.io/baseline/ddf.html>`_ templates.
+Template images are being generated incrementally during the early science phase and LSST year one.
+The current template coverage can be visualized with the `interactive alert production template coverage interface <https://s3df.slac.stanford.edu/people/ebellm/template_coverage/template_coverage.html>`_.
 
-The best-covered subset of the templates generated as part of the forthcoming Data Preview 2 were selected.
-This increased the total sky area for alert production by more than a factor of ten (depending on the band).
-
-Current template coverage can be visualized with the `interactive alert production template coverage interface <https://s3df.slac.stanford.edu/people/ebellm/template_coverage/template_coverage.html>`_.
-More detailed programatic access to template coverage under development.
-
-.. list-table:: Current alert production coverage by filter.
-   :widths: auto
-   :header-rows: 1
-   :class: tight-table
-
-   * - Filter
-     - Sky area (sq. deg)
-   * - u
-     - 53
-   * - g
-     - 211
-   * - r
-     - 905
-   * - i
-     - 1444
-   * - z
-     - 1197
-   * - y
-     - 25
-
-
-
-Additional template images will be generated incrementally during the early science phase, and information about template regions will be added here.
-Details are available in :doc:`/processing/templates/index`.
+Details about template coadd images are available in :doc:`/processing/templates/index`.
 
 
 Survey strategy
@@ -73,6 +45,11 @@ Nightly projection
 
 The projected Rubin schedule can be obtained via ObsLocTAP with the browser-based `static viewer <https://usdf-rsp.slac.stanford.edu/obsloctap/static/viewer.html>`_
 or `all-sky map interface <https://usdf-rsp.slac.stanford.edu/obsloctap/skymap>`_, and programmatically as demonstrated in the Commissioning :ref:`tutorials <tutorials-notebook>`.
+
+Nightly digest
+--------------
+
+A graphical interface dashboard displaying summary metrics of last night's observations: `nightlydigest.lsst.cloud <https://nightlydigest.lsst.cloud/>`_.
 
 Nightly reports
 ---------------
