@@ -54,7 +54,7 @@ Stamps from commissioning images that include 3I/ATLAS.
 2026 ED138
 ==========
 
-Release image cutouts and catalogs for Rubin Observatory LSSTCam data covering 2026 ED138.
+Release images and catalogs for Rubin Observatory LSSTCam data covering 2026 ED138.
 
 .. toctree::
     :maxdepth: 1
