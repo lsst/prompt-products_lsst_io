@@ -49,3 +49,15 @@ Stamps from commissioning images that include 3I/ATLAS.
     :glob:
 
     3i-atlas/index
+
+
+2026 ED138
+==========
+
+Release image cutouts and catalogs for Rubin Observatory LSSTCam data covering 2026 ED138.
+
+.. toctree::
+    :maxdepth: 1
+    :glob:
+
+    2026-ED138/index
