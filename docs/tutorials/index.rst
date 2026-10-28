@@ -51,6 +51,7 @@ Access, visualize, and analyze Prompt products.
     notebook/Prompt/102/notebook-102-1.rst
     notebook/Prompt/102/notebook-102-2.rst
     notebook/Prompt/201/notebook-201-1.rst
+    notebook/Prompt/308/notebook-308-1.rst
 
 
 Commissioning data

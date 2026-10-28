@@ -20,7 +20,7 @@ A `pipeline definition <https://github.com/lsst-dm/prompt_processing/blob/main/p
 It imports pipelines from `ap_pipe <https://pipelines.lsst.io/v/weekly/modules/lsst.ap.pipe/index.html>`_.
 The `pipeline yaml files <https://github.com/lsst/ap_pipe/tree/main/pipelines>`_ may be found in Github.
 
-A graph of the pipeline stages and intermediate data products may be found `here <https://tigress-web.princeton.edu/~lkelvin/pipelines/current/ap_pipe/LSSTCam/ApPipe/pipeline_ap_pipe_LSSTCam_ApPipe.pdf>`_.
+A graph of the pipeline stages and intermediate data products may be found `here <https://tigress-web.princeton.edu/~lkelvin/pipelines/current/ap_pipe/LSSTCam/ApPipe-legacy/pipeline_ap_pipe_LSSTCam_ApPipe-legacy.pdf>`_.
 The resulting user-facing data products are described in the Data Products section.
 
 

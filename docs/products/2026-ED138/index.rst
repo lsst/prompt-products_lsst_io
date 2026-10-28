@@ -45,8 +45,6 @@ Contents
      - a Butler export (``export.yaml`` + files): 1,428 datasets in 63 runs, 24 GB
    * - ``butler_repo/``
      - a read-only Butler repository with the export already imported (SQLite registry; files are symlinks into ``butler_export/``)
-   * - ``tutorial-2026-ed138.ipynb``
-     - executed demo notebook: finds the 30 ADES observations in ``butler_repo/``, makes 20″ cutouts and plots them (source: ``notebooks/ed138_release_demo.ipynb`` in rubin-tno-attribution, PR #75 @ 5e2d44c)
    * - ``manifest.csv``
      - every exported file: dataset type, run, data ID, path, bytes, sha256, set
    * - ``metadata/``
