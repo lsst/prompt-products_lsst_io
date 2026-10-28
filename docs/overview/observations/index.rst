@@ -20,12 +20,6 @@ Find a description, key numbers, filter bandpasses, and more in the `LSSTCam doc
 |lsstcam_doi|
 
 
-Alert stream status
-===================
-
-A live dashboard showing alert processing over the last twelve hours is available at `ls.st/alert-stream-status <https://ls.st/alert-stream-status>`_.
-
-
 Template coverage
 =================
 
@@ -35,13 +29,16 @@ The current template coverage can be visualized with the `interactive alert prod
 Details about template coadd images are available in :doc:`/processing/templates/index`.
 
 
-Survey strategy
-===============
+Live status
+===========
 
-Information about the strategy and cadence for the Legacy Survey of Space and Time can be found at `survey-strategy.lsst.io <https://survey-strategy.lsst.io/>`_.
+Alert stream
+------------
 
-Nightly projection
-------------------
+A live dashboard showing alert processing over the last twelve hours is available at `ls.st/alert-stream-status <https://ls.st/alert-stream-status>`_.
+
+Schedule projection
+-------------------
 
 The projected Rubin schedule can be obtained via ObsLocTAP with the browser-based `static viewer <https://usdf-rsp.slac.stanford.edu/obsloctap/static/viewer.html>`_
 or `all-sky map interface <https://usdf-rsp.slac.stanford.edu/obsloctap/skymap>`_, and programmatically as demonstrated in the Commissioning :ref:`tutorials <tutorials-notebook>`.
@@ -51,13 +48,17 @@ Nightly digest
 
 A graphical interface dashboard displaying summary metrics of last night's observations: `nightlydigest.lsst.cloud <https://nightlydigest.lsst.cloud/>`_.
 
-Nightly reports
----------------
+Per-night reports
+-----------------
 
 Automated per-night reports are publicly available as `scheduler viewer reports <https://s3df.slac.stanford.edu/data/rubin/sim-data/schedview/reports/>`_.
 Static files of LSSTCam visits metadata are available in the Commissioning :ref:`tutorials <tutorials-notebook>`.
 In the future, observational metadata will be available as queryable tables and documented under :doc:`/products/index`.
 
 
+Survey strategy
+===============
+
+Longer-term information about the strategy and cadence for the Legacy Survey of Space and Time can be found at `survey-strategy.lsst.io <https://survey-strategy.lsst.io/>`_.
 
 
