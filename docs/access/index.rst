@@ -42,7 +42,7 @@ See the "Roadmap for Community Alert Filters with the ANTARES Broker" `RTN-090 <
 Minor Planet Center (MPC)
 =========================
 
-All solar system objects discovered by Rubin Observatory with LSSTCam are reported to and available via the `Minor Planet Center <https://minorplanetcenter.net/>`_.
+All solar system objects discovered by Rubin Observatory with LSSTCam are reported to and available via the `Minor Planet Center <https://minorplanetcenter.net/>`_. A live submissions dashboard is maintained at `sbx.dirac.dev/station/X05 <https://sbx.dirac.dev/station/X05>`_.
 
 **B612**: A subset of MPC entries that include only Rubin observations (`"observatory code" <https://minorplanetcenter.net/iau/lists/ObsCodesF.html>`_ ``X05``) is maintained by the Asteriod Institute, a program of the `B612 Foundation <https://b612foundation.org/>`_, and available at `ls.st/ast <http://ls.st/ast>`_.
 
