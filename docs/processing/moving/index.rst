@@ -75,7 +75,7 @@ The prompt products database (PPDB) delivers associations between Rubin differen
    * - :doc:`numbered_identifications </products/catalogs/numbered_identifications>`
      - An MPC mapping between permanent numbers and primary provisional designations.
 
-The ``DiaSource`` and ``DiaForcedSource`` catalogs can be joined with the ``SSObservation`` and ``NearbySSO`` table using the ``diaSourceId``. The ``SSObject``, ``SSObservation``, ``NearbySSO``, and ``DiaSource`` catalogs can be joined using the ``ssObjectId``. And the ``SSObject``, ``SSObservation``, and ``mpc_orbits`` catalogs can be joined using the ``designation``.
+**Join Keys:** The ``SSObject``, ``SSObservation``, and ``NearbySSO`` catalogs can be joined using the ``ssObjectId``. The ``SSObject``, ``SSObservation``, and ``mpc_orbits`` catalogs can be joined using the ``designation``. The ``DiaSource`` and ``DiaForcedSource`` catalogs can be joined with the ``NearbySSO`` table using the ``diaSourceId``. **NOTE:** The ``SSObservation`` table contains the ``DiaSource``- or ``Source``-like columns for the difference image detection or direct image detection from which the Rubin observation was submitted to the MPC; there should thus never be a need to join the ``SSObservation`` and ``DiaSource`` tables.
 
 The three MPC tables retain the upstream MPC field semantics rather than being recomputed from Rubin DP2 observations.
 The delivered ``mpc_orbits`` reference product is the same snapshot of the ``mpc_orbits`` table from the Minor Planet Center Database from 2026 March 13 that was used as input to association.
