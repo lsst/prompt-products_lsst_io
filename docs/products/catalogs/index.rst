@@ -41,7 +41,11 @@ Derived properties for moving objects detected in images: Solar System (SS) obje
 
     ss_object
     ss_source
-    mpcorb
+    ss_observation
+    mpc_orbits
+    current_identifications
+    numbered_identifications
+    nearby_sso
 
 
 
