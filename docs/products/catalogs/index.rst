@@ -1,8 +1,8 @@
 .. _catalogs:
 
-######################
-Catalogs (coming soon)
-######################
+########
+Catalogs
+########
 
 .. important::
 

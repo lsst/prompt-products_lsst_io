@@ -8,11 +8,7 @@ Tutorials
 
 
 Tutorials demonstrating :doc:`/access/index` and analysis via the Rubin Science Platform (RSP).
-
 Find general information about the RSP's Portal, Notebook, and API aspects in the `RSP User Guides <https://rsp.lsst.io/guides/index.html>`_.
-
-**Broker tutorials are not included here,** as they are provided by the individual brokers.
-Visit the `Alerts and brokers for scientists webpage <https://rubinobservatory.org/for-scientists/data-products/alerts-and-brokers>`_ for links to broker websites.
 
 
 .. _tutorials-portal:
@@ -27,6 +23,8 @@ Interact with Prompt Products via the RSP Portal.
     :glob:
 
     portal/101/portal-101-1.rst
+    portal/101/portal-101-2.rst
+    portal/101/portal-101-3.rst
 
 
 
@@ -35,65 +33,14 @@ Interact with Prompt Products via the RSP Portal.
 Notebook Aspect
 ===============
 
+Access, visualize, and analyze Prompt products and related special releases.
 Get executable versions of these notebooks in the RSP using the "Tutorials" drop-down menu.
 
-
-Prompt products
----------------
-
-Access, visualize, and analyze Prompt products.
-
 .. toctree::
-    :titlesonly:
+    :maxdepth: 3
     :glob:
 
-    notebook/Prompt/101/notebook-101-1.rst
-    notebook/Prompt/102/notebook-102-1.rst
-    notebook/Prompt/102/notebook-102-2.rst
-    notebook/Prompt/201/notebook-201-1.rst
-    notebook/Prompt/308/notebook-308-1.rst
-
-
-Commissioning data
-------------------
-
-Early access to observational metadata and special releases.
-
-
-.. toctree::
-    :titlesonly:
-    :glob:
-
-    notebook/Commissioning/notebook-101.rst
-    notebook/Commissioning/notebook-103.rst
-
-
-MPC data
---------
-
-Remotely access Rubin asteroids via the Minor Planets Center, from the RSP Notebook Aspect.
-
-.. toctree::
-    :titlesonly:
-    :glob:
-
-    notebook/MPC/notebook-mpc.rst
-
-
-Broker alerts access
---------------------
-
-Remotely access alerts via brokers, from the RSP Notebook Aspect.
-
-.. toctree::
-    :titlesonly:
-    :glob:
-
-    alert_access.rst
-
-
-
-
+    notebook/index
 
 
 .. _tutorials-api:
@@ -108,6 +55,20 @@ Remotely access data through the RSP's API Aspect.
     :glob:
 
     api/api-alert-archive.rst
+
+
+Broker alerts access
+====================
+
+Tutorials demonstrating how to use each alert broker provided by the individual brokers themselves; visit the `Alerts and brokers for scientists webpage <https://rubinobservatory.org/for-scientists/data-products/alerts-and-brokers>`_ for links to broker websites.
+
+Remotely access alerts via brokers, from the RSP Notebook Aspect.
+
+.. toctree::
+    :titlesonly:
+    :glob:
+
+    alert_access.rst
 
 
 
