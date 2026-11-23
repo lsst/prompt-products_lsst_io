@@ -7,16 +7,46 @@ Services, tools, and policies for accessing the alerts and the Prompt data produ
 Data policy
 ===========
 
-**Public:** The contents of the alert packets and the Prompt Products Database (PPDB), plus all data submitted to the MPC, are public.
-Anyone, anywhere, worldwide, may share, analyze, and publish papers based on public data.
-Alerts are publicly accessible via the brokers.
-
-**Proprietary:** The promptly-processed images and the visit image source catalogs are proprietary, and are subject to an initial 80-hour embargo.
-Only Rubin data rights holders may access and analyze proprietary data after the embargo period.
-Access to the Rubin Science Platform (RSP) is also proprietary.
-
-**Data rights:** All scientists and students in the US and Chile, plus named members of international in-kind teams, are Rubin data rights holders.
+**Data rights:** All scientists and students in the US and Chile, plus named members of international in-kind teams, are Rubin data rights holders who can access proprietary Rubin data products and services.
 `Learn more about the Rubin data policy <https://rubinobservatory.org/for-scientists/data-products/data-policy>`_.
+
+**Public:** The contents of the alert packets, the Prompt Products Database (PPDB), and all MPC submissions are public, which means they can be used and shared by anyone, including those without data rights.
+Alerts are publicly accessible via the brokers, and the MPC is openly accessible, but the PPDB is accessible only via the Rubin Science Platform (RSP), which is a proprietary service.
+
+**Proprietary:** The Prompt images and the visit image source catalogs will become available via the RSP to Rubin data rights holders after an 80-hour embargo, after which they have a 2-year proprietary period during which they cannot be shared with anyone without data rights.
+
+
+
+Rubin Science Platform (RSP)
+============================
+
+**Get started:** Follow these `instructions to sign up for an RSP account <https://rsp.lsst.io/guides/getting-started/get-an-account.html>`_.
+Refer to the `RSP user guides <https://rsp.lsst.io/>`_ and work through the :doc:`/tutorials/index`.
+
+**Get support:** To ask question and get help with any aspect of the Rubin data products, services, and tools, please post a new topic in the publicly-accessible Rubin Community Forum `Support category <https://www.rubin.community/c/support/6>`_.
+
+
+Alert archive
+-------------
+
+An archive of past :doc:`/products/alerts/index` is available via the RSP.
+Alerts can be queried individually using the ``alertId`` (which is the same as the ``diaSourceId``).
+In the Notebook Aspect, individual alert packets can be retrieved via the Alert Retrieval Service, and their contents analyzed and visualized programmatically.
+In the Portal Aspect, individual alert packets can be loaded into the Alert Viewer and explored via the user interface.
+See the :doc:`/tutorials/index` for demonstrations of how to use these tools to access the alert archive.
+
+
+Prompt Products Database (PPDB)
+-------------------------------
+
+The PPDB will be updated within 24 hours of alert distribution.
+The same data that is streamed in alert packets is available for query and analysis in the PPDB via the RSP.
+
+Prompt images
+-------------
+
+The promptly-processed visit and difference images will be available after an 80-hour embargo period via the RSP.
+Measurements for sources detected in the prompt visit images will be also available after an 80 hour embargo period via the RSP.
 
 
 Alert brokers
@@ -49,40 +79,3 @@ All solar system objects discovered by Rubin Observatory with LSSTCam are report
 |b612_mpc_x05|
 
 
-
-Rubin Science Platform (RSP)
-============================
-
-.. important::
-
-   The PPDB and Prompt images are not yet available, but individual alerts can be accessed via the RSP.
-
-
-**Get started:** follow these `instructions to sign up for an RSP account <https://rsp.lsst.io/guides/getting-started/get-an-account.html>`_.
-Refer to the `RSP user guides <https://rsp.lsst.io/>`_ and work through the :doc:`/tutorials/index`.
-
-**Get support:** to ask question and get help with any aspect of the Rubin data products, services, and tools, please post a new topic in the Rubin Community Forum's `Support category <https://community.lsst.org/c/support/6>`_.
-Weekly `Rubin Science Assemblies <https://rubinobservatory.org/for-scientists/events-deadlines/events-rsa>`_ offer presentations, hands-on tutorials, and drop-in office hours as live support.
-
-
-Alert archive
--------------
-
-An archive of past :doc:`/products/alerts/index` is available in the RSP.
-Alerts can be queried individually using the ``alertId`` (which is the same as the ``diaSourceId``).
-In the Notebook Aspect, individual alert packets can be retrieved via the Alert Retrieval Service, and their contents analyzed and visualized programmatically.
-In the Portal Aspect, individual alert packets can be loaded into the Alert Viewer and explored via the user interface.
-See the :doc:`/tutorials/index` for demonstrations of how to use these tools to access the alert archive.
-
-
-Prompt Products Database (PPDB)
--------------------------------
-
-The PPDB will be updated within 24 hours of alert distribution.
-The same data that is streamed in alert packets is available for query and analysis via the RSP.
-
-Prompt images
--------------
-
-The promptly-processed visit and difference images will be available after an 80 hour embargo period via the RSP.
-Measurements for sources detected in the prompt visit images will be also available after an 80 hour embargo period via the RSP.
