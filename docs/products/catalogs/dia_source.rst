@@ -1,8 +1,8 @@
 .. _catalogs-dia-source:
 
-########################
-DIA source (coming soon)
-########################
+##########
+DIA source
+##########
 
 .. important::
 
@@ -11,24 +11,26 @@ DIA source (coming soon)
 
 Measurements for sources detected in difference images.
 
-|dia_source_doi|
+Schema: `PPDB DiaSource table <https://sdm-schemas.lsst.io/ppdb.html#DiaSource>`_
 
 
 Access
 ======
 
-**The Prompt DIA source catalog is not yet accessible.**
-
+As of Nov 30 2026, the DIA tables are accessible via the TAP service.
+In early 2027, these tables will become accessible via the Butler (see the `timeline for early science <https://rubinobservatory.org/for-scientists/resources/early-science>`_).
 
 TAP
 ---
 
+* |DiaSource_doi|
 * Table name: ``DiaSource``
-* Schema: `APDB DIA Source table <https://sdm-schemas.lsst.io/apdb.html#DiaSource>`_
+
 
 Butler
 ------
 
+* |dia_source_doi|
 * Dataset type: ('dia_source', {**skymap**, **tract**}, ArrowAstropy)
 * Format: Parquet
 
@@ -40,7 +42,7 @@ A "DIA source" is a signal-to-noise ratio > 5 detection in a difference image.
 
 The DIA source catalog contains measurements on a difference image at the coordinates of every source detected in that difference image.
 These measurements include PSF-fit and forced PSF fluxes, and aperture and trailed-source fluxes.
-Forced PSF fluxes on the corresponding visit (i.e., "direct" or "science") image at the coordinates of the DIA source are also included.
+Forced PSF fluxes on the corresponding visit (i.e., "direct" or "science") and template images at the coordinates of the DIA source are also included.
 
 All DIA sources are associated with either a :doc:`/products/catalogs/dia_object` or a :doc:`/products/catalogs/ss_object`.
 
@@ -53,4 +55,4 @@ The DIA source catalog is the result of :doc:`/processing/dia/index`.
 Tutorials
 ---------
 
-Coming soon.
+See the 200-level catalog :doc:`/tutorials/index` for a notebook on the DIA source table.
