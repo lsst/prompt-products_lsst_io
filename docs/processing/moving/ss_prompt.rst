@@ -39,10 +39,12 @@ During the day before the coming night’s observing:
 
 7. Precovery linking is attempted for all ``SSObjects`` whose orbits were updated in the above process (or are new). Where successful, newly discovered observations are queued up for submission to the Minor Planet Center.
 
-Production of Solar System prompt products database tables
-==========================================================
+Production of Solar System PPDB tables
+======================================
 
 .. image:: images/LSST-Solar-System-Processing-Infographic-PPDB-production.png
+
+The above infographic illustrates the process by which the Solar System PPDB tables are produced (see step 5 above).
 
 The LSST Camera raw images are input the prompt processing pipeline to perform difference imaging and generate alerts.
 
