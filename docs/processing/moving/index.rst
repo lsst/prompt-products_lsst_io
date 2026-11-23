@@ -54,7 +54,7 @@ Prompt Products Database Solar System Tables
 
 .. image:: images/LSST-Solar-System-Processing-Infographic-PPDB.png
 
-The prompt products database (PPDB) delivers associations between Rubin difference image detections (``DiaSources``) and known small bodies (``SSObservation``) as well as Rubin-derived object-level photometry and summary properties (``SSObject``). The PPDB also includes snapshots of three tables from the `Minor Planet Center (MPC) PostgreSQL database <https://data.minorplanetcenter.net/mpcops/documentation/replicated-tables-schema/>`_ (see :doc:`DP2 catalogs </products/catalogs/index>` for details):
+The prompt products database (PPDB) delivers associations between Rubin difference image detections (``DiaSources``) and known small bodies (``SSObservation``) as well as Rubin-derived object-level photometry and summary properties (``SSObject``). The ``DiaSource`` catalog is an alert product produced from Prompt Processing, while the ``SSObservation``, ``SSObject``, and ``NearbySSO`` catalogs are rebuilt daily from the moving object observations Rubin submits to and are accepted by the MPC. The PPDB also includes snapshots of three tables from the `Minor Planet Center (MPC) PostgreSQL database <https://data.minorplanetcenter.net/mpcops/documentation/replicated-tables-schema/>`_ (see :doc:`DP2 catalogs </products/catalogs/index>` for details):
 
 .. list-table::
    :header-rows: 1
