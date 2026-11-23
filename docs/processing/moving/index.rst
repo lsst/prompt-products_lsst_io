@@ -27,7 +27,7 @@ Solar System processing
 
 Solar System processing consists of two key components: the association of observations (sources) with known solar system objects, and the discovery of previously unknown objects by linking sets of tracklets, where a tracklet is defined as two or more observations taken in close succession in a single night.
 
-To generate expected positions for known objects, ephemerides are computed for all objects found in the Minor Planet Center orbit catalog using the ``Sorcha`` survey simulation toolkit (`Merritt et al., in press <https://github.com/dirac-institute/sorcha>`_).
+To generate expected positions for known objects, ephemerides are computed for all objects found in the Minor Planet Center orbit catalog using the ASSIST integrator (`Holman et al. 2023, The Planetary Science Journal, 4, 69 <https://github.com/matthewholman/assist>`_) in the ``Sorcha`` survey simulation toolkit (`Merritt et al. 2025, The Astronomical Journal, 170, 100 <https://github.com/dirac-institute/sorcha>`_).
 To enable fast lookup of objects potentially present in an observed visit, ``Sorcha`` uses the ``mpsky`` package (M. Juric 2025).
 In each difference image resulting from :doc:`/processing/dia/index` processing, the closest ``DIASource`` within 1 arcsecond of a known solar system object’s predicted position is associated to that object (for details, see the :doc:`/processing/association/index` page).
 
@@ -54,7 +54,7 @@ Prompt Products Database Solar System Tables
 
 .. image:: images/LSST-Solar-System-Processing-Infographic-PPDB.png
 
-The prompt products database (PPDB) delivers associations between Rubin difference image detections (``DiaSources``) and known small bodies (``SSObservation``) as well as Rubin-derived object-level photometry and summary properties (``SSObject``). The ``DiaSource`` catalog is an alert product produced from Prompt Processing, while the ``SSObservation``, ``SSObject``, and ``NearbySSO`` catalogs are rebuilt daily from the moving object observations Rubin submits to and are accepted by the MPC. The PPDB also includes snapshots of three tables from the `Minor Planet Center (MPC) PostgreSQL database <https://data.minorplanetcenter.net/mpcops/documentation/replicated-tables-schema/>`_ (see :doc:`DP2 catalogs </products/catalogs/index>` for details):
+The prompt products database (PPDB) delivers associations between Rubin difference image detections (``DiaSources``) and known small bodies (``SSObservation``) as well as Rubin-derived object-level photometry and summary properties (``SSObject``) and is updated on a daily basis. The PPDB contains all alerts from roughly September 2025 onwards as well as the accumulated Solar System tables. The ``DiaSource`` catalog is an alert product produced from Prompt Processing, while the ``SSObservation``, ``SSObject``, and ``NearbySSO`` catalogs are rebuilt daily from the moving object observations Rubin submits to and are accepted by the MPC. The PPDB also includes snapshots of three tables from the `Minor Planet Center (MPC) PostgreSQL database <https://data.minorplanetcenter.net/mpcops/documentation/replicated-tables-schema/>`_ (see :doc:`DP2 catalogs </products/catalogs/index>` for details):
 
 .. list-table::
    :header-rows: 1
