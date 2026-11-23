@@ -1,7 +1,7 @@
 .. _moving:
 
 #############################
-Solar System processing (SSP)
+Solar System Processing (SSP)
 #############################
 
 Solar System Processing includes both the association of known Solar System Objects (SSOs) during nighttime observations (see the :doc:`/processing/association/index` page) as well as the discovery of new SSOs by linking unassociated ``DiaSources`` during daytime processing.
@@ -19,11 +19,6 @@ General overview of SSP
 
     ss_prompt
     ss_linking
-
-
-
-Solar System processing
-=======================
 
 Solar System processing consists of two key components: the association of observations (sources) with known solar system objects, and the discovery of previously unknown objects by linking sets of tracklets, where a tracklet is defined as two or more observations taken in close succession in a single night.
 

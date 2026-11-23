@@ -38,3 +38,19 @@ During the day before the coming night’s observing:
 6. The Solar System daily data products (``SSObject``, ``SSObservation``, ``mpc_orbits``, ``current_identifications``, ``numbered_identifications``, ``DiaSource``, & ``NearbySSO``  tables) are released.
 
 7. Precovery linking is attempted for all ``SSObjects`` whose orbits were updated in the above process (or are new). Where successful, newly discovered observations are queued up for submission to the Minor Planet Center.
+
+Production of Solar System prompt products database tables
+==========================================================
+
+.. image:: images/LSST-Solar-System-Processing-Infographic-PPDB-production.png
+
+The LSST Camera raw images are input the prompt processing pipeline to perform difference imaging and generate alerts.
+
+The alerts are kept in the Alert Production Database (APDB; schema: `<https://sdm-schemas.lsst.io/apdb.html>`_).
+See the :doc:`/processing/association/index` page for more information on the association of known Solar System Objects (SSOs) during nighttime observations.
+
+The Prompt Products Database (PPDB) contains the same data (and more) as the APDB accumulated and queryable. This includes the ``DiaSource``, ``DiaObject``, ``DiaForcedSource``, and Solar System tables.
+
+The ``DiaSource`` catalog from the PPDB is ingested into the ssp-tools build along with the shutter timings, visit table, and MPC tables. ssp-tools then matches each MPC-accepted Rubin observation to its ``DiaSource`` measurement, computes ephemerides for all known Solar System objects using the ASSIST integrator, and performs internal checks. This generates the daily Solar System data products (i.e., the Solar System PPDB tables).
+
+The Solar System PPDB tables include ``SSObservation``, ``SSObject``, NearbySSO``, ``mpc_orbits``, ``current_identifications``, and ``numbered_identifications``. For more information on each catalog, see the :doc:`/products/catalogs/index` pages.
