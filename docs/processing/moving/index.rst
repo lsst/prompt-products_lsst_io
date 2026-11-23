@@ -49,5 +49,33 @@ Smaller heliocentric distances are not attempted, because nearby objects move ra
 A clustering radius is chosen corresponding to :math:`1.33 \times 10^{-3}` au at 1 au from Earth.
 Linkages produced by ``heliolinc`` are post-processed with ``link_purify`` into a final non-overlapping set of candidate discoveries, ranked from highest to lowest probability of being a real asteroid based on astrometric orbit-fit residuals and other considerations.
 
+Prompt Products Database Solar System Tables
+============================================
 
+.. image:: images/LSST-Solar-System-Processing-Infographic-PPDB.png
 
+The prompt products database (PPDB) delivers associations between Rubin difference image detections (``DiaSources``) and known small bodies (``SSObservation``) as well as Rubin-derived object-level photometry and summary properties (``SSObject``). The PPDB also includes snapshots of three tables from the `Minor Planet Center (MPC) PostgreSQL database <https://data.minorplanetcenter.net/mpcops/documentation/replicated-tables-schema/>`_ (see :doc:`DP2 catalogs </products/catalogs/index>` for details):
+
+.. list-table::
+   :header-rows: 1
+   :widths: 30 70
+
+   * - Table
+     - Purpose
+   * - :doc:`SSObservation </products/catalogs/ss_observation>`
+     - One row per MPC record of each Rubin-submitted observation, joined to the full measurement from which it was submitted (a difference image ``DiaSource`` or a direct image ``Source``).
+   * - :doc:`SSObject </products/catalogs/ss_object>`
+     - One row per recovered known object built only from the MPC-accepted observations (``SSObservations``), with observation summaries, per-band absolute-magnitude fits, and selected orbit-derived quantities.
+   * - :doc:`NearbySSO </products/catalogs/nearby_sso>`
+     - One row per nearest predicted known Solar System object for each ``DiaSource``, including the nearest objects predicted to land on a detector but match no ``DiaSource`` (with ``DiaSourceId`` = NULL).
+   * - :doc:`mpc_orbits </products/catalogs/mpc_orbits>`
+     - An MPC orbit-catalog snapshot containing orbital elements and associated fit information.
+   * - :doc:`current_identifications </products/catalogs/current_identifications>`
+     - An MPC mapping of primary and secondary provisional designations for the same physical object.
+   * - :doc:`numbered_identifications </products/catalogs/numbered_identifications>`
+     - An MPC mapping between permanent numbers and primary provisional designations.
+
+The ``DiaSource`` and ``DiaForcedSource`` catalogs can be joined with the ``SSObservation`` and ``NearbySSO`` table using the ``diaSourceId``. The ``SSObject``, ``SSObservation``, ``NearbySSO``, and ``DiaSource`` catalogs can be joined using the ``ssObjectId``. And the ``SSObject``, ``SSObservation``, and ``mpc_orbits`` catalogs can be joined using the ``designation``.
+
+The three MPC tables retain the upstream MPC field semantics rather than being recomputed from Rubin DP2 observations.
+The delivered ``mpc_orbits`` reference product is the same snapshot of the ``mpc_orbits`` table from the Minor Planet Center Database from 2026 March 13 that was used as input to association.

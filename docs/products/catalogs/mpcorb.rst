@@ -21,7 +21,7 @@ TAP
 ---
 
 * Table name: ``mpc_orbits``
-* Schema: `APDB MPC orbits table <https://sdm-schemas.lsst.io/apdb.html#mpc_orbits>`_
+* Schema: `PPDB MPC orbits table <https://sdm-schemas.lsst.io/ppdb.html#mpc_orbits>`_
 
 
 Description

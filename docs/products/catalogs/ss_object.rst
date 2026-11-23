@@ -23,7 +23,7 @@ TAP
 ---
 
 * Table name: ``SSObject``
-* Schema: `APDB SS Object table <https://sdm-schemas.lsst.io/apdb.html#SSObject>`_
+* Schema: `PPDB SS Object table <https://sdm-schemas.lsst.io/ppdb.html#SSObject>`_
 
 Butler
 ------
