@@ -41,7 +41,7 @@ A "DIA object" is an astrophysical transient or variable object at a static sky 
 The DIA object table is created by associating DIA sources within a 1 arcsecond radius.
 The DIA object table contains derived per-filter variability parameters (e.g., the minimum, mean, maximum and standard deviation of the difference-image fluxes).
 
-**Note:** The `firstDiaSourceMjdTai` and `lastDiaSourceMjdTai` columns were added when alert production restarted at the end of October 2026, and they are unpopulated for any DIA object that was not redetected after that time.
+**Note:** The ``firstDiaSourceMjdTai`` and ``lastDiaSourceMjdTai`` columns were added when alert production restarted at the end of October 2026, and they are unpopulated for any DIA object that was not redetected after that time.
 
 Processing
 ----------
