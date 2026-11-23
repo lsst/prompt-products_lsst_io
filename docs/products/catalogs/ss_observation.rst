@@ -11,8 +11,6 @@ SS observation (coming soon)
 
 MPC record of each Rubin-submitted observation for moving (Solar System) objects.
 
-|ss_observation_doi|
-
 
 Access
 ======

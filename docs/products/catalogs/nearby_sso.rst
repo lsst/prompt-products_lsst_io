@@ -11,8 +11,6 @@ Nearby SSO (coming soon)
 
 One row per nearest predicted known Solar System object for each ``DiaSource``.
 
-|nearby_sso_doi|
-
 
 Access
 ======
