@@ -23,18 +23,21 @@
 .. |template_coadd_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2027); Legacy Survey of Space and Time Prompt Products: template_coadd dataset type |doi_image| ``<doi-tbd>``
 .. |difference_image_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2027); Legacy Survey of Space and Time Prompt Products: difference_image dataset type |doi_image| ``<doi-tbd>``
 
-.. |dia_object_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2026); Legacy Survey of Space and Time Prompt Products: dia_object dataset type |doi_image| ``<doi-tbd>``
+.. |dia_object_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2027); Legacy Survey of Space and Time Prompt Products: dia_object dataset type |doi_image| ``<doi-tbd>``
 .. |DiaObject_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2026); Legacy Survey of Space and Time Prompt Products: DiaObject searchable catalog |doi_image| ``<doi-tbd>``
 
-.. |dia_source_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2026); Legacy Survey of Space and Time Prompt Products: dia_source dataset type |doi_image| ``<doi-tbd>``
+.. |dia_source_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2027); Legacy Survey of Space and Time Prompt Products: dia_source dataset type |doi_image| ``<doi-tbd>``
 .. |DiaSource_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2026); Legacy Survey of Space and Time Prompt Products: DiaSource searchable catalog |doi_image| ``<doi-tbd>``
 
-.. |dia_object_forced_source_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2026); Legacy Survey of Space and Time Prompt Products: dia_object_forced_source dataset type |doi_image| ``<doi-tbd>``
+.. |dia_object_forced_source_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2027); Legacy Survey of Space and Time Prompt Products: dia_object_forced_source dataset type |doi_image| ``<doi-tbd>``
 .. |DiaForcedSource_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2026); Legacy Survey of Space and Time Prompt Products: DiaForcedSource searchable catalog |doi_image| ``<doi-tbd>``
 
 
-.. |ss_source_doi| replace:: *Citation*: ``<placeholder ss source catalog DOI>``
-.. |ss_object_doi| replace:: *Citation*: ``<placeholder ss object catalog DOI>``
+.. |ss_source_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2027); Legacy Survey of Space and Time Prompt Products: ss_source dataset type |doi_image| ``<doi-tbd>``
+.. |SSSource_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2026); Legacy Survey of Space and Time Prompt Products: SSSource searchable catalog |doi_image| ``<doi-tbd>``
+
+.. |ss_object_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2027); Legacy Survey of Space and Time Prompt Products: ss_object dataset type |doi_image| ``<doi-tbd>``
+.. |SSObject_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2026); Legacy Survey of Space and Time Prompt Products: SSObject searchable catalog |doi_image| ``<doi-tbd>``
 
 .. |detector_visit_doi| replace:: *Citation*: ``<placeholder detector visit processing summary catalog DOI>``
 
