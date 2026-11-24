@@ -38,6 +38,7 @@ The MPC has assigned `"observatory code" <https://minorplanetcenter.net/iau/list
 
 The PPDB ``mpc_orbits`` table is a daily snapshot of the `MPC PostgreSQL orbit table <https://data.minorplanetcenter.net/mpcops/documentation/replicated-tables-schema/>`_.
 It contains MPC orbital elements, photometric parameters, fit metadata, and uncertainties for all known solar system objects and the linked difference-image detections and direct-image detections of moving objects submitted by Rubin (i.e., this catalog is not limited to Rubin discoveries or observations only).
+An important note is that the ``epoch_mjd`` provided in the ``mpc_orbits`` catalog is measured in TAI, but Terrestrial Time (TT).
 The upstream definitions and field semantics are documented in the `MPC replicated-tables schema <https://docs.minorplanetcenter.net/mpc-ops-docs/data-and-services/replicated-tables-schema/>`_.
 
 The ``designation`` column contains the unpacked primary provisional designation.
