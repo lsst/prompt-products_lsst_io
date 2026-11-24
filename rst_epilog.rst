@@ -8,6 +8,7 @@
    :alt: DOI Logo
 
 
+
 .. |lsstcam_doi| replace:: *Citation:* SLAC National Accelerator Laboratory & NSF-DOE Vera C. Rubin Observatory (2025); *The LSST Camera (LSSTCam)* |doi_image| https://doi.org/10.71929/rubin/2571927
 .. |osprae_doi| replace:: *Citation:* **Rubin Observatory Science Pipelines Developers** (2026); *The LSST Science Pipelines Software: Optical Survey Pipeline Reduction and Analysis Environment* |doi_image| https://doi.org/10.48550/arXiv.2610.22613
 .. |tutorials_doi| replace:: *Citation*: NSF-DOE Vera C. Rubin Observatory (2025); *Rubin Observatory LSST Tutorials* |doi_image| https://doi.org/10.11578/rubin/dc.20250909.20
