@@ -39,7 +39,7 @@
 
 .. |SSObservation_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2026); Legacy Survey of Space and Time Prompt Products: SSObservation searchable catalog |doi_image| ``<doi-tbd>``
 
-.. |SSObject_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2026); Legacy Survey of Space and Time Prompt Products: SSObject searchable catalog |doi_image| ``<doi-tbd>``
+.. |NearbySSO_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2026); Legacy Survey of Space and Time Prompt Products: NearbySSO searchable catalog |doi_image| ``<doi-tbd>``
 
 .. |mpc_orbits_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2026); Legacy Survey of Space and Time Prompt Products: mpc_orbits searchable catalog |doi_image| ``<doi-tbd>``
 
