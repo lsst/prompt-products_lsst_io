@@ -1,8 +1,8 @@
 .. _catalogs-ss-object:
 
-#######################
-SS object (coming soon)
-#######################
+#########
+SS object
+#########
 
 .. important::
 

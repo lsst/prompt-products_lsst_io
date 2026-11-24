@@ -1,8 +1,8 @@
 .. _catalogs-ss-observation:
 
-############################
-SS observation (coming soon)
-############################
+##############
+SS observation
+##############
 
 .. important::
 
