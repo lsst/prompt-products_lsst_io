@@ -33,11 +33,19 @@
 .. |DiaForcedSource_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2026); Legacy Survey of Space and Time Prompt Products: DiaForcedSource searchable catalog |doi_image| ``<doi-tbd>``
 
 
-.. |ss_source_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2027); Legacy Survey of Space and Time Prompt Products: ss_source dataset type |doi_image| ``<doi-tbd>``
 .. |SSSource_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2026); Legacy Survey of Space and Time Prompt Products: SSSource searchable catalog |doi_image| ``<doi-tbd>``
 
-.. |ss_object_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2027); Legacy Survey of Space and Time Prompt Products: ss_object dataset type |doi_image| ``<doi-tbd>``
 .. |SSObject_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2026); Legacy Survey of Space and Time Prompt Products: SSObject searchable catalog |doi_image| ``<doi-tbd>``
+
+.. |SSObservation_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2026); Legacy Survey of Space and Time Prompt Products: SSObservation searchable catalog |doi_image| ``<doi-tbd>``
+
+.. |SSObject_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2026); Legacy Survey of Space and Time Prompt Products: SSObject searchable catalog |doi_image| ``<doi-tbd>``
+
+.. |mpc_orbits_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2026); Legacy Survey of Space and Time Prompt Products: mpc_orbits searchable catalog |doi_image| ``<doi-tbd>``
+
+.. |current_identifications_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2026); Legacy Survey of Space and Time Prompt Products: current_identifications searchable catalog |doi_image| ``<doi-tbd>``
+
+.. |numbered_identifications_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2026); Legacy Survey of Space and Time Prompt Products: numbered_identifications searchable catalog |doi_image| ``<doi-tbd>``
 
 .. |detector_visit_doi| replace:: *Citation*: ``<placeholder detector visit processing summary catalog DOI>``
 
