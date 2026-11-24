@@ -40,12 +40,13 @@ Derived properties for moving objects detected in images: Solar System (SS) obje
     :glob:
 
     ss_object
-    ss_observation
     ss_source
-    nearby_sso
+    ss_observation
     mpc_orbits
     current_identifications
     numbered_identifications
+    nearby_sso
+
 
 
 Observations
