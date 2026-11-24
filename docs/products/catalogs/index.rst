@@ -9,9 +9,9 @@ Catalogs
    Prompt catalogs are not yet available.
 
 
-Tables of measurements for detections in difference images.
+Tables of measurements for detections in difference images (DIA) and direct images.
 
-The DIA and moving objects catalogs together are referred to as the Prompt Products Database (PPDB).
+The DIA and moving object catalogs together are referred to as the Prompt Products Database (PPDB).
 
 
 Difference image analysis (DIA)

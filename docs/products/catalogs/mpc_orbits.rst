@@ -23,7 +23,7 @@ In early 2027, these tables will become accessible via the Butler (see the `time
 TAP
 ---
 
-|mpc_orbits_doi|
+* |mpc_orbits_doi|
 * Table name: ``mpc_orbits``
 
 
@@ -44,9 +44,9 @@ The ``designation`` column contains the unpacked primary provisional designation
 It is identical row by row to ``unpacked_primary_provisional_designation`` and provides a readable join key to the ``SSObservation`` and ``SSObject`` tables.
 For improved performance, SQL joins on integer identifiers such as ``ssObjectId`` are preferred wherever they are available.
 
-The ``mpc_orbits`` table can be joined to the :doc:`SSObject <ss_object>` and :doc:`SSObservations <ss_observation>` tables on the ``designation`` to obtain Rubin-derived object-level photometry and summary properties (``SSObject``) and Minor Planet Center (MPC)-submitted observations (``SSObservation``).
+The ``mpc_orbits`` table can be joined to the :doc:`SSObject <ss_object>` and :doc:`SSObservation <ss_observation>` tables on the ``designation`` to obtain Rubin-derived object-level photometry and summary properties (``SSObject``) and Minor Planet Center (MPC)-submitted observations (``SSObservation``).
 
-The PPDB contains all alerts from roughly September 2025 onwards as well as the accumulated Solar System tables. The ``mpc_orbits`` catalog is rebuilt daily from the moving object observations Rubin submits to and are accepted by the MPC as well as discoveries and detections by other contemporaneous programs made during the past 24 hours.
+The PPDB contains all alerts from roughly September 2025 onwards as well as the accumulated Solar System tables. The ``mpc_orbits`` catalog is ingested daily from the MPC and includes moving object observations Rubin submits to and are accepted by the MPC as well as discoveries and detections by other contemporaneous programs made during the past 24 hours.
 
 
 Processing

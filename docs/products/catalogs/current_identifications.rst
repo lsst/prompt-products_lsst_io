@@ -23,7 +23,7 @@ In early 2027, these tables will become accessible via the Butler (see the `time
 TAP
 ---
 
-|current_identifications_doi|
+* |current_identifications_doi|
 * Table name: ``current_identifications``
 
 
@@ -42,9 +42,9 @@ The upstream definitions and field semantics are documented in the `MPC replicat
 
 This table is useful for resolving historical or alternate designations before joining to the Rubin-derived Solar System tables.
 
-The ``current_identifications`` table can be joined to the :doc:`mpc_ortbis <mpc_orbits>` table on the ``packed_primary_provisional_designation`` to obtain Minor Planet Center (MPC)-derived orbital parameters.
+The ``current_identifications`` table can be joined to the :doc:`mpc_orbits <mpc_orbits>` table on the ``packed_primary_provisional_designation`` to obtain Minor Planet Center (MPC)-derived orbital parameters.
 
-The PPDB contains all alerts from roughly September 2025 onwards as well as the accumulated Solar System tables. The ``current_identifications`` catalog is rebuilt daily from the moving object observations Rubin submits to and are accepted by the MPC as well as discoveries and detections by other contemporaneous programs made during the past 24 hours.
+The PPDB contains all alerts from roughly September 2025 onwards as well as the accumulated Solar System tables. The ``current_identifications`` catalog is ingested daily from the MPC and includes moving object observations Rubin submits to and are accepted by the MPC as well as discoveries and detections by other contemporaneous programs made during the past 24 hours.
 
 Processing
 ----------

@@ -9,7 +9,7 @@ Solar System prompt processing
 The goal of the nightly Solar System Processing (SSP) pipeline is to link (identify) previously unknown ``SSObjects``, given an additional night of observing, and report the discoveries to the `Minor Planet Center <https://minorplanetcenter.net>`_ (MPC), as well as to compute physical (e.g., absolute magnitudes) and other auxiliary properties (e.g., predicted apparent magnitudes and coordinates in various coordinate systems) for known Solar System objects and their LSST observations.
 
 The majority of the pipeline's processing occurs in daytime, after a night of observing.
-The pipeline will deliver daily data products for Solar System objects in the form of catalogs: ``SSObject``, ``SSObservation``, ``mpc_orbits``, ``current_identifications``, ``numbered_identifications``, ``DiaSource``, and ``NearbySSO``, which are described in the :doc:`/products/catalogs/index` documentation.
+The pipeline will deliver daily data products for Solar System objects in the form of catalogs: ``SSObject``, ``SSObservation``, ``mpc_orbits``, ``current_identifications``, ``numbered_identifications``, ``NearbySSO``, and ``DiaSource``, which are described in the :doc:`/products/catalogs/index` documentation.
 The SSP pipeline is illustrated in the infographic provided above.
 For more information on the moving object tracklet linking and orbit fitting algorithm, see :doc:`/processing/moving/ss_linking`.
 
@@ -33,9 +33,9 @@ During the day before the coming night’s observing:
 
 4. The most up-to-date ``mpc_orbits``, ``current_identifications``, and ``numbered_identifications`` catalogs are downloaded from the Minor Planet Center (MPC) and ingested into the Prompt Products database to obtain all previously submitted LSST discoveries and detections as well as discoveries and detections by other contemporaneous programs made during the past 24 hours.
 
-5. The daily data product catalogs (PPDB) are updated to include the new Solar System object discoveries from the MPC. The ``SSObservation`` catalog is updated with all observations submitted to the MPC for all corresponding ``SSObjects``, independent of the PPDB ``DiaSource`` table. The ``NearbySSO`` catalog is updated with the nearest predicted known Solar System object for each ``DiaSource``; the ``NearbySSO`` catalog also includes the nearest objects predicted to land on a detector (or within 30" of one) but match no ``DiaSource`` (with ``DiaSourceId`` = NULL). In addition, the physical properties (e.g., absolute magnitudes, predicted apparent magnitudes, extendedness estimates, and light curve characteristics), as defined by the orbit catalog of all known ``SSObjects``, including new discoveries ingested from the MPC, are recomputed. Updated data are entered into the relevant tables.
+5. The daily data product catalogs (PPDB) are updated to include the new Solar System object discoveries from the MPC. The ``SSObservation`` catalog is updated with all observations submitted to and accepted by the MPC for all corresponding ``SSObjects``, independent of the PPDB ``DiaSource`` table. The ``NearbySSO`` catalog is updated with the nearest predicted known Solar System object for each ``DiaSource``; the ``NearbySSO`` catalog also includes the nearest objects predicted to land on a detector (or within 30" of one) but match no ``DiaSource`` (with ``DiaSourceId`` = NULL). In addition, the physical properties (e.g., absolute magnitudes, predicted apparent magnitudes, extendedness estimates, and light curve characteristics), as defined by the orbit catalog of all known ``SSObjects``, including new discoveries ingested from the MPC, are recomputed. Updated data are entered into the relevant tables.
 
-6. The Solar System daily data products (``SSObject``, ``SSObservation``, ``mpc_orbits``, ``current_identifications``, ``numbered_identifications``, ``DiaSource``, & ``NearbySSO``  tables) are released.
+6. The Solar System daily data products (``SSObject``, ``SSObservation``, ``mpc_orbits``, ``current_identifications``, ``numbered_identifications``, ``NearbySSO``, and ``DiaSource`` tables) are released.
 
 7. Precovery linking is attempted for all ``SSObjects`` whose orbits were updated in the above process (or are new). Where successful, newly discovered observations are queued up for submission to the Minor Planet Center.
 
@@ -53,6 +53,9 @@ See the :doc:`/processing/association/index` page for more information on the as
 
 The Prompt Products Database (PPDB) contains the same data (and more) as the APDB accumulated and queryable. This includes the ``DiaSource``, ``DiaObject``, ``DiaForcedSource``, and Solar System tables.
 
-The ``DiaSource`` catalog from the PPDB is ingested into the ssp-tools build along with the shutter timing information, visit table, and MPC tables. ssp-tools then matches each MPC-accepted Rubin observation to its ``DiaSource`` measurement, computes ephemerides for all known Solar System objects using the ASSIST integrator, and performs internal checks. Shutter timing corrections are included in the ``SSObservation`` and ``NearbySSO`` tables; the ``DiaSource`` and past MPC submissions use the visit midpoint. The daily Solar System data products (i.e., the Solar System PPDB tables) are then generated.
+The ``DiaSource`` catalog from the PPDB is ingested into the ssp-tools build along with the shutter timing information, visit table, and MPC tables.
+``ssp-tools`` then matches each MPC-accepted Rubin observation to its ``DiaSource`` measurement, computes ephemerides for all known Solar System objects using the ASSIST integrator, and performs internal checks.
+Shutter timing corrections are included in the ``SSObservation`` and ``NearbySSO`` tables; the ``DiaSource`` and past MPC submissions use the visit midpoint.
+The daily Solar System data products (i.e., the Solar System PPDB tables) are then generated.
 
-The Solar System PPDB tables include ``SSObservation``, ``SSObject``, NearbySSO``, ``mpc_orbits``, ``current_identifications``, and ``numbered_identifications``. For more information on each catalog, see the :doc:`/products/catalogs/index` pages.
+The Solar System PPDB tables include ``SSObservation``, ``SSObject``, ``NearbySSO``, ``mpc_orbits``, ``current_identifications``, and ``numbered_identifications``. For more information on each catalog, see the :doc:`/products/catalogs/index` pages.
