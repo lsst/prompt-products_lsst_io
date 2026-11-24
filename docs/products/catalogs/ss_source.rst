@@ -23,7 +23,7 @@ In early 2027, these tables will become accessible via the Butler (see the `time
 TAP
 ---
 
-* |SSSource_doi|
+* |ss_source_doi|
 * Table name: ``SSSource``
 
 
