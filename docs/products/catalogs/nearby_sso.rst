@@ -1,8 +1,8 @@
 .. _catalogs-nearby-sso:
 
-########################
-Nearby SSO (coming soon)
-########################
+##########
+Nearby SSO
+##########
 
 .. important::
 
