@@ -6,7 +6,7 @@ Time Measurements
 
 Time measurements are in International Atomic Time (TAI).
 
-The data products that contain time measurements include the :doc:`DiaObject </products/catalogs/dia_object>` table, :doc:`DiaSource </products/catalogs/dia_source>` table, :doc:`DiaForcedSource </products/catalogs/dia_forced_source>` table, :doc:`SSObject </products/catalogs/ss_object>`, :doc:`SSObservation </products/catalogs/ss_observation>`, and :doc:`mpc_orbits </products/catalogs/mpc_orbits>` catalogs.
+The data products that contain time measurements include the :doc:`DiaObject </products/catalogs/dia_object>`, :doc:`DiaSource </products/catalogs/dia_source>`, :doc:`DiaForcedSource </products/catalogs/dia_forced_source>`, :doc:`SSObject </products/catalogs/ss_object>`, :doc:`SSObservation </products/catalogs/ss_observation>`, and :doc:`mpc_orbits </products/catalogs/mpc_orbits>` catalogs.
 
 The ``epoch_mjd`` provided in the :doc:`mpc_orbits </products/catalogs/mpc_orbits>` catalog is the only time measurement that is not measured in TAI, but Terrestrial Time (TT).
 
