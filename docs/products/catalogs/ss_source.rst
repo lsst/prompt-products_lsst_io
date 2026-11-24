@@ -1,8 +1,8 @@
 .. _catalogs-ss-source:
 
-#######################
-SS source (coming soon)
-#######################
+#########
+SS source
+#########
 
 .. important::
 
@@ -11,39 +11,35 @@ SS source (coming soon)
 
 Instantaneous physical parameters for moving objects at the time of every observation.
 
-|ss_source_doi|
+Schema: `PPDB SSSource table <https://sdm-schemas.lsst.io/ppdb.html#SSSource>`_
 
 
 Access
 ======
 
-**The SS source catalog is not yet accessible.**
-
+As of Nov 30 2026, the DIA tables are accessible via the TAP service.
+In early 2027, these tables will become accessible via the Butler (see the `timeline for early science <https://rubinobservatory.org/for-scientists/resources/early-science>`_).
 
 TAP
 ---
 
+* |SSSource_doi|
 * Table name: ``SSSource``
-* Schema: `APDB SS Source table <https://sdm-schemas.lsst.io/apdb.html#SSSource>`_
-
-Butler
-------
-
-* Dataset type: ('ss_source', {}, ArrowAstropy)
-* Format: Parquet
 
 
 Description
 ===========
 
-The SS source table contains the 2-d (sky) coordinates and 3-d distances and velocities for every ``SSObject`` at the time of every LSST detection of that ``SSObject`` (i.e., for every assicated ``DIASource``).
+A "SS source" is a signal-to-noise ratio > 5 detection in a difference image that has been associated with a known Solar System object.
+
+The SS source table contains the 2-d (sky) coordinates and 3-d distances and velocities for every ``DiaSource`` alert associated with a known ``SSObject``. Alerts for ``DiaSources`` with known Solar System objects predicted to be within the 1-arcsecond association radius of the ``DiaSource`` detection include the ``SSSource`` records for each Solar System object (SSO). The ``SSSource`` table contains information derived from the known orbit of the associated Solar System object and the current observation of the ``DiaSource``.
 
 Processing
 ----------
 
-The SS source catalog is the result of :doc:`/processing/moving/index`.
+The SS source catalog is the result of :doc:`/processing/moving/index` and :doc:`/processing/association/index`.
 
 Tutorials
 ---------
 
-Coming soon.
+See the 200-level catalog :doc:`/tutorials/index` for a notebook on the SS source table.
