@@ -17,7 +17,7 @@ Nearest predicted known Solar System object for each ``DiaSource``, including th
 Access
 ======
 
-As of Nov 30 2026, the DIA tables are accessible via the TAP service.
+As of Nov 30 2026, the SS tables are accessible via the TAP service.
 In early 2027, these tables will become accessible via the Butler (see the `timeline for early science <https://rubinobservatory.org/for-scientists/resources/early-science>`_).
 
 TAP
