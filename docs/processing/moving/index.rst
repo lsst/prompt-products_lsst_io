@@ -49,7 +49,7 @@ Prompt Products Database Solar System Tables
 
 .. image:: images/LSST-Solar-System-Processing-Infographic-PPDB.png
 
-The prompt products database (PPDB) delivers associations between Rubin difference image detections (``DiaSources``) and known small bodies (``SSObservation``) as well as Rubin-derived object-level photometry and summary properties (``SSObject``) and is updated on a daily basis. The PPDB contains all alerts from roughly September 2025 onwards as well as the accumulated Solar System tables. The ``DiaSource`` catalog is an alert product produced from Prompt Processing, while the ``SSObservation``, ``SSObject``, and ``NearbySSO`` catalogs are rebuilt daily from the moving object observations Rubin submits to and are accepted by the MPC. The PPDB also includes snapshots of three tables from the `Minor Planet Center (MPC) PostgreSQL database <https://data.minorplanetcenter.net/mpcops/documentation/replicated-tables-schema/>`_ (see :doc:`DP2 catalogs </products/catalogs/index>` for details):
+The prompt products database (PPDB) delivers Rubin small body discoveries and associations between Rubin difference image detections (``DiaSources``) or direct image detections (``Sources``) and known small bodies (``SSObservation``) as well as Rubin-derived object-level photometry and summary properties (``SSObject``) and is updated on a daily basis. The PPDB contains all alerts from roughly September 2025 onwards as well as the accumulated Solar System tables. The ``DiaSource`` catalog is an alert product produced from Prompt Processing, while the ``SSObservation``, ``SSObject``, and ``NearbySSO`` catalogs are rebuilt daily from the moving object observations Rubin submits to and are accepted by the MPC. The PPDB also includes snapshots of three tables from the `Minor Planet Center (MPC) PostgreSQL database <https://data.minorplanetcenter.net/mpcops/documentation/replicated-tables-schema/>`_ (see :doc:`DP2 catalogs </products/catalogs/index>` for details):
 
 .. list-table::
    :header-rows: 1
@@ -58,7 +58,7 @@ The prompt products database (PPDB) delivers associations between Rubin differen
    * - Table
      - Purpose
    * - :doc:`SSObservation </products/catalogs/ss_observation>`
-     - One row per MPC record of each Rubin-submitted observation, joined to the full measurement from which it was submitted (a difference image ``DiaSource`` or a direct image ``Source``).
+     - One row per MPC record of each Rubin-submitted observation, joined to the full measurement from which it was submitted (a difference image ``DiaSource`` or a direct image ``Source``) and its ephemeris from ``mpc_orbits``.
    * - :doc:`SSObject </products/catalogs/ss_object>`
      - One row per recovered known object built only from the MPC-accepted observations (``SSObservations``), with observation summaries, per-band absolute-magnitude fits, and selected orbit-derived quantities.
    * - :doc:`NearbySSO </products/catalogs/nearby_sso>`
