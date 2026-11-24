@@ -44,7 +44,7 @@ Users should compare the per-band ``nObsUsed`` and ``nObs`` values, inspect the 
 The table also contains the Tisserand parameter with respect to Jupiter and Earth minimum-orbit-intersection-distance quantities computed from the input MPC elements.
 These values should not by themselves be used for hazard classification or close-approach prediction.
 
-The PPDB contains all alerts from roughly September 2025 onwards as well as the accumulated Solar System tables. The ``SSObject``catalog is rebuilt daily from the moving object observations Rubin submits to and are accepted by the MPC.
+The PPDB contains all alerts from roughly September 2025 onwards as well as the accumulated Solar System tables. The ``SSObject`` catalog is rebuilt daily from the moving object observations Rubin submits to and are accepted by the MPC.
 
 Processing
 ----------
