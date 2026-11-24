@@ -33,8 +33,6 @@
 .. |dia_object_forced_source_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2027); Legacy Survey of Space and Time Prompt Products: dia_object_forced_source dataset type |doi_image| ``<doi-tbd>``
 .. |DiaForcedSource_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2026); Legacy Survey of Space and Time Prompt Products: DiaForcedSource searchable catalog |doi_image| ``<doi-tbd>``
 
-.. |ss_source_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2026); Legacy Survey of Space and Time Prompt Products: SSSource searchable catalog |doi_image| ``<doi-tbd>``
-
 .. |ss_object_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2026); Legacy Survey of Space and Time Prompt Products: SSObject searchable catalog |doi_image| ``<doi-tbd>``
 
 .. |ss_observation_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2026); Legacy Survey of Space and Time Prompt Products: SSObservation searchable catalog |doi_image| ``<doi-tbd>``

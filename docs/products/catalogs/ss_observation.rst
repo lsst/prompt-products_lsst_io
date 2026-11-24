@@ -34,7 +34,7 @@ A "Solar System object" is a moving object for which one or more signal-to-noise
 ``SSObservation`` includes one row per Minor Planet Center (MPC) record of each Rubin-submitted observation of a moving object, joined to the full measurement from which it was submitted (a difference image ``DiaSource`` or a direct image ``Source``) and its ephemeris from ``mpc_orbits``.
 The ``SSObservation`` table contains the ``DiaSource``- or ``Source``-like columns for the difference image detection or direct image detection from which the Rubin observation was submitted to the MPC; there should thus never be a need to join the ``SSObservation`` and ``DiaSource`` tables.
 
-The ``SSObservation`` table can be joined to the :doc:`SSObject <ss_object>`, :doc:`SSSource <ss_source>`, and :doc:`NearbySSO <nearby_sso>` tables on the ``ssObjectId`` or ``designation`` to obtain Rubin-derived object-level photometry and summary properties (``SSObject``), single-epoch measurements and observing geometry from alerts (``SSSource``), and nearest predicted known Solar System object per ``DiaSource`` (``NearbySSO``).
+The ``SSObservation`` table can be joined to the :doc:`SSObject <ss_object>` and :doc:`NearbySSO <nearby_sso>` tables on the ``ssObjectId`` or ``designation`` to obtain Rubin-derived object-level photometry and summary properties (``SSObject``) and nearest predicted known Solar System object per ``DiaSource`` (``NearbySSO``).
 
 The PPDB contains all alerts from roughly September 2025 onwards as well as the accumulated Solar System tables. The ``SSObservation`` catalog is rebuilt daily from the moving object observations Rubin submits to and are accepted by the MPC.
 

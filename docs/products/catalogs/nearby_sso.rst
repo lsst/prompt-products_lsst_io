@@ -34,6 +34,8 @@ One row per nearest predicted known Solar System object for each ``DiaSource``, 
 
 To explore how many objects have been positionally matched to ``DiaSource`` detections within a radius of some number of arcseconds, query ``NearbySSO``. Alternatively, to search for non-detections of known Solar System objects in prompt processing, join the ``SSObject`` and/or ``SSObservation`` table to the ``NearbySSO`` table using the ``ssObjectId``; non-detections will have NULL ``diaSourceIds``).
 
+The ``NearbySSO`` table can be joined to the :doc:`SSObject <ss_object>` and :doc:`SSObservations <ss_observation>` tables on the ``ssObjectId`` or ``designation`` to obtain Rubin-derived object-level photometry and summary properties (``SSObject``) and Minor Planet Center (MPC)-submitted observations (``SSObservation``).
+
 The PPDB contains all alerts from roughly September 2025 onwards as well as the accumulated Solar System tables. The ``NearbySSO`` catalog is rebuilt daily from the moving object observations Rubin submits to and are accepted by the MPC.
 
 Processing

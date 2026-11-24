@@ -11,7 +11,7 @@ SS object
 
 Derived parameters for moving (Solar System) objects.
 
-Schema: `PPDB SSSource table <https://sdm-schemas.lsst.io/ppdb.html#SSObject>`_
+Schema: `PPDB SSObject table <https://sdm-schemas.lsst.io/ppdb.html#SSObject>`_
 
 
 Access
@@ -34,7 +34,7 @@ A "Solar System object" is a moving object for which one or more signal-to-noise
 
 ``SSObject`` includes the unique identifier integer ``ssObjectId``, the unpacked primary provisional ``designation``, total and per-band observation counts, the first observation epoch and observing arc, per-band phase-angle ranges, extendedness summaries, and selected quantities derived from the input MPC orbit.
 
-The ``SSObject`` table can be joined to the :doc:`SSObservation <ss_observation>`, :doc:`SSSource <ss_source>`, and :doc:`NearbySSO <nearby_sso>` tables on the ``ssObjectId`` or ``designation`` to obtain Minor Planet Center (MPC)-submitted observations (``SSObservation``), single-epoch measurements and observing geometry from alerts (``SSSource``), and nearest predicted known Solar System object per ``DiaSource`` (``NearbySSO``).
+The ``SSObject`` table can be joined to the :doc:`SSObservation <ss_observation>` and :doc:`NearbySSO <nearby_sso>` tables on the ``ssObjectId`` or ``designation`` to obtain Minor Planet Center (MPC)-submitted observations (``SSObservation``) and nearest predicted known Solar System object per ``DiaSource`` (``NearbySSO``).
 
 The ``SSObject`` table per-band absolute magnitudes were fitted to the associated PSF photometry with an H-G12 phase function.
 G12 was fixed at 0.5 and only H was fitted; valid G12 values therefore all equal 0.5, while G12 uncertainties and the H-G12 covariance are undefined.

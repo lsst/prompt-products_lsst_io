@@ -11,7 +11,7 @@ Current identifications
 
 The current identifications catalog produced by the `Minor Planet Center <https://minorplanetcenter.net/>`_ (MPC).
 
-* Schema: `PPDB MPC orbits table <https://sdm-schemas.lsst.io/ppdb.html#current_identifications>`_
+* Schema: `PPDB Current identifications table <https://sdm-schemas.lsst.io/ppdb.html#current_identifications>`_
 
 Access
 ======
@@ -41,6 +41,10 @@ It maps primary and secondary provisional designations that refer to the same ph
 The upstream definitions and field semantics are documented in the `MPC replicated-tables schema <https://docs.minorplanetcenter.net/mpc-ops-docs/data-and-services/replicated-tables-schema/>`_.
 
 This table is useful for resolving historical or alternate designations before joining to the Rubin-derived Solar System tables.
+
+The ``current_identifications`` table can be joined to the :doc:`mpc_ortbis <mpc_orbits>` table on the ``packed_primary_provisional_designation`` to obtain Minor Planet Center (MPC)-derived orbital parameters.
+
+The PPDB contains all alerts from roughly September 2025 onwards as well as the accumulated Solar System tables. The ``current_identifications`` catalog is rebuilt daily from the moving object observations Rubin submits to and are accepted by the MPC as well as discoveries and detections by other contemporaneous programs made during the past 24 hours.
 
 Processing
 ----------

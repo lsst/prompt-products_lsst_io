@@ -81,16 +81,15 @@ Tutorials with a learning objective of understanding one of the data products.
     :titlesonly:
     :glob:
 
-    202/notebook-202-01.rst
-    202/notebook-202-02.rst
-    202/notebook-202-03.rst
-    202/notebook-202-04.rst
-    202/notebook-202-05.rst
-    202/notebook-202-06.rst
-    202/notebook-202-07.rst
-    202/notebook-202-08.rst
-    202/notebook-202-09.rst
-    202/notebook-202-10.rst
+    202/notebook-202-1.rst
+    202/notebook-202-2.rst
+    202/notebook-202-3.rst
+    202/notebook-202-4.rst
+    202/notebook-202-5.rst
+    202/notebook-202-6.rst
+    202/notebook-202-7.rst
+    202/notebook-202-8.rst
+    202/notebook-202-9.rst
 
 
 
