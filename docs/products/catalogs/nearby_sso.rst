@@ -32,7 +32,18 @@ Description
 
 One row per nearest predicted known Solar System object for each ``DiaSource``, including the nearest objects predicted to land on a detector but match no ``DiaSource`` (with ``DiaSourceId`` = NULL).
 
-To explore how many objects have been positionally matched to ``DiaSource`` detections within a radius of some number of arcseconds, query ``NearbySSO``. Alternatively, to search for non-detections of known Solar System objects in prompt processing, join the ``SSObject`` and/or ``SSObservation`` table to the ``NearbySSO`` table using the ``ssObjectId``; non-detections will have NULL ``diaSourceIds``).
+The ``NearbySSO`` table includes the unique identifiers ``diaSourceId``, ``ssObjectId``, and ``designation``.
+It also contains the ephemeris information (``ephRa``, ``ephDec``, and ``ephVmag``) with the predicted position's error ellipse (``ephRaErr``, ``ephDecErr``, ``ephRa_ephDec_Cov``).
+``ephOffset`` provides the total observed versus predicted angular separation on the sky between the observed ``DiaSource`` and the predicted position of a known solar system object.
+
+Because a single known moving object predicted position may fall within the 1-arcsecond association radius for multiple nearby ``DiaSources``, a ``diaDistanceRank`` field is included in the ``NearbySSO`` table with the rank of the ``diaSourceId`` -identified source in terms of its closeness to the predicted SSO position, among all ``DiaSources`` of the same visit within the object's matching radius of that prediction.
+If the ``diaSourceId`` is the nearest ``DiaSource`` to this SSO prediction, ``diaDistanceRank`` = 1 would be set.
+If it is the second nearest, it would be 2, etc, with ties broken by the lower ``diaSourceId``.
+A rank above 1 means a closer ``DiaSource`` exists, which may be attributed to another object.
+``diaDistanceRank`` is NULL for a prediction that matched no ``DiaSource``.
+
+To explore how many objects have been positionally matched to ``DiaSource`` detections within a radius of some number of arcseconds, query ``NearbySSO``.
+Alternatively, to search for non-detections of known Solar System objects in prompt processing, join the ``SSObject`` and/or ``SSObservation`` table to the ``NearbySSO`` table using the ``ssObjectId``; non-detections will have NULL ``diaSourceIds``).
 
 The ``NearbySSO`` table can be joined to the :doc:`SSObject <ss_object>` and :doc:`SSObservations <ss_observation>` tables on the ``ssObjectId`` or ``designation`` to obtain Rubin-derived object-level photometry and summary properties (``SSObject``) and Minor Planet Center (MPC)-submitted observations (``SSObservation``).
 
