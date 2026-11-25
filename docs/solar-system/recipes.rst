@@ -118,15 +118,17 @@ r-band fits where the slope was fitted, from at least 20 observations.
 Colors
 ======
 
-Rough colors from the per-band absolute magnitudes, for objects with at least five observations in each band.
-Read the cautions in :doc:`quality` before using colors of individual objects.
-For cleaner colors, also require the slope to have been fitted in both bands, for example ``AND g_G12Err IS NOT NULL AND r_G12Err IS NOT NULL``.
+Colors from the per-band absolute magnitudes, for objects with at least five observations and a fitted slope in each band:
 
 .. code-block:: sql
 
    SELECT designation, g_H - r_H AS g_r, r_H - i_H AS r_i
    FROM ppdb.SSObject
    WHERE g_nObsUsed >= 5 AND r_nObsUsed >= 5 AND i_nObsUsed >= 5
+     AND g_G12Err IS NOT NULL AND r_G12Err IS NOT NULL AND i_G12Err IS NOT NULL
+
+Removing the ``G12Err`` conditions gives many more objects, but mixes fits whose slopes were fitted with fits that fell back to G12 = 0.5.
+Read the cautions in :doc:`quality` before using colors of individual objects.
 
 
 Comets
@@ -240,6 +242,7 @@ To look up your own list of objects, upload it as a table and join to it:
    counts = service.run_sync(query, uploads={"mine": mine}).to_table()
 
 For large queries, use ``service.submit_job(query)`` and run them one at a time (see :doc:`caveats`).
+To fit phase curves yourself, packages such as `sbpy <https://sbpy.org/>`_ implement the standard phase functions.
 
 
 Where to go next

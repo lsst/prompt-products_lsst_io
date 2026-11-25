@@ -41,7 +41,7 @@ Columns to start with:
 - ``nObs``, ``arc``, ``firstObservationMjdTai``: how many Rubin observations there are, over what span, and since when.
 - ``{band}_H``, ``{band}_G12``, and their uncertainties, for each band *ugrizy*: the phase-curve fits (below). H is an AB magnitude in the Rubin band.
 - ``{band}_nObs``, ``{band}_nObsUsed``, ``{band}_phaseAngleMin``, ``{band}_phaseAngleMax``: what each band's fit is based on (phase angles in degrees).
-- ``MOIDEarth``: the minimum orbit intersection distance with Earth's orbit, with related quantities.
+- ``MOIDEarth``: the minimum orbit intersection distance with Earth's orbit; ``MOIDEarthDeltaV``, ``MOIDEarthEclipticLongitude``, ``MOIDEarthTrueAnomaly``, and ``MOIDEarthTrueAnomalyObject`` describe where on the two orbits it occurs.
 - ``tisserand_J``: the Tisserand parameter with respect to Jupiter.
 - ``extendednessMin``, ``extendednessMedian``, ``extendednessMax``: how extended the object's detections look.
 

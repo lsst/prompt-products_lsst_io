@@ -27,7 +27,7 @@ The Solar System tables live in the Prompt Products Database (PPDB), which you q
 
 1. **Get an RSP account.** Follow the `instructions to sign up <https://rsp.lsst.io/guides/getting-started/get-an-account.html>`_. The RSP is available to Rubin data rights holders; see :doc:`/access/index`.
 2. **Open a query interface.** Use the Portal's ADQL search or a notebook in the Notebook Aspect (see :doc:`recipes` for the Python version), and choose the PPDB TAP service.
-3. **Run a query.** This one returns every Rubin observation of Pluto, (134340), a famous object chosen here only as a demonstration:
+3. **Run a query.** This one returns every Rubin observation of (134340) Pluto, chosen only as a demonstration:
 
 .. code-block:: sql
 
@@ -88,7 +88,7 @@ The PPDB is one of four places to find Rubin's Solar System data.
      - Public, through the :doc:`alert brokers </access/index>`.
    * - The PPDB (this guide)
      - Rubin's accepted observations with their full measurements, object summaries, predictions near every detection, and the MPC's orbits and designations.
-     - Queried through the RSP, which requires data rights. The contents themselves are public: you may share query results with anyone. See :doc:`/access/index`.
+     - Queried through the RSP, which requires data rights; see :doc:`/access/index` for the data policy, including what you may share.
    * - Data releases
      - Versioned, homogeneously processed catalogs and images.
      - Data rights; see :doc:`/access/index`.

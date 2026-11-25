@@ -97,7 +97,8 @@ See :doc:`/products/time_measurements/index` for converting between time scales.
 ``midpointMjdTai`` is the time of the observation at the detector: the middle of the exposure, at the source's position on the focal plane.
 Rubin's camera shutter sweeps across the focal plane, so different parts of an image are exposed at slightly different times; ``midpointMjdTai`` is corrected for this.
 (``midpointMjdTai_flag`` marks the rare rows where no correction was available and the visit's midpoint is used instead.)
-It is not corrected for light travel time; ``topoRange``, the distance at the time the light left the object, lets you do so (see :doc:`recipes`).
+It is not corrected for light travel time.
+``topoRange`` is the distance from Rubin to the object, with the object's position taken at the time the light left it, so ``topoRange`` divided by the speed of light is the light time (see :doc:`recipes`).
 The times in the PPDB's ``DiaSource`` table, and in Rubin's earlier MPC submissions, are the visit's midpoint, without the shutter correction.
 
 

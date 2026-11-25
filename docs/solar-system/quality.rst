@@ -40,6 +40,7 @@ Rows measured on visit images (``measuredOn = 'science'``) also have 3-, 6-, and
 Aperture fluxes are not corrected for the light outside the aperture.
 
 For fast-moving objects, difference-image rows also have the results of a trailed-source fit: ``trailFlux``, ``trailLength`` (in arcseconds), and ``trailAngle``.
+These columns are NULL for rows measured on visit images, and for the few difference-image rows where the fit wasn't run.
 
 
 Flags
@@ -51,7 +52,7 @@ The most useful ones to check are:
 - ``pixelFlags_saturated``, ``pixelFlags_cr`` (cosmic ray), ``pixelFlags_edge``, ``pixelFlags_bad``, ``pixelFlags_suspect``, and ``pixelFlags_streak``, which mark problem pixels in or near the source (the ``...Center`` versions mark the central pixels);
 - ``centroid_flag``, set when the position measurement failed;
 - ``psfFlux_flag``, set when the PSF flux measurement failed;
-- ``trail_flag``, set when the fit of a trailed-source model failed (filled only for recent alert processing);
+- ``trail_flag``, set when the trailed-source fit failed (recorded only for recent alert processing; NULL elsewhere);
 - ``glint_trail``, set when the source is part of a satellite glint trail.
 
 ``extendedness`` (0 for point-like, 1 for extended) and, for difference-image rows, ``reliability`` (the probability, from a machine-learning model, that the detection is real) are also useful.
