@@ -8,6 +8,7 @@
    :alt: DOI Logo
 
 
+
 .. |lsstcam_doi| replace:: *Citation:* SLAC National Accelerator Laboratory & NSF-DOE Vera C. Rubin Observatory (2025); *The LSST Camera (LSSTCam)* |doi_image| https://doi.org/10.71929/rubin/2571927
 .. |osprae_doi| replace:: *Citation:* **Rubin Observatory Science Pipelines Developers** (2026); *The LSST Science Pipelines Software: Optical Survey Pipeline Reduction and Analysis Environment* |doi_image| https://doi.org/10.48550/arXiv.2610.22613
 .. |tutorials_doi| replace:: *Citation*: NSF-DOE Vera C. Rubin Observatory (2025); *Rubin Observatory LSST Tutorials* |doi_image| https://doi.org/10.11578/rubin/dc.20250909.20
@@ -32,12 +33,17 @@
 .. |dia_object_forced_source_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2027); Legacy Survey of Space and Time Prompt Products: dia_object_forced_source dataset type |doi_image| ``<doi-tbd>``
 .. |DiaForcedSource_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2026); Legacy Survey of Space and Time Prompt Products: DiaForcedSource searchable catalog |doi_image| ``<doi-tbd>``
 
+.. |ss_object_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2026); Legacy Survey of Space and Time Prompt Products: SSObject searchable catalog |doi_image| ``<doi-tbd>``
 
-.. |ss_source_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2027); Legacy Survey of Space and Time Prompt Products: ss_source dataset type |doi_image| ``<doi-tbd>``
-.. |SSSource_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2026); Legacy Survey of Space and Time Prompt Products: SSSource searchable catalog |doi_image| ``<doi-tbd>``
+.. |ss_observation_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2026); Legacy Survey of Space and Time Prompt Products: SSObservation searchable catalog |doi_image| ``<doi-tbd>``
 
-.. |ss_object_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2027); Legacy Survey of Space and Time Prompt Products: ss_object dataset type |doi_image| ``<doi-tbd>``
-.. |SSObject_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2026); Legacy Survey of Space and Time Prompt Products: SSObject searchable catalog |doi_image| ``<doi-tbd>``
+.. |nearby_sso_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2026); Legacy Survey of Space and Time Prompt Products: NearbySSO searchable catalog |doi_image| ``<doi-tbd>``
+
+.. |mpc_orbits_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2026); Legacy Survey of Space and Time Prompt Products: mpc_orbits searchable catalog |doi_image| ``<doi-tbd>``
+
+.. |current_identifications_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2026); Legacy Survey of Space and Time Prompt Products: current_identifications searchable catalog |doi_image| ``<doi-tbd>``
+
+.. |numbered_identifications_doi| replace:: *Citation*: **NSF-DOE Vera C. Rubin Observatory** (2026); Legacy Survey of Space and Time Prompt Products: numbered_identifications searchable catalog |doi_image| ``<doi-tbd>``
 
 .. |detector_visit_doi| replace:: *Citation*: ``<placeholder detector visit processing summary catalog DOI>``
 

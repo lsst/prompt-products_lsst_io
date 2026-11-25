@@ -39,6 +39,18 @@ Science, difference, and coadded template images of the sky.
     images/index
 
 
+Supplementary information
+=========================
+
+Additional data products and information.
+
+.. toctree::
+    :maxdepth: 1
+    :glob:
+
+    time_measurements/index
+
+
 3I/ATLAS
 ========
 
