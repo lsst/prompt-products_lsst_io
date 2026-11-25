@@ -27,7 +27,7 @@ During the day following nightly observing:
 
 2. The previous night's ``DiaSources`` (SNR of at least 5) that were not matched to a known object go to the HelioLinC3D linking pipeline. It groups detections of the same object within a night into tracklets, then links tracklets from different nights (at least three within 15 days) into candidate objects on Keplerian orbits. See :doc:`/processing/moving/ss_linking` for the algorithm.
 
-3. Observations of known objects and new discoveries are submitted to the Minor Planet Center (MPC) in its ADES format. Single-night detections not yet linked to an object (singletons) are currently held at the MPC's request.
+3. Observations of known objects and new discoveries are submitted to the Minor Planet Center (MPC) in its ADES format. Single-night detections not yet linked to an object (singletons) are currently not being submitted to the MPC, at the MPC's request.
 
 During the day before the coming night’s observing:
 

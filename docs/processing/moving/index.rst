@@ -8,7 +8,7 @@ Solar System Processing includes both the association of known Solar System Obje
 Rubin reports its SSO observations and discoveries to the Minor Planet Center (MPC).
 The MPC identifies the observations, assigns designations, and computes the orbits of all known objects.
 Rubin computes per-object properties, such as per-band absolute magnitudes, from its observations accepted by the MPC.
-Single-night detections not yet linked to an object (singletons) are currently held at the MPC's request.
+Single-night detections not yet linked to an object (singletons) are currently not being submitted to the MPC, at the MPC's request.
 
 
 General overview of SSP
@@ -177,7 +177,7 @@ Things to know
 
 - **SSObservation and SSObject lag the alerts.**
   An observation appears only after the MPC has accepted and published it, days to months after it was made.
-  Single-night detections not yet linked to an object (singletons) are currently held at the MPC's request.
+  Single-night detections not yet linked to an object (singletons) are currently not being submitted to the MPC, at the MPC's request.
 - **NearbySSO shows proximity, not identification.**
   The ``DiaSource`` may be a different object or an artifact, especially when ``ephOffset`` is large compared with the prediction's uncertainty.
   Confirmed observations are in ``SSObservation``.
