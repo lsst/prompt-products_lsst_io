@@ -21,21 +21,30 @@ During operations, the pipeline will consist of the following steps that will re
 
 During nightly observing:
 
-1. Known Solar System objects are associated with difference image detections in real-time. Alerts are produced within 60 seconds for all signal-to-noise ratio (SNR)>=5 ``DiaSources``. The Alert Production pipeline attempts association of ``DiaSources`` with known Solar System objects in real-time, and if a match is found then the alert records the object's designation. For details on Solar System object association, see the :doc:`/processing/association/index` page.
+1. Alerts are issued within 60 seconds for all ``DiaSources`` with a signal-to-noise ratio (SNR) of at least 5. The Alert Production pipeline matches each ``DiaSource`` against the predicted positions of known Solar System objects; when it finds a match, the alert records the object's designation. See the :doc:`/processing/association/index` page for details.
 
 During the day following nightly observing:
 
-2. ``DiaSources`` (SNR>=5) detected on the previous night that are not associated with a known Solar System object are passed to the HelioLinC3D moving object linking pipeline. It builds tracklets (detections of the same object within a single night) and links tracklets from different nights (at least three tracklets within 15 days) into candidates consistent with a single Keplerian orbit around the Sun. For more information on this algorithm, see :doc:`/processing/moving/ss_linking`.
+2. The previous night's ``DiaSources`` (SNR of at least 5) that were not matched to a known object go to the HelioLinC3D linking pipeline. It groups detections of the same object within a night into tracklets, then links tracklets from different nights (at least three within 15 days) into candidate objects on Keplerian orbits. See :doc:`/processing/moving/ss_linking` for the algorithm.
 
-3. Measurements of known objects and new discoveries are submitted to the Minor Planet Center (MPC) in the standard ADES format. Single-night detections that cannot yet be identified with an object (singletons) are currently held at the MPC's request.
+3. Observations of known objects and new discoveries are submitted to the Minor Planet Center (MPC) in its ADES format. Single-night detections not yet linked to an object (singletons) are currently held at the MPC's request.
 
 During the day before the coming night’s observing:
 
-4. A snapshot of the Minor Planet Center (MPC) database is taken: its orbit catalog and designation tables (delivered as ``mpc_orbits``, ``current_identifications``, and ``numbered_identifications``), which reflect the discoveries and observations reported by all programs, and the MPC's record of Rubin's accepted observations (observatory code X05).
+4. A snapshot of the MPC database is taken. It includes:
 
-5. The daily data product catalogs (PPDB) are rebuilt from this snapshot. The ``SSObservation`` catalog holds all of Rubin's observations accepted by the MPC, each with the measurement it was submitted from, independent of the PPDB ``DiaSource`` table. The ``NearbySSO`` catalog holds the nearest predicted known Solar System object for each ``DiaSource``, and the predictions on (or within 30" of) a detector that matched no ``DiaSource`` (with a NULL ``diaSourceId``). The per-object quantities in ``SSObject`` (per-band absolute magnitudes and phase-curve slopes, extendedness summaries, and orbit-derived quantities such as the Earth MOID and the Tisserand parameter) are recomputed, and the predicted positions and magnitudes in ``SSObservation`` and ``NearbySSO`` are recomputed from the current orbits.
+   - the MPC's orbits and designations, which reflect the discoveries and observations of all programs (delivered as ``mpc_orbits``, ``current_identifications``, and ``numbered_identifications``);
+   - the MPC's record of Rubin's accepted observations (observatory code X05).
 
-6. The Solar System daily data products (``SSObject``, ``SSObservation``, ``NearbySSO``, ``mpc_orbits``, ``current_identifications``, and ``numbered_identifications`` tables) are released.
+5. The Solar System tables are rebuilt from this snapshot:
+
+   - ``SSObservation``: every Rubin observation accepted by the MPC, with the measurement it was submitted from;
+   - ``SSObject``: per-object quantities (phase-curve fits, extendedness summaries, MOID, Tisserand parameter) recomputed from those observations and the current orbits;
+   - ``NearbySSO``: the known objects predicted near each ``DiaSource``, and predictions that matched no ``DiaSource``.
+
+   Predicted positions and magnitudes are recomputed from the current orbits.
+
+6. The Solar System tables are released in the PPDB.
 
 7. Precovery linking is attempted for all ``SSObjects`` whose orbits were updated in the above process (or are new). Where successful, newly discovered observations are queued up for submission to the Minor Planet Center.
 

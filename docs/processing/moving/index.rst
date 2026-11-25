@@ -5,8 +5,10 @@ Solar System Processing (SSP)
 #############################
 
 Solar System Processing includes both the association of known Solar System Objects (SSOs) during nighttime observations (see the :doc:`/processing/association/index` page) as well as the discovery of new SSOs by linking unassociated ``DiaSources`` during daytime processing.
-Rubin reports its SSO observations and discoveries to the Minor Planet Center (MPC); single-night detections of objects that cannot yet be identified (singletons) are currently held at the MPC's request.
-The MPC identifies the observations, assigns designations, and computes the orbits of all known objects; Rubin derives per-object quantities (e.g., per-band absolute magnitudes) from its own MPC-accepted observations.
+Rubin reports its SSO observations and discoveries to the Minor Planet Center (MPC).
+The MPC identifies the observations, assigns designations, and computes the orbits of all known objects.
+Rubin computes per-object properties, such as per-band absolute magnitudes, from its observations accepted by the MPC.
+Single-night detections not yet linked to an object (singletons) are currently held at the MPC's request.
 
 
 General overview of SSP
@@ -49,37 +51,45 @@ Prompt Products Database Solar System Tables
 
 .. image:: images/LSST-Solar-System-Processing-Infographic-PPDB.png
 
-The prompt products database (PPDB) delivers Rubin's MPC-accepted observations of small bodies, each with the difference image detection (``DiaSource``) or direct image detection (``Source``) it was measured from (``SSObservation``), Rubin-derived object-level photometry and summary properties (``SSObject``), and the known objects predicted near each ``DiaSource`` (``NearbySSO``); it is updated daily.
-The ``DiaSource`` catalog is an alert product of Prompt Processing; the PPDB holds the alerts from 2025 October 24 onwards.
-The ``SSObservation`` and ``SSObject`` catalogs are rebuilt daily from Rubin's observations accepted by the MPC, which include observations from reprocessings of earlier data (e.g., DP1 and DP2) as well as from alert production.
-The ``NearbySSO`` catalog is rebuilt daily from all PPDB ``DiaSources`` and the current MPC orbits. The PPDB also includes daily snapshots of three tables from the `Minor Planet Center (MPC) PostgreSQL database <https://data.minorplanetcenter.net/mpcops/documentation/replicated-tables-schema/>`_ (see :doc:`PPDB catalogs </products/catalogs/index>` for details):
+The PPDB's Solar System tables are rebuilt every day.
+They fall into three groups:
+
+- **Rubin's observations and objects**: ``SSObservation`` and ``SSObject``.
+  These are built only from Rubin observations that the Minor Planet Center (MPC) has accepted.
+  Besides alert production, they include observations from reprocessed earlier data (e.g., DP1 and DP2).
+- **Predictions near Rubin detections**: ``NearbySSO``.
+  It is built from every ``DiaSource`` in the PPDB and the current MPC orbits.
+- **MPC reference tables**: ``mpc_orbits``, ``current_identifications``, and ``numbered_identifications``.
+  These are daily, unmodified copies of tables from the `MPC database <https://data.minorplanetcenter.net/mpcops/documentation/replicated-tables-schema/>`_ and keep the MPC's definitions.
+
+The PPDB's ``DiaSource`` table holds the alerts from 2025 October 24 onwards.
 
 .. list-table::
    :header-rows: 1
    :widths: 30 70
 
    * - Table
-     - Purpose
+     - Contents
    * - :doc:`SSObservation </products/catalogs/ss_observation>`
-     - One row per MPC record of each Rubin-submitted and MPC-accepted observation, joined to the full measurement from which it was submitted (a difference image ``DiaSource`` or a direct image ``Source``) and its ephemeris from ``mpc_orbits``, independent of the PPDB ``DiaSource`` table.
+     - One row per Rubin observation accepted by the MPC, with the measurement it was submitted from (a ``DiaSource`` or a ``Source``) and the object's predicted position.
    * - :doc:`SSObject </products/catalogs/ss_object>`
-     - One row per object with at least one MPC-accepted Rubin observation, built only from those observations (``SSObservation``), with observation summaries, per-band absolute-magnitude fits, and selected orbit-derived quantities.
+     - One row per object with at least one accepted Rubin observation: observation counts, per-band phase-curve fits, and orbit-derived quantities.
    * - :doc:`NearbySSO </products/catalogs/nearby_sso>`
-     - For each ``DiaSource``, the nearest known Solar System object predicted within 5 arcseconds (15 arcseconds for comets); and, with a NULL ``diaSourceId``, each prediction on (or within 30 arcseconds of) a detector that matched no ``DiaSource``.
+     - For each ``DiaSource``, the nearest known object predicted within 5 arcseconds (15 for comets); also predictions that matched no ``DiaSource``.
    * - :doc:`mpc_orbits </products/catalogs/mpc_orbits>`
-     - An MPC orbit-catalog snapshot containing orbital elements and associated fit information.
+     - The MPC's orbit catalog: orbital elements and fit information.
    * - :doc:`current_identifications </products/catalogs/current_identifications>`
-     - An MPC mapping of primary and secondary provisional designations for the same physical object.
+     - The MPC's mapping between designations of the same object (primary and secondary provisional designations).
    * - :doc:`numbered_identifications </products/catalogs/numbered_identifications>`
-     - An MPC mapping between permanent numbers and primary provisional designations.
+     - The MPC's mapping between permanent numbers and primary provisional designations.
 
-**Join Keys:** The ``SSObject``, ``SSObservation``, and ``NearbySSO`` catalogs can be joined using the ``ssObjectId``. The ``SSObject``, ``SSObservation``, and ``mpc_orbits`` catalogs can be joined using the ``designation``. The ``DiaSource`` catalog can be joined with the ``NearbySSO`` table using the ``diaSourceId``. **NOTE:** The ``SSObservation`` table contains the ``DiaSource``- or ``Source``-like columns for the difference image detection or direct image detection from which the Rubin observation was submitted to the MPC and is independent of the PPDB ``DiaSource`` table; there should thus never be a need to join the ``SSObservation`` and ``DiaSource`` tables.
+The tables join on these keys:
 
-To retrieve the observations of Solar System objects that Rubin has submitted to and been accepted by the Minor Planet Center (MPC), use the ``SSObservation`` table. For orbit information, use the ``mpc_orbits`` table, and for per-object properties, such as per-band absolute magnitudes, use the ``SSObject`` table. These three tables can be joined using the Solar System object ``designation``. To find which known objects were predicted near ``DiaSources``, and how close, query ``NearbySSO``. To search for non-detections of known Solar System objects in prompt processing, select the ``NearbySSO`` rows with a NULL ``diaSourceId``.
+- ``ssObjectId``: ``SSObject``, ``SSObservation``, and ``NearbySSO``.
+- ``designation``: the same three tables and ``mpc_orbits``.
+- ``diaSourceId``: ``NearbySSO`` and ``DiaSource``.
 
-
-The three MPC tables retain the upstream MPC field semantics rather than being recomputed from Rubin observations.
-The delivered ``mpc_orbits``, ``current_identifications``, and ``numbered_identifications`` reference products are daily snapshots of the `MPC PostgreSQL tables <https://data.minorplanetcenter.net/mpcops/documentation/replicated-tables-schema/>`_.
+``SSObservation`` already contains the full measurement of each observation, so it never needs to be joined to ``DiaSource``.
 
 
 Which table should I use?
@@ -91,25 +101,27 @@ Which table should I use?
 
    * - To find...
      - Use
-   * - Rubin's observations of an object (astrometry, photometry, observing geometry)
+   * - Rubin's observations of an object
      - ``SSObservation``
-   * - Per-object properties (per-band absolute magnitudes and phase-curve slopes, Earth MOID, Tisserand parameter)
+   * - An object's absolute magnitudes, phase-curve slopes, MOID, or Tisserand parameter
      - ``SSObject``
    * - An object's orbit
      - ``mpc_orbits``
-   * - Which known objects were predicted near a ``DiaSource``, or predicted positions where no ``DiaSource`` was detected
+   * - Known objects that could explain a ``DiaSource``
      - ``NearbySSO``
-   * - The primary provisional designation for a permanent number or an alternate designation
+   * - Where a known object should have been seen but wasn't
+     - ``NearbySSO`` (rows with a NULL ``diaSourceId``)
+   * - The primary designation of a numbered object, or of an alternate designation
      - ``numbered_identifications`` or ``current_identifications``
 
-The Solar System tables are keyed on the primary provisional designation (``designation``).
-To look up an object by its number or by another designation, first translate it with ``numbered_identifications`` or ``current_identifications``, as in the examples below.
+The Solar System tables identify objects by their primary provisional designation (``designation``).
+To look up an object by its number or by another designation, translate it first, as in the first two examples below.
 
 
 Example queries
 ---------------
 
-All Rubin observations of asteroid (1246):
+All Rubin observations of asteroid (1246), looked up by its number:
 
 .. code-block:: sql
 
@@ -120,7 +132,7 @@ All Rubin observations of asteroid (1246):
    WHERE n.permid = '1246'
    ORDER BY o.midpointMjdTai
 
-The same for an object known by an alternate (secondary) designation, here 2025 PL160:
+All Rubin observations of an object, looked up by an alternate designation (here 2025 PL160):
 
 .. code-block:: sql
 
@@ -131,7 +143,7 @@ The same for an object known by an alternate (secondary) designation, here 2025 
    WHERE c.unpacked_secondary_provisional_designation = '2025 PL160'
    ORDER BY o.midpointMjdTai
 
-r-band phase-curve parameters, only where the slope was fitted (a fit that fell back to G12 = 0.5 has a NULL ``r_G12Err``), from at least 20 observations:
+r-band phase-curve parameters from at least 20 observations, where the slope was fitted (when the fit falls back to G12 = 0.5, ``r_G12Err`` is NULL):
 
 .. code-block:: sql
 
@@ -140,7 +152,7 @@ r-band phase-curve parameters, only where the slope was fitted (a fit that fell 
    FROM ppdb.SSObject
    WHERE r_G12Err IS NOT NULL AND r_nObsUsed >= 20
 
-``DiaSources`` whose nearest predicted known object lies within three times the prediction's positional uncertainty (``ephOffset`` is in arcseconds, ``ephRaErr`` and ``ephDecErr`` in degrees):
+``DiaSources`` whose nearest predicted object lies within three times the prediction's uncertainty (``ephOffset`` is in arcseconds; ``ephRaErr`` and ``ephDecErr`` are in degrees):
 
 .. code-block:: sql
 
@@ -151,7 +163,7 @@ r-band phase-curve parameters, only where the slope was fitted (a fit that fell 
      AND n.diaDistanceRank = 1
      AND n.ephOffset < 3 * 3600 * SQRT(n.ephRaErr * n.ephRaErr + n.ephDecErr * n.ephDecErr)
 
-Predicted positions of an object in visits where no ``DiaSource`` matched it (non-detections):
+Visits where an object was predicted but no ``DiaSource`` matched it (non-detections):
 
 .. code-block:: sql
 
@@ -163,8 +175,17 @@ Predicted positions of an object in visits where no ``DiaSource`` matched it (no
 Things to know
 --------------
 
-- **SSObservation and SSObject lag the alerts.** They contain only observations the MPC has accepted and published, so an observation appears days to months after it was made. Single-night detections that cannot yet be identified with an object (singletons) are currently held at the MPC's request.
-- **NearbySSO is a statement about proximity, not identification.** A row says that a known object was predicted near a ``DiaSource``; the ``DiaSource`` may be a different object or an artifact, particularly when ``ephOffset`` is large compared with the prediction's uncertainty. Observations confirmed by the MPC are in ``SSObservation``.
-- **The ssObjectId is an opaque identifier.** It stays the same when an object is numbered, but changes if the MPC changes the object's primary provisional designation (for example, when it finds that two designations are the same object); the object's rows then appear under the new ``ssObjectId``. For references that must last, record the designation or number.
-- **The tables are rebuilt daily.** Newly accepted observations, new discoveries, orbit updates, and designation changes all appear the next day, so query results can change from day to day.
-- **Check the phase-curve fits.** Where ``{band}_slope_fit_failed`` is true, G12 was fixed at 0.5 and only H was fitted; see :doc:`SSObject </products/catalogs/ss_object>`.
+- **SSObservation and SSObject lag the alerts.**
+  An observation appears only after the MPC has accepted and published it, days to months after it was made.
+  Single-night detections not yet linked to an object (singletons) are currently held at the MPC's request.
+- **NearbySSO shows proximity, not identification.**
+  The ``DiaSource`` may be a different object or an artifact, especially when ``ephOffset`` is large compared with the prediction's uncertainty.
+  Confirmed observations are in ``SSObservation``.
+- **The ssObjectId is an opaque identifier.**
+  It does not change when an object is numbered.
+  It does change if the MPC changes the object's primary provisional designation, for example when two designations turn out to be the same object.
+  For references that must last, record the designation or number.
+- **The tables are rebuilt daily.**
+  New observations, discoveries, orbits, and designation changes appear the next day, so query results can change from day to day.
+- **Check the phase-curve fits.**
+  Where ``{band}_slope_fit_failed`` is true, G12 was fixed at 0.5 and only H was fitted; see :doc:`SSObject </products/catalogs/ss_object>`.

@@ -9,7 +9,7 @@ SS object
    The Solar System tables are available via the TAP service as of Nov 30 2026.
 
 
-Derived parameters for moving (Solar System) objects accepted by the Minor Planet Center (MPC).
+Per-object properties of the Solar System objects with Rubin observations accepted by the Minor Planet Center (MPC).
 
 Schema: `PPDB SSObject table <https://sdm-schemas.lsst.io/ppdb.html#SSObject>`_
 
@@ -30,23 +30,50 @@ TAP
 Description
 ===========
 
-In these tables, a "Solar System object" (``SSObject``) is a small body known to the Minor Planet Center (MPC) with at least one Rubin observation accepted by the MPC, whether Rubin discovered it or observed a previously known object.
+``SSObject`` has one row per Solar System object with at least one Rubin observation accepted by the Minor Planet Center (MPC), whether Rubin discovered the object or observed a known one.
+Its values are computed from those observations (the object's ``SSObservation`` rows) and from the object's MPC orbit.
 
-``SSObject`` includes one row per object with at least one MPC-accepted Rubin observation, built only from those observations (``SSObservation``), with observation summaries, per-band absolute-magnitude fits, and selected orbit-derived quantities.
-The ``SSObject`` table includes the integer identifier ``ssObjectId`` (an opaque identifier that changes if the MPC changes the object's primary provisional designation; see :ref:`moving`), the unpacked primary provisional ``designation``, total and per-band observation counts, the first observation epoch and observing arc, per-band phase-angle ranges, extendedness summaries, and selected quantities derived from the input MPC orbit (``mpc_orbits``).
+The table contains:
 
-The ``SSObject`` table can be joined to the :doc:`SSObservation <ss_observation>` and :doc:`NearbySSO <nearby_sso>` tables on the ``ssObjectId`` or ``designation`` to obtain Minor Planet Center (MPC)-submitted observations (``SSObservation``) and nearest predicted known Solar System object per ``DiaSource`` (``NearbySSO``).
+- ``ssObjectId`` and ``designation`` (the unpacked primary provisional designation).
+  ``ssObjectId`` is an opaque identifier: it changes if the MPC changes the object's primary designation (see :ref:`moving`).
+- observation counts, in total and per band, the time of the first observation, and the observed arc;
+- per-band phase-curve fits (below) and phase-angle ranges;
+- extendedness summaries (``extendednessMin``, ``extendednessMedian``, ``extendednessMax``);
+- quantities computed from the MPC orbit: the Earth minimum orbit intersection distance (MOID) and the Tisserand parameter with respect to Jupiter.
+  On their own, these should not be used for hazard assessment or close-approach prediction.
 
-The per-band absolute magnitudes are fitted to the PSF photometry of the object's ``SSObservation`` rows with the H-G12 phase function.
-A 0.05 magnitude uncertainty floor is added in quadrature; a robust fit first identifies outliers beyond 10 sigma, which are excluded from the final least-squares fit.
-H and G12 are fitted together, with G12 constrained to [0, 1].
-Where the slope cannot be constrained (fewer than three usable points, a phase-angle span under 5 degrees, a fit ending at the edge of G12's range, or a singular fit), ``{band}_slope_fit_failed`` is true, G12 is set to 0.5, H is fitted with G12 fixed, and ``{band}_G12Err`` and the H-G12 covariance are NULL.
-Users should check ``{band}_slope_fit_failed``, compare the per-band ``nObsUsed`` and ``nObs`` values, inspect the phase-angle coverage (``{band}_phaseAngleMin`` and ``{band}_phaseAngleMax``) and fit statistics, and treat sparsely sampled fits and cross-band colors with care.
+Phase-curve fits
+----------------
 
-The table also contains the Tisserand parameter with respect to Jupiter and Earth minimum-orbit-intersection-distance quantities computed from the input MPC elements.
-These values should not by themselves be used for hazard classification or close-approach prediction.
+In each band, H and G12 of the H-G12 phase function are fitted to the PSF photometry, with G12 limited to the range 0 to 1.
+A 0.05 mag uncertainty floor is added in quadrature.
+A robust fit first identifies outliers beyond 10 sigma, which are left out of the final least-squares fit.
 
-The ``SSObject`` catalog is rebuilt daily from the ``SSObservation`` table, i.e., from the observations Rubin has submitted to and the MPC has accepted.
+If the slope cannot be constrained, ``{band}_slope_fit_failed`` is true.
+G12 is then fixed at 0.5 and only H is fitted; ``{band}_G12Err`` and the H-G12 covariance are NULL.
+This happens when:
+
+- fewer than three points are usable;
+- the points span less than 5 degrees of phase angle;
+- the fitted G12 lands at 0 or 1, or at 0.2, where the G12 function changes form; or
+- the fit is singular.
+
+Before using a fit, check ``{band}_slope_fit_failed``, compare ``{band}_nObsUsed`` with ``{band}_nObs``, and look at the phase-angle coverage (``{band}_phaseAngleMin``, ``{band}_phaseAngleMax``) and ``{band}_Chi2``.
+Treat sparsely sampled fits, and colors derived from them, with care.
+
+Joins
+-----
+
+- To :doc:`SSObservation <ss_observation>` on ``ssObjectId`` or ``designation``, for the individual observations.
+- To :doc:`mpc_orbits <mpc_orbits>` on ``designation``, for the orbit.
+- To :doc:`NearbySSO <nearby_sso>` on ``ssObjectId`` or ``designation``.
+
+Updates
+-------
+
+``SSObject`` is rebuilt daily from ``SSObservation``.
+
 
 Processing
 ----------

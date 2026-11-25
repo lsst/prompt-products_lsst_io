@@ -30,17 +30,23 @@ TAP
 Description
 ===========
 
-The `Minor Planet Center <https://minorplanetcenter.net/>`_ (MPC) designates small bodies and computes their orbits; see :doc:`mpc_orbits <mpc_orbits>` for the MPC's role and Rubin's observatory code.
+``numbered_identifications`` is a daily copy of the `MPC database <https://data.minorplanetcenter.net/mpcops/documentation/replicated-tables-schema/>`_ table of numbered objects.
+Each row gives an object's permanent number (``permid``) and its primary provisional designation, with its IAU designation, name, and naming credit where available.
+Use it to translate a number into the primary designation used by the Rubin tables.
 
-The PPDB ``numbered_identifications`` table is a daily auxiliary snapshot adopted from the `Minor Planet Center PostgreSQL database <https://data.minorplanetcenter.net/mpcops/documentation/replicated-tables-schema/>`_.
-It connects an object's permanent number to its primary provisional designation and includes IAU designations, names, discovery credits, and publication references where available.
-The upstream definitions and field semantics are documented in the `MPC replicated-tables schema <https://docs.minorplanetcenter.net/mpc-ops-docs/data-and-services/replicated-tables-schema/>`_.
+The columns keep the MPC's definitions; see the `MPC replicated-tables schema <https://docs.minorplanetcenter.net/mpc-ops-docs/data-and-services/replicated-tables-schema/>`_.
+For the MPC's role, see :doc:`mpc_orbits <mpc_orbits>`.
 
-This table is useful for translating between permanent numbers and the provisional designations used by the Rubin-derived Solar System tables.
+Joins
+-----
 
-The ``numbered_identifications`` table can be joined to the :doc:`mpc_orbits <mpc_orbits>` table on the ``packed_primary_provisional_designation`` to obtain Minor Planet Center (MPC)-derived orbital parameters.
+- ``unpacked_primary_provisional_designation`` to ``designation`` in :doc:`SSObservation <ss_observation>`, :doc:`SSObject <ss_object>`, :doc:`NearbySSO <nearby_sso>`, and :doc:`mpc_orbits <mpc_orbits>`.
+- ``packed_primary_provisional_designation`` to :doc:`mpc_orbits <mpc_orbits>`.
 
-A new snapshot of the ``numbered_identifications`` catalog is taken from the MPC daily, so it reflects the MPC's current designations.
+Updates
+-------
+
+A new copy is taken daily, so it reflects the MPC's current numbering.
 
 
 Processing
