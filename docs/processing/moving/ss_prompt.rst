@@ -35,7 +35,7 @@ During the day before the coming night’s observing:
 
 5. The daily data product catalogs (PPDB) are updated to include the new Solar System object discoveries from the MPC. The ``SSObservation`` catalog is updated with all observations submitted to and accepted by the MPC for all corresponding ``SSObjects``, independent of the PPDB ``DiaSource`` table. The ``NearbySSO`` catalog is updated with the nearest predicted known Solar System object for each ``DiaSource``; the ``NearbySSO`` catalog also includes the nearest objects predicted to land on a detector (or within 30" of one) but match no ``DiaSource`` (with ``DiaSourceId`` = NULL). In addition, the physical properties (e.g., absolute magnitudes, predicted apparent magnitudes, extendedness estimates, and light curve characteristics), as defined by the orbit catalog of all known ``SSObjects``, including new discoveries ingested from the MPC, are recomputed. Updated data are entered into the relevant tables.
 
-6. The Solar System daily data products (``SSObject``, ``SSObservation``, ``mpc_orbits``, ``current_identifications``, ``numbered_identifications``, ``NearbySSO``, and ``DiaSource`` tables) are released.
+6. The Solar System daily data products (``SSObject``, ``SSObservation``, ``NearbySSO``, ``mpc_orbits``, ``current_identifications``, and ``numbered_identifications`` tables) are released.
 
 7. Precovery linking is attempted for all ``SSObjects`` whose orbits were updated in the above process (or are new). Where successful, newly discovered observations are queued up for submission to the Minor Planet Center.
 

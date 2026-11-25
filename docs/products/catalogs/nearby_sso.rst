@@ -45,7 +45,7 @@ A rank above 1 means a closer ``DiaSource`` exists, which may be attributed to a
 ``diaDistanceRank`` is NULL for a prediction that matched no ``DiaSource``.
 
 To explore how many objects have been positionally matched to ``DiaSource`` detections within a radius of some number of arcseconds, query ``NearbySSO``.
-Alternatively, to search for non-detections of known Solar System objects in prompt processing, join the ``SSObject`` and/or ``SSObservation`` table to the ``NearbySSO`` table using the ``ssObjectId``; non-detections will have NULL ``diaSourceIds``).
+Alternatively, to search for non-detections of known Solar System objects in prompt processing, join the ``SSObject`` table to the ``NearbySSO`` table using the ``ssObjectId``; non-detections will have NULL ``diaSourceIds``).
 
 The ``NearbySSO`` table can be joined to the :doc:`SSObject <ss_object>` and :doc:`SSObservation <ss_observation>` tables on the ``ssObjectId`` or ``designation`` to obtain Rubin-derived object-level photometry and summary properties (``SSObject``) and Minor Planet Center (MPC)-submitted observations (``SSObservation``). The ``NearbySSO`` table can also be joined to the :doc:`DiaSource <dia_source>` table on the ``diaSourceId``, should the nearest predicted known Solar Sytem object be positionally matched to a ``DiaSource`` detection.
 
