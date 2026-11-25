@@ -32,12 +32,14 @@ Fluxes and magnitudes are in Rubin's own filters, *ugrizy* (``band``), not in Jo
 The predicted magnitude ``ephVmag`` is a V magnitude, from the MPC's absolute magnitude.
 
 ``psfFlux`` is measured on the image the detection was made on (``measuredOn``).
-On a difference image the object's flux remains because the template doesn't contain the moving object.
-If it does, for instance because the object was in the field when the template's images were taken, the flux and position can be biased.
+On a difference image, the moving object's flux survives the subtraction because the template, built from other nights, normally doesn't contain the object.
+If the template happens to contain it, the difference-image flux and position can be biased.
 
 ``apFlux`` is the flux in a 12-pixel-radius aperture, available for nearly every row.
 Rows measured on visit images (``measuredOn = 'science'``) also have 3-, 6-, and 25-pixel apertures (``ap03Flux``, ``ap06Flux``, ``ap25Flux``), useful for looking for comae.
 Aperture fluxes are not corrected for the light outside the aperture.
+
+For fast-moving objects, difference-image rows also have the results of a trailed-source fit: ``trailFlux``, ``trailLength`` (in arcseconds), and ``trailAngle``.
 
 
 Flags
@@ -64,42 +66,41 @@ Phase curves and colors
 ``SSObject`` gives, for each band, an absolute magnitude H and slope G12, fitted to the object's PSF photometry with the H-G12 phase function.
 How the fit is done, and when the slope falls back to a fixed value, is described in :doc:`tables`.
 
-Two cautions apply to using these values for colors.
-First, the bands are fitted separately, each over its own range of phase angles, so differences between bands (for example ``g_H - r_H``) can be thrown off when one band's coverage is poor.
-Second, rotation is not modeled: an object's brightness changes as it rotates, and that variation goes into the fit's scatter.
-Population-wide, the colors behave as expected; for individual objects, look at ``{band}_nObsUsed``, the phase-angle ranges, and ``{band}_slope_fit_failed`` before trusting a color.
+Each ``{band}_H`` is an absolute magnitude in that Rubin band, on the AB system.
+It is not directly comparable with ``mpc_orbits.h``, the MPC's V-band absolute magnitude in the H-G system.
+
+Three cautions apply to using these values for colors:
+
+- The bands are fitted separately, each over its own range of phase angles, so a difference such as ``g_H - r_H`` can be thrown off when one band's coverage is poor.
+- If one band's slope was fitted and the other's fell back to G12 = 0.5, the two H values rest on different phase functions. Compare bands that were treated alike.
+- Rotation is not modeled: an object's brightness changes as it rotates, and that variation goes into the fit's scatter.
+
+Before trusting the color of an individual object, look at ``{band}_nObsUsed``, the phase-angle ranges, and ``{band}_slope_fit_failed``.
 
 Rubin does not provide rotation periods, light-curve amplitudes, taxonomic classes, sizes, or albedos.
 The individual observations in ``SSObservation`` are there for you to derive them.
+The tables also don't currently record which objects Rubin discovered.
 
 
 What the tables contain, and what they don't
 ============================================
 
-``SSObservation`` contains a detection only when **all** of the following are true:
-
-- Rubin detected it, on a difference image or, where no template existed, on a visit image;
-- it was associated with a known object or linked into a new one, and submitted to the MPC;
-- the MPC accepted and published it.
-
-So the tables do **not** contain:
-
-- detections the MPC has not yet accepted and published;
-- single-night detections that can't yet be linked to an object (singletons), which are currently not being submitted to the MPC, at the MPC's request;
-- objects Rubin saw but has not linked;
-- fields observed before a template existed for them, except where Rubin measured moving objects on the visit images.
+As :doc:`concepts` explains, ``SSObservation`` contains a detection only if Rubin detected it, associated or linked it to an object and submitted it, and the MPC accepted and published it.
+So the tables do not contain detections the MPC hasn't yet published, singletons, or objects Rubin saw but hasn't linked.
+Fields observed before a template existed for them are covered only where Rubin measured moving objects on the visit images.
 
 These selection effects depend on the field, the time, and the state of Rubin's processing, and they are not characterized in the PPDB.
 The PPDB is therefore well suited to studying individual objects and to looking for interesting ones, but not to measuring the sizes or properties of populations.
 For population studies, use a data release, whose selection is characterized.
 
 **Non-detections.**
-``NearbySSO`` rows with a NULL ``diaSourceId`` mark visits where a known object was predicted to fall on, or near, a detector, but no ``DiaSource`` matched it.
-That can happen because the object was too faint, because it fell in a gap between detectors or on masked pixels, because no template existed, or because its orbit is uncertain.
+``NearbySSO`` rows with a NULL ``diaSourceId`` mark visits where a known object was predicted to fall on a detector, or within 30 arcseconds of one, but no ``DiaSource`` matched it.
+So a row does not guarantee that the object was on the detector: it may have fallen in a gap between detectors (``detector`` is then the nearest one).
+Even when it was on the detector, it may have gone undetected because it was too faint, because it fell on masked pixels, because no template existed, or because its orbit is uncertain.
 The PPDB does not record each visit's depth, so these rows are not, on their own, upper limits on brightness.
 
 
 Where to go next
 ================
 
-:doc:`tables` describes each table and its most useful columns.
+:doc:`recipes` puts all this to work.

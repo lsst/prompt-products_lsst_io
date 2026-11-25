@@ -11,11 +11,8 @@ Most are explained in more detail elsewhere in this guide.
 About the data
 ==============
 
-**SSObservation and SSObject lag the alerts.**
-An observation appears only after the MPC has accepted and published it.
-
-**Singletons are not in the tables.**
-Single-night detections that can't yet be linked to an object are currently not being submitted to the MPC, at the MPC's request.
+**SSObservation and SSObject lag the alerts, and don't contain singletons.**
+An observation appears only after the MPC has accepted and published it; singletons are currently not being submitted to the MPC, at the MPC's request.
 
 **The tables change every day.**
 They follow the MPC's latest observations, orbits, and designations, so the same query can return different results tomorrow.
@@ -30,17 +27,15 @@ It changes if the MPC changes an object's primary designation.
 Record the designation or number instead.
 
 **Check the phase-curve fits.**
-Where ``{band}_slope_fit_failed`` is true, G12 was fixed at 0.5 and only H was fitted.
-For comets, the H-G12 fit is not meaningful.
+Where ``{band}_slope_fit_failed`` is true, G12 was fixed at 0.5; for comets, the fit is not meaningful.
 
 **The PPDB is not built for population statistics.**
-What reaches the tables depends on detection, linking, and MPC acceptance, and that selection is not characterized here.
-Use a data release for population studies.
+Its selection is not characterized; use a data release for population studies.
 
 **Mind the units.**
 Positions and position uncertainties are in degrees, but ``ephOffset`` and its components are in arcseconds.
-Fluxes are in nJy.
-Times are TAI, except ``mpc_orbits.epoch_mjd``, which is TT.
+Fluxes are in nJy; distances in au.
+Times are TAI (UTC + 37 s), except ``mpc_orbits.epoch_mjd``, which is TT, and are not corrected for light travel time.
 
 
 About the TAP service
@@ -56,7 +51,7 @@ At present:
   Convert angles yourself; to get radians from degrees, multiply by 0.0174532925.
   ``SIN``, ``COS``, ``SQRT``, ``LOG10``, and ``POWER`` work.
 - **Run large queries one at a time.**
-  Several large asynchronous queries running at once can hang.
+  Use asynchronous queries for large results, and don't run several at once: they can hang.
 
 
 

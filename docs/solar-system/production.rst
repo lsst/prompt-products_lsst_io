@@ -26,14 +26,6 @@ Once a day, the Solar System tables are rebuilt from scratch:
 6. **The tables are checked** for internal consistency, then loaded into the PPDB, replacing the previous day's.
 
 
-Observation times
-=================
-
-Rubin's camera has a shutter whose blades sweep across the focal plane, so different parts of an image are exposed at slightly different times.
-The ``midpointMjdTai`` times in ``SSObservation`` and ``NearbySSO`` are corrected for this, at each source's position, using the shutter's measured motion.
-The times in the PPDB's ``DiaSource`` table, and in Rubin's earlier MPC submissions, are the visit's midpoint.
-
-
 Where to go next
 ================
 

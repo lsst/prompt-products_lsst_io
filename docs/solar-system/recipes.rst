@@ -38,6 +38,22 @@ This works for numbered comets too, for example ``permid = '29P'``.
 From another designation: join ``current_identifications`` the same way, on ``unpacked_primary_provisional_designation``, and select on ``unpacked_secondary_provisional_designation``.
 
 
+A light curve
+=============
+
+One band, in time order, with the time corrected for light travel time.
+The correction subtracts the light time, ``topoRange`` multiplied by 0.0057755183 days per au.
+
+.. code-block:: sql
+
+   SELECT midpointMjdTai,
+          midpointMjdTai - 0.0057755183 * topoRange AS lightTimeCorrectedMjdTai,
+          psfMag, psfMagErr, topoRange, helioRange, phaseAngle
+   FROM ppdb.SSObservation
+   WHERE designation = '1993 FG21' AND band = 'r'
+   ORDER BY midpointMjdTai
+
+
 An object's summary and orbit
 =============================
 
@@ -82,7 +98,7 @@ This query returns all their observations:
    WHERE s.tisserand_J BETWEEN 2 AND 3
    ORDER BY o.designation, o.midpointMjdTai
 
-The cut 2 < T\ :sub:`J` < 3 also selects the Jupiter Trojans; add a cut on ``mpc_orbits.a`` or ``q`` to exclude them.
+The cut 2 < T\ :sub:`J` < 3 also selects Jupiter Trojans, Hildas, and some outer main-belt asteroids; add cuts on ``mpc_orbits.a``, ``e``, or ``q`` to exclude them.
 
 
 Phase-curve fits
@@ -104,6 +120,7 @@ Colors
 
 Rough colors from the per-band absolute magnitudes, for objects with at least five observations in each band.
 Read the cautions in :doc:`quality` before using colors of individual objects.
+For cleaner colors, also require the slope to have been fitted in both bands, for example ``AND g_G12Err IS NOT NULL AND r_G12Err IS NOT NULL``.
 
 .. code-block:: sql
 
@@ -115,7 +132,7 @@ Read the cautions in :doc:`quality` before using colors of individual objects.
 Comets
 ======
 
-Observations of comets, with aperture magnitude, extendedness, and the directions in which a tail would point:
+Observations of objects with cometary designations, with aperture magnitude, extendedness, and the directions in which a tail would point:
 
 .. code-block:: sql
 
@@ -123,7 +140,10 @@ Observations of comets, with aperture magnitude, extendedness, and the direction
           o.extendedness, o.helioRange, o.ephAntiSunPA, o.ephAntiMotionPA
    FROM ppdb.SSObservation AS o
    WHERE o.designation LIKE 'C/%' OR o.designation LIKE 'P/%'
+      OR o.designation LIKE 'D/%' OR o.designation LIKE 'I/%'
    ORDER BY o.designation, o.midpointMjdTai
+
+Active asteroids and other objects with asteroidal designations are not selected by this query; select them by designation or by orbit.
 
 
 Everything Rubin saw in a field
@@ -142,8 +162,7 @@ Solar System observations within one degree of a position, in a ten-day window:
 What known object could this detection be?
 ==========================================
 
-The detections of one visit whose nearest predicted object lies within three times the prediction's uncertainty.
-``ephOffset`` is in arcseconds; ``ephRaErr`` and ``ephDecErr`` are in degrees.
+The detections of one visit whose nearest predicted object lies within three times the prediction's uncertainty:
 
 .. code-block:: sql
 
@@ -153,6 +172,7 @@ The detections of one visit whose nearest predicted object lies within three tim
    WHERE n.visit = 2026011200081
      AND n.diaSourceId IS NOT NULL
      AND n.diaDistanceRank = 1
+     -- ephOffset is in arcseconds; ephRaErr and ephDecErr are in degrees
      AND n.ephOffset < 3 * 3600 * SQRT(n.ephRaErr * n.ephRaErr + n.ephDecErr * n.ephDecErr)
 
 To get the detections' measurements, join ``ppdb.DiaSource`` on ``diaSourceId``.

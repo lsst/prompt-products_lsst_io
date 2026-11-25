@@ -19,7 +19,7 @@ Columns to start with:
 - ``designation`` and ``ssObjectId``: the object.
 - ``midpointMjdTai``: the time (TAI), corrected for the shutter's motion.
 - ``band``, ``ra``, ``dec``, ``psfMag``, ``psfMagErr``: the measurement.
-- ``phaseAngle``, ``helioRange``, ``topoRange``, ``elongation``: the observing geometry, from the orbit.
+- ``phaseAngle``, ``helioRange``, ``topoRange``, ``elongation``: the observing geometry, from the orbit (angles in degrees, distances in au).
 - ``ephRa``, ``ephDec``, ``ephOffset``: the predicted position and the residual from it.
 - ``ephAntiSunPA`` and ``ephAntiMotionPA``: the position angles of the anti-Sun and anti-motion directions, where a comet's ion tail and dust trail point.
 - ``helio_x``, ``helio_y``, ``helio_z`` and ``topo_x``, ``topo_y``, ``topo_z`` (with their velocities): the object's heliocentric and topocentric state vectors.
@@ -39,8 +39,8 @@ Columns to start with:
 
 - ``designation`` and ``ssObjectId``.
 - ``nObs``, ``arc``, ``firstObservationMjdTai``: how many Rubin observations there are, over what span, and since when.
-- ``{band}_H``, ``{band}_G12``, and their uncertainties, for each band *ugrizy*: the phase-curve fits (below).
-- ``{band}_nObs``, ``{band}_nObsUsed``, ``{band}_phaseAngleMin``, ``{band}_phaseAngleMax``: what each band's fit is based on.
+- ``{band}_H``, ``{band}_G12``, and their uncertainties, for each band *ugrizy*: the phase-curve fits (below). H is an AB magnitude in the Rubin band.
+- ``{band}_nObs``, ``{band}_nObsUsed``, ``{band}_phaseAngleMin``, ``{band}_phaseAngleMax``: what each band's fit is based on (phase angles in degrees).
 - ``MOIDEarth``: the minimum orbit intersection distance with Earth's orbit, with related quantities.
 - ``tisserand_J``: the Tisserand parameter with respect to Jupiter.
 - ``extendednessMin``, ``extendednessMedian``, ``extendednessMax``: how extended the object's detections look.
@@ -49,7 +49,7 @@ How the phase curves are fitted
 -------------------------------
 
 In each band, H and G12 are fitted together to the object's PSF magnitudes, with the H-G12 phase function and with G12 limited to the range 0 to 1.
-A small floor is added to each magnitude's uncertainty, and outliers are rejected with a robust fit before the final fit.
+A 0.05 mag floor is added in quadrature to each magnitude's uncertainty, and outliers are rejected with a robust fit before the final fit.
 
 When the data can't constrain the slope, ``{band}_slope_fit_failed`` is true: G12 is fixed at 0.5 and only H is fitted, and ``{band}_G12Err`` and the H-G12 covariance are NULL.
 That happens when:
@@ -149,4 +149,4 @@ Which table do I need?
 Where to go next
 ================
 
-:doc:`recipes` puts these tables to work.
+:doc:`quality` covers the uncertainties and flags, and what the tables do and don't contain.

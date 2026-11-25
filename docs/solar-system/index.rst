@@ -13,8 +13,8 @@ It does not assume you know anything about Rubin.
    :hidden:
 
    concepts
-   quality
    tables
+   quality
    recipes
    caveats
    production
@@ -25,9 +25,9 @@ Your first query
 
 The Solar System tables live in the Prompt Products Database (PPDB), which you query with ADQL, a dialect of SQL, through the Rubin Science Platform (RSP).
 
-1. **Get an RSP account.** Follow the `instructions to sign up <https://rsp.lsst.io/guides/getting-started/get-an-account.html>`_. RSP access requires Rubin data rights; see :doc:`/access/index`.
+1. **Get an RSP account.** Follow the `instructions to sign up <https://rsp.lsst.io/guides/getting-started/get-an-account.html>`_. The RSP is available to Rubin data rights holders; see :doc:`/access/index`.
 2. **Open a query interface.** Use the Portal's ADQL search or a notebook in the Notebook Aspect (see :doc:`recipes` for the Python version), and choose the PPDB TAP service.
-3. **Run a query.** This one returns every Rubin observation of Pluto, (134340):
+3. **Run a query.** This one returns every Rubin observation of Pluto, (134340), a famous object chosen here only as a demonstration:
 
 .. code-block:: sql
 
@@ -58,7 +58,8 @@ Two things to know before you start
 **The tables are rebuilt every day.**
 They follow the MPC: new observations, new discoveries, improved orbits, and changed designations all appear the next day.
 That keeps them current, but it also means that the same query can return different results tomorrow.
-If you use the results in a paper, save the table you queried and note the date.
+If you use the results in a paper, save the table you queried and note the date and time of your query.
+The latest ``updated_at`` in ``mpc_orbits`` (``SELECT MAX(updated_at) FROM ppdb.mpc_orbits``) tells you roughly when the MPC snapshot behind that day's tables was taken.
 
 **The PPDB is the current view; data releases are the reference catalogs.**
 The PPDB gives you Rubin's best current knowledge of the Solar System, updated daily.
@@ -87,7 +88,7 @@ The PPDB is one of four places to find Rubin's Solar System data.
      - Public, through the :doc:`alert brokers </access/index>`.
    * - The PPDB (this guide)
      - Rubin's accepted observations with their full measurements, object summaries, predictions near every detection, and the MPC's orbits and designations.
-     - The contents are public; querying them requires the RSP. See :doc:`/access/index`.
+     - Queried through the RSP, which requires data rights. The contents themselves are public: you may share query results with anyone. See :doc:`/access/index`.
    * - Data releases
      - Versioned, homogeneously processed catalogs and images.
      - Data rights; see :doc:`/access/index`.
@@ -108,13 +109,16 @@ You will meet these words in column names and in the rest of this guide.
 
 **Source**: a source detected and measured on the visit image itself. Rubin uses these for moving objects where no template exists yet.
 
+The PPDB contains catalogs only.
+For images, see :doc:`/access/index`: Rubin's prompt images will become available to data rights holders through the RSP.
+
 
 Where to go next
 ================
 
 - :doc:`concepts` explains how an observation gets into the tables and how to identify objects.
-- :doc:`quality` covers uncertainties, flags, and what the tables do and don't contain.
 - :doc:`tables` is a tour of each table and its most useful columns.
+- :doc:`quality` covers uncertainties, flags, and what the tables do and don't contain.
 - :doc:`recipes` has copy-and-paste queries for common tasks.
 - :doc:`caveats` lists the things that most often trip people up.
 - :doc:`production` describes how the tables are made, for the curious.

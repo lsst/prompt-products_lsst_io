@@ -39,7 +39,7 @@ A detection becomes a row of ``SSObservation`` in four steps:
 Two things follow.
 First, ``SSObservation`` and ``SSObject`` lag the alerts: an observation appears only after the MPC has accepted and published it.
 Second, single-night detections that can't yet be linked to an object (singletons) are currently not being submitted to the MPC, at the MPC's request, so they are not in ``SSObservation``.
-``NearbySSO`` has no such lag: it covers every detection in the PPDB, as soon as it is there.
+``NearbySSO`` has no such lag: it covers every difference-image detection (``DiaSource``) in the PPDB, as soon as it is there. It does not cover measurements made on visit images (``Sources``).
 
 
 Where the measurements come from
@@ -79,30 +79,36 @@ The Solar System tables and DiaSource are separate datasets
 ===========================================================
 
 The PPDB also contains Rubin's alert data: ``DiaSource``, ``DiaObject``, and ``DiaForcedSource``.
-Think of these and the Solar System tables as two separate datasets.
-You should almost never need to join them.
+Think of these and the Solar System tables as two separate datasets; you should almost never need to join them.
+``SSObservation`` already contains the full measurement of every observation, and many of its measurements are not in ``DiaSource`` at all.
+(Its ``diaSourceId`` refers to the PPDB's ``DiaSource`` table only in rows with ``processing = 'AP-DS'``.)
 
-``SSObservation`` has a ``diaSourceId`` column, but only rows with ``processing = 'AP-DS'`` (alert production, difference images) refer to the PPDB's ``DiaSource`` table.
-In other rows, ``diaSourceId`` identifies a source of a different processing; it is unique only together with ``processing``.
-Even for ``AP-DS`` rows, the join isn't needed: each ``SSObservation`` row already contains the full measurement.
-
-The exception is ``NearbySSO``.
-It is built on the PPDB's ``DiaSources``, so joining it to ``DiaSource`` on ``diaSourceId`` is how you get the measurements of the detections it lists.
+The exception is ``NearbySSO``, which is built on the PPDB's ``DiaSources``: join it to ``DiaSource`` on ``diaSourceId`` to get the measurements of the detections it lists.
 
 
 Time
 ====
 
 All times in the Solar System tables are in TAI, as Modified Julian Dates.
-``midpointMjdTai`` is the time of the observation, corrected for the motion of the camera's shutter across the focal plane.
-Use it as the observation time.
-(``midpointMjdTai_flag`` marks the rare rows where no correction was available and the visit's midpoint is used instead.)
-
+TAI is currently 37 seconds ahead of UTC, the time scale of MPC observation records and of JPL Horizons' default output.
 The one exception is the orbit epoch in ``mpc_orbits``, ``epoch_mjd``, which is in TT.
 See :doc:`/products/time_measurements/index` for converting between time scales.
+
+``midpointMjdTai`` is the time of the observation at the detector: the middle of the exposure, at the source's position on the focal plane.
+Rubin's camera shutter sweeps across the focal plane, so different parts of an image are exposed at slightly different times; ``midpointMjdTai`` is corrected for this.
+(``midpointMjdTai_flag`` marks the rare rows where no correction was available and the visit's midpoint is used instead.)
+It is not corrected for light travel time; ``topoRange``, the distance at the time the light left the object, lets you do so (see :doc:`recipes`).
+The times in the PPDB's ``DiaSource`` table, and in Rubin's earlier MPC submissions, are the visit's midpoint, without the shutter correction.
+
+
+Positions
+=========
+
+Measured positions (``ra``, ``dec``) and predicted positions (``ephRa``, ``ephDec``) are both in ICRS, as seen from Rubin.
+Offsets in right ascension, such as ``ephOffsetRa``, include the cos(dec) factor.
 
 
 Where to go next
 ================
 
-:doc:`quality` covers the uncertainties and flags, and what the tables do and don't contain.
+:doc:`tables` takes you through each table and its most useful columns.
