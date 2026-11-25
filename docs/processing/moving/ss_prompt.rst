@@ -44,18 +44,20 @@ Production of Solar System PPDB tables
 
 .. image:: images/LSST-Solar-System-Processing-Infographic-PPDB-production.png
 
-The above infographic illustrates the process by which the Solar System PPDB tables are produced (see step 5 above).
+The infographic above shows how the Solar System PPDB tables are produced (step 5 above).
 
-The LSST Camera raw images are input the prompt processing pipeline to perform difference imaging and generate alerts.
+Raw LSSTCam images are processed by Prompt Processing, which performs difference imaging and issues alerts.
+Its detections are kept in the Alert Production Database (APDB; schema: `<https://sdm-schemas.lsst.io/apdb.html>`_) and accumulated in the PPDB (``DiaSource``, ``DiaObject``, and ``DiaForcedSource``).
+See the :doc:`/processing/association/index` page for the association of known Solar System objects during nighttime observations.
 
-The alerts are kept in the Alert Production Database (APDB; schema: `<https://sdm-schemas.lsst.io/apdb.html>`_).
-See the :doc:`/processing/association/index` page for more information on the association of known Solar System Objects (SSOs) during nighttime observations.
+Each day, the Solar System tables are built from:
 
-The Prompt Products Database (PPDB) contains the same data (and more) as the APDB accumulated and queryable. This includes the ``DiaSource``, ``DiaObject``, ``DiaForcedSource``, and Solar System tables.
+- the PPDB ``DiaSources`` (for ``NearbySSO``) and the measurements Rubin submitted to the MPC (for ``SSObservation``), which include measurements from reprocessed data (e.g., DP1 and DP2) and direct image ``Sources``;
+- a snapshot of the MPC database: the orbit catalog, the designation tables, and the MPC's record of Rubin's accepted observations;
+- the geometry of each visit and detector (WCS and detector footprints), used to place predicted positions on the focal plane;
+- each source's mid-exposure time corrected for the shutter's motion across the focal plane (a difference of up to about 0.24 s from the visit's midpoint).
 
-The ``DiaSource`` catalog from the PPDB is ingested into the ssp-tools build along with the shutter timing information, visit table, and MPC tables.
-``ssp-tools`` then matches each MPC-accepted Rubin observation to its ``DiaSource`` or ``Source`` measurement, computes ephemerides for all known Solar System objects using the ASSIST integrator, and performs internal checks.
-Shutter timing corrections are included in the ``SSObservation`` and ``NearbySSO`` tables; the ``DiaSource`` and past MPC submissions use the visit midpoint.
-The daily Solar System data products (i.e., the Solar System PPDB tables) are then generated.
+Each MPC-accepted Rubin observation is matched to the measurement it was submitted from, ephemerides of known objects are computed from the MPC orbits with the ASSIST integrator, and the tables are checked for internal consistency before they are released.
+Times in ``SSObservation`` and ``NearbySSO`` are corrected for the shutter's motion where a correction is available; ``DiaSource`` times, and the times in Rubin's past MPC submissions, are the visit's midpoint.
 
 The Solar System PPDB tables include ``SSObservation``, ``SSObject``, ``NearbySSO``, ``mpc_orbits``, ``current_identifications``, and ``numbered_identifications``. For more information on each catalog, see the :doc:`/products/catalogs/index` pages.

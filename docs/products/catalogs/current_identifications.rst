@@ -30,11 +30,7 @@ TAP
 Description
 ===========
 
-The `Minor Planet Center <https://minorplanetcenter.net/>`_ (MPC) is the single worldwide location for receipt and distribution of positional measurements of small bodies.
-The MPC is responsible for the identification, designation, and orbit computation for all moving objects.
-
-All solar system objects discovered by Rubin Observatory with LSSTCam are reported to the `Minor Planet Center <https://minorplanetcenter.net/>`_ (MPC).
-The MPC has assigned `"observatory code" <https://minorplanetcenter.net/iau/lists/ObsCodesF.html>`_ ``X05`` to the Rubin Observatory.
+The `Minor Planet Center <https://minorplanetcenter.net/>`_ (MPC) designates small bodies and computes their orbits; see :doc:`mpc_orbits <mpc_orbits>` for the MPC's role and Rubin's observatory code.
 
 The PPDB ``current_identifications`` table is a daily auxiliary snapshot adopted from the `Minor Planet Center PostgreSQL database <https://data.minorplanetcenter.net/mpcops/documentation/replicated-tables-schema/>`_.
 It maps primary and secondary provisional designations that refer to the same physical object and includes both self-mappings and mappings among aliases.
