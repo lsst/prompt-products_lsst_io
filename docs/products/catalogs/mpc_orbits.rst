@@ -6,7 +6,7 @@ MPC orbits
 
 .. important::
 
-   Prompt catalogs are not yet available.
+   The Solar System tables are available via the TAP service as of Nov 30 2026.
 
 
 The orbit catalog produced by the `Minor Planet Center <https://minorplanetcenter.net/>`_ (MPC).
@@ -37,8 +37,8 @@ All solar system objects discovered by Rubin Observatory with LSSTCam are report
 The MPC has assigned `"observatory code" <https://minorplanetcenter.net/iau/lists/ObsCodesF.html>`_ ``X05`` to the Rubin Observatory.
 
 The PPDB ``mpc_orbits`` table is a daily snapshot of the `MPC PostgreSQL orbit table <https://data.minorplanetcenter.net/mpcops/documentation/replicated-tables-schema/>`_.
-It contains MPC orbital elements, photometric parameters, fit metadata, and uncertainties for all known solar system objects and the linked difference-image detections and direct-image detections of moving objects submitted by Rubin (i.e., this catalog is not limited to Rubin discoveries or observations only).
-An important note is that the ``epoch_mjd`` provided in the ``mpc_orbits`` catalog is measured in TAI, but Terrestrial Time (TT).
+It contains MPC orbital elements, photometric parameters, fit metadata, and uncertainties for all known Solar System objects, computed by the MPC from the observations of all programs (i.e., it is not limited to objects discovered or observed by Rubin). It contains no individual observations.
+Note that the orbit epoch, ``epoch_mjd``, is in Terrestrial Time (TT), not TAI (see :doc:`/products/time_measurements/index`).
 The upstream definitions and field semantics are documented in the `MPC replicated-tables schema <https://docs.minorplanetcenter.net/mpc-ops-docs/data-and-services/replicated-tables-schema/>`_.
 
 The ``designation`` column contains the unpacked primary provisional designation.
@@ -47,13 +47,13 @@ For improved performance, SQL joins on integer identifiers such as ``ssObjectId`
 
 The ``mpc_orbits`` table can be joined to the :doc:`SSObject <ss_object>` and :doc:`SSObservation <ss_observation>` tables on the ``designation`` to obtain Rubin-derived object-level photometry and summary properties (``SSObject``) and Minor Planet Center (MPC)-submitted observations (``SSObservation``).
 
-The PPDB contains all alerts from roughly September 2025 onwards as well as the accumulated Solar System tables. The ``mpc_orbits`` catalog is ingested daily from the MPC and includes moving object observations Rubin submits to and are accepted by the MPC as well as discoveries and detections by other contemporaneous programs made during the past 24 hours.
+A new snapshot of the ``mpc_orbits`` catalog is taken from the MPC daily, so it includes the newest discoveries and orbit updates from all programs, Rubin's included.
 
 
 Processing
 ----------
 
-The MPC orbits catalog is the result of :doc:`/processing/moving/index`.
+The MPC orbits catalog is a daily snapshot of the MPC's orbit catalog; it is used by :doc:`/processing/moving/index` but not modified.
 
 Tutorials
 ---------

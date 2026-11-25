@@ -5,8 +5,8 @@ Solar System Processing (SSP)
 #############################
 
 Solar System Processing includes both the association of known Solar System Objects (SSOs) during nighttime observations (see the :doc:`/processing/association/index` page) as well as the discovery of new SSOs by linking unassociated ``DiaSources`` during daytime processing.
-All Rubin SSO observations and discoveries are reported to the Minor Planet Center (MPC).
-In addition, Rubin interfaces with the Minor Planet Center (MPC) for physical parameter derivation and orbit fitting.
+Rubin reports its SSO observations and discoveries to the Minor Planet Center (MPC); single-night detections of objects that cannot yet be identified (singletons) are currently held at the MPC's request.
+The MPC identifies the observations, assigns designations, and computes the orbits of all known objects; Rubin derives per-object quantities (e.g., per-band absolute magnitudes) from its own MPC-accepted observations.
 
 
 General overview of SSP
@@ -49,7 +49,10 @@ Prompt Products Database Solar System Tables
 
 .. image:: images/LSST-Solar-System-Processing-Infographic-PPDB.png
 
-The prompt products database (PPDB) delivers Rubin small body discoveries and associations between Rubin difference image detections (``DiaSources``) or direct image detections (``Sources``) and known small bodies (``SSObservation``) as well as Rubin-derived object-level photometry and summary properties (``SSObject``) and is updated on a daily basis. The PPDB contains all alerts from roughly September 2025 onwards as well as the accumulated Solar System tables. The ``DiaSource`` catalog is an alert product produced from Prompt Processing, while the ``SSObservation``, ``SSObject``, and ``NearbySSO`` catalogs are rebuilt daily from the moving object observations Rubin submits to and are accepted by the MPC. The PPDB also includes daily snapshots of three tables from the `Minor Planet Center (MPC) PostgreSQL database <https://data.minorplanetcenter.net/mpcops/documentation/replicated-tables-schema/>`_ (see :doc:`PPDB catalogs </products/catalogs/index>` for details):
+The prompt products database (PPDB) delivers Rubin's MPC-accepted observations of small bodies, each with the difference image detection (``DiaSource``) or direct image detection (``Source``) it was measured from (``SSObservation``), Rubin-derived object-level photometry and summary properties (``SSObject``), and the known objects predicted near each ``DiaSource`` (``NearbySSO``); it is updated daily.
+The ``DiaSource`` catalog is an alert product of Prompt Processing; the PPDB holds the alerts from 2025 October 24 onwards.
+The ``SSObservation`` and ``SSObject`` catalogs are rebuilt daily from Rubin's observations accepted by the MPC, which include observations from reprocessings of earlier data (e.g., DP1 and DP2) as well as from alert production.
+The ``NearbySSO`` catalog is rebuilt daily from all PPDB ``DiaSources`` and the current MPC orbits. The PPDB also includes daily snapshots of three tables from the `Minor Planet Center (MPC) PostgreSQL database <https://data.minorplanetcenter.net/mpcops/documentation/replicated-tables-schema/>`_ (see :doc:`PPDB catalogs </products/catalogs/index>` for details):
 
 .. list-table::
    :header-rows: 1
@@ -58,11 +61,11 @@ The prompt products database (PPDB) delivers Rubin small body discoveries and as
    * - Table
      - Purpose
    * - :doc:`SSObservation </products/catalogs/ss_observation>`
-     - One row per MPC record of each Rubin-submitted and MPC-accpeted observation, joined to the full measurement from which it was submitted (a difference image ``DiaSource`` or a direct image ``Source``) and its ephemeris from ``mpc_orbits``, independent of the PPDB ``DiaSource`` table.
+     - One row per MPC record of each Rubin-submitted and MPC-accepted observation, joined to the full measurement from which it was submitted (a difference image ``DiaSource`` or a direct image ``Source``) and its ephemeris from ``mpc_orbits``, independent of the PPDB ``DiaSource`` table.
    * - :doc:`SSObject </products/catalogs/ss_object>`
-     - One row per recovered known object built only from the MPC-accepted observations (``SSObservations``), with observation summaries, per-band absolute-magnitude fits, and selected orbit-derived quantities.
+     - One row per object with at least one MPC-accepted Rubin observation, built only from those observations (``SSObservation``), with observation summaries, per-band absolute-magnitude fits, and selected orbit-derived quantities.
    * - :doc:`NearbySSO </products/catalogs/nearby_sso>`
-     - One row per nearest predicted known Solar System object for each ``DiaSource``, including the nearest objects predicted to land on a detector but match no ``DiaSource`` (with ``DiaSourceId`` = NULL).
+     - For each ``DiaSource``, the nearest known Solar System object predicted within 5 arcseconds (15 arcseconds for comets); and, with a NULL ``diaSourceId``, each prediction on (or within 30 arcseconds of) a detector that matched no ``DiaSource``.
    * - :doc:`mpc_orbits </products/catalogs/mpc_orbits>`
      - An MPC orbit-catalog snapshot containing orbital elements and associated fit information.
    * - :doc:`current_identifications </products/catalogs/current_identifications>`
@@ -70,9 +73,9 @@ The prompt products database (PPDB) delivers Rubin small body discoveries and as
    * - :doc:`numbered_identifications </products/catalogs/numbered_identifications>`
      - An MPC mapping between permanent numbers and primary provisional designations.
 
-**Join Keys:** The ``SSObject``, ``SSObservation``, and ``NearbySSO`` catalogs can be joined using the ``ssObjectId``. The ``SSObject``, ``SSObservation``, and ``mpc_orbits`` catalogs can be joined using the ``designation``. The ``DiaSource`` and ``DiaForcedSource`` catalogs can be joined with the ``NearbySSO`` table using the ``diaSourceId``. **NOTE:** The ``SSObservation`` table contains the ``DiaSource``- or ``Source``-like columns for the difference image detection or direct image detection from which the Rubin observation was submitted to the MPC and is independent of the PPDB ``DiaSource`` table; there should thus never be a need to join the ``SSObservation`` and ``DiaSource`` tables.
+**Join Keys:** The ``SSObject``, ``SSObservation``, and ``NearbySSO`` catalogs can be joined using the ``ssObjectId``. The ``SSObject``, ``SSObservation``, and ``mpc_orbits`` catalogs can be joined using the ``designation``. The ``DiaSource`` catalog can be joined with the ``NearbySSO`` table using the ``diaSourceId``. **NOTE:** The ``SSObservation`` table contains the ``DiaSource``- or ``Source``-like columns for the difference image detection or direct image detection from which the Rubin observation was submitted to the MPC and is independent of the PPDB ``DiaSource`` table; there should thus never be a need to join the ``SSObservation`` and ``DiaSource`` tables.
 
-To retrieve the observations of Solar System objects that Rubin has submitted to and been accepted by the Minor Planet Center (MPC), use the ``SSObservation`` table. For orbit information, use the ``mpc_orbits`` table, and for per-object properties, such as per-band absolute magnitudes, use the ``SSObject`` table. These three tables can be joined using the Solar System object ``designation``. To explore how many objects have been positionally matched to ``DiaSources`` within a radius of some number of arcseconds, query ``NearbySSO`` or to search for non-detections of known Solar System objects in prompt processing, join the ``SSObject`` table to the ``NearbySSO`` table using the ``ssObjectId``; non-detections will have NULL ``diaSourceIds``).
+To retrieve the observations of Solar System objects that Rubin has submitted to and been accepted by the Minor Planet Center (MPC), use the ``SSObservation`` table. For orbit information, use the ``mpc_orbits`` table, and for per-object properties, such as per-band absolute magnitudes, use the ``SSObject`` table. These three tables can be joined using the Solar System object ``designation``. To find which known objects were predicted near ``DiaSources``, and how close, query ``NearbySSO``. To search for non-detections of known Solar System objects in prompt processing, select the ``NearbySSO`` rows with a NULL ``diaSourceId``.
 
 The three MPC tables retain the upstream MPC field semantics rather than being recomputed from Rubin observations.
 The delivered ``mpc_orbits``, ``current_identifications``, and ``numbered_identifications`` reference products are daily snapshots of the `MPC PostgreSQL tables <https://data.minorplanetcenter.net/mpcops/documentation/replicated-tables-schema/>`_.

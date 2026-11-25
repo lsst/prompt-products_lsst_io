@@ -6,7 +6,7 @@ SS object
 
 .. important::
 
-   Prompt catalogs are not yet available.
+   The Solar System tables are available via the TAP service as of Nov 30 2026.
 
 
 Derived parameters for moving (Solar System) objects accepted by the Minor Planet Center (MPC).
@@ -30,22 +30,23 @@ TAP
 Description
 ===========
 
-A "Solar System object" is a moving object for which one or more signal-to-noise (SNR) ratio >5 difference image detections (``DIASources``) or direct image detections (``Sources``) have been linked together either as an association to a previously known small body or as a new discovery and has been accepted by the Minor Planet Center (MPC).
+In these tables, a "Solar System object" (``SSObject``) is a small body known to the Minor Planet Center (MPC) with at least one Rubin observation accepted by the MPC, whether Rubin discovered it or observed a previously known object.
 
-``SSObject`` includes one row per recovered known object built only from the MPC-accepted observations (``SSObservations``), with observation summaries, per-band absolute-magnitude fits, and selected orbit-derived quantities.
+``SSObject`` includes one row per object with at least one MPC-accepted Rubin observation, built only from those observations (``SSObservation``), with observation summaries, per-band absolute-magnitude fits, and selected orbit-derived quantities.
 The ``SSObject`` table includes the unique identifier integer ``ssObjectId``, the unpacked primary provisional ``designation``, total and per-band observation counts, the first observation epoch and observing arc, per-band phase-angle ranges, extendedness summaries, and selected quantities derived from the input MPC orbit (``mpc_orbits``).
 
 The ``SSObject`` table can be joined to the :doc:`SSObservation <ss_observation>` and :doc:`NearbySSO <nearby_sso>` tables on the ``ssObjectId`` or ``designation`` to obtain Minor Planet Center (MPC)-submitted observations (``SSObservation``) and nearest predicted known Solar System object per ``DiaSource`` (``NearbySSO``).
 
-The ``SSObject`` table per-band absolute magnitudes were fitted to the associated PSF photometry with an H-G12 phase function.
-G12 was fixed at 0.5 and only H was fitted; valid G12 values therefore all equal 0.5, while G12 uncertainties and the H-G12 covariance are undefined.
-A 0.05 magnitude uncertainty floor was included, and a robust initial fit was used to reject measurements beyond 10 sigma before the final least-squares fit.
-Users should compare the per-band ``nObsUsed`` and ``nObs`` values, inspect the phase-angle coverage and fit statistics, and treat sparsely sampled fits and cross-band colors with care.
+The per-band absolute magnitudes are fitted to the PSF photometry of the object's ``SSObservation`` rows with the H-G12 phase function.
+A 0.05 magnitude uncertainty floor is added in quadrature; a robust fit first identifies outliers beyond 10 sigma, which are excluded from the final least-squares fit.
+H and G12 are fitted together, with G12 constrained to [0, 1].
+Where the slope cannot be constrained (fewer than three usable points, a phase-angle span under 5 degrees, a fit ending at the edge of G12's range, or a singular fit), ``{band}_slope_fit_failed`` is true, G12 is set to 0.5, H is fitted with G12 fixed, and ``{band}_G12Err`` and the H-G12 covariance are NULL.
+Users should check ``{band}_slope_fit_failed``, compare the per-band ``nObsUsed`` and ``nObs`` values, inspect the phase-angle coverage (``{band}_phaseAngleMin`` and ``{band}_phaseAngleMax``) and fit statistics, and treat sparsely sampled fits and cross-band colors with care.
 
 The table also contains the Tisserand parameter with respect to Jupiter and Earth minimum-orbit-intersection-distance quantities computed from the input MPC elements.
 These values should not by themselves be used for hazard classification or close-approach prediction.
 
-The PPDB contains all alerts from roughly September 2025 onwards as well as the accumulated Solar System tables. The ``SSObject`` catalog is rebuilt daily from the moving object observations Rubin submits to and are accepted by the MPC.
+The ``SSObject`` catalog is rebuilt daily from the ``SSObservation`` table, i.e., from the observations Rubin has submitted to and the MPC has accepted.
 
 Processing
 ----------

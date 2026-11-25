@@ -6,7 +6,7 @@ Current identifications
 
 .. important::
 
-   Prompt catalogs are not yet available.
+   The Solar System tables are available via the TAP service as of Nov 30 2026.
 
 
 The current identifications catalog produced by the `Minor Planet Center <https://minorplanetcenter.net/>`_ (MPC).
@@ -44,12 +44,12 @@ This table is useful for resolving historical or alternate designations before j
 
 The ``current_identifications`` table can be joined to the :doc:`mpc_orbits <mpc_orbits>` table on the ``packed_primary_provisional_designation`` to obtain Minor Planet Center (MPC)-derived orbital parameters.
 
-The PPDB contains all alerts from roughly September 2025 onwards as well as the accumulated Solar System tables. The ``current_identifications`` catalog is ingested daily from the MPC and includes moving object observations Rubin submits to and are accepted by the MPC as well as discoveries and detections by other contemporaneous programs made during the past 24 hours.
+A new snapshot of the ``current_identifications`` catalog is taken from the MPC daily, so it reflects the MPC's current designations.
 
 Processing
 ----------
 
-The current identifications catalog is the result of :doc:`/processing/moving/index`.
+The current identifications catalog is a daily snapshot of the MPC's table; it is used by :doc:`/processing/moving/index` but not modified.
 
 Tutorials
 ---------
