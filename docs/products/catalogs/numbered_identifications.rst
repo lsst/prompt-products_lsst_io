@@ -31,7 +31,8 @@ Description
 ===========
 
 ``numbered_identifications`` is a daily copy of the `MPC database <https://data.minorplanetcenter.net/mpcops/documentation/replicated-tables-schema/>`_ table of numbered objects.
-Each row gives an object's permanent number (``permid``) and its primary provisional designation, with its IAU designation, name, and naming credit where available.
+Each row gives an object's permanent number (``permid``) and its primary provisional designation.
+The ``iau_designation``, ``iau_name``, and ``naming_credit`` columns are present, but are not currently populated in the MPC's replicated table.
 Use it to translate a number into the primary designation used by the Rubin tables.
 
 The columns keep the MPC's definitions; see the `MPC replicated-tables schema <https://docs.minorplanetcenter.net/mpc-ops-docs/data-and-services/replicated-tables-schema/>`_.

@@ -130,13 +130,22 @@ Which table should I use?
      - ``numbered_identifications`` or ``current_identifications``
 
 The Solar System tables identify objects by their primary provisional designation (``designation``).
-To look up an object by its number or by another designation, translate it first, as in the first two examples below.
+To look up an object by its number, translate it first with ``numbered_identifications``, as in the second example below; use ``current_identifications`` the same way for an alternate designation.
 
 
 Example queries
 ---------------
 
-All Rubin observations of asteroid (1246), looked up by its number:
+All Rubin observations of an object, by its designation:
+
+.. code-block:: sql
+
+   SELECT midpointMjdTai, band, ra, dec, psfMag, psfMagErr
+   FROM ppdb.SSObservation
+   WHERE designation = '1932 OA'
+   ORDER BY midpointMjdTai
+
+The same object, (1246), looked up by its number:
 
 .. code-block:: sql
 
@@ -147,16 +156,21 @@ All Rubin observations of asteroid (1246), looked up by its number:
    WHERE n.permid = '1246'
    ORDER BY o.midpointMjdTai
 
-All Rubin observations of an object, looked up by an alternate designation (here 2025 PL160):
+The object's orbit (``epoch_mjd`` is in TT):
 
 .. code-block:: sql
 
-   SELECT o.midpointMjdTai, o.band, o.ra, o.dec, o.psfMag, o.psfMagErr
-   FROM ppdb.SSObservation AS o
-   JOIN ppdb.current_identifications AS c
-     ON o.designation = c.unpacked_primary_provisional_designation
-   WHERE c.unpacked_secondary_provisional_designation = '2025 PL160'
-   ORDER BY o.midpointMjdTai
+   SELECT designation, a, e, i, q, epoch_mjd, h
+   FROM ppdb.mpc_orbits
+   WHERE designation = '1932 OA'
+
+The ten objects Rubin has observed most:
+
+.. code-block:: sql
+
+   SELECT TOP 10 designation, nObs, arc, firstObservationMjdTai
+   FROM ppdb.SSObject
+   ORDER BY nObs DESC
 
 r-band phase-curve parameters from at least 20 observations, where the slope was fitted (when the fit falls back to G12 = 0.5, ``r_G12Err`` is NULL):
 
@@ -167,14 +181,30 @@ r-band phase-curve parameters from at least 20 observations, where the slope was
    FROM ppdb.SSObject
    WHERE r_G12Err IS NOT NULL AND r_nObsUsed >= 20
 
-``DiaSources`` whose nearest predicted object lies within three times the prediction's uncertainty (``ephOffset`` is in arcseconds; ``ephRaErr`` and ``ephDecErr`` are in degrees):
+All observations of objects on Jupiter-family comet (JFC) orbits, selected by their Tisserand parameter with respect to Jupiter, 2 < T\ :sub:`J` < 3, computed from the MPC orbit (5.2026 au is Jupiter's semi-major axis; 0.0174532925 converts degrees to radians).
+This simple cut also selects the Jupiter Trojans (``a`` near 5.2 au); add a cut on ``a`` or ``q`` to exclude them.
+``SSObject`` also has a precomputed ``tisserand_J``.
+
+.. code-block:: sql
+
+   SELECT o.designation, o.midpointMjdTai, o.band, o.ra, o.dec, o.psfMag, o.psfMagErr,
+          m.a, m.e, m.i,
+          5.2026 / m.a + 2 * COS(m.i * 0.0174532925) * SQRT(m.a / 5.2026 * (1 - m.e * m.e)) AS tisserandJ
+   FROM ppdb.SSObservation AS o
+   JOIN ppdb.mpc_orbits AS m ON o.designation = m.designation
+   WHERE m.e < 1
+     AND 5.2026 / m.a + 2 * COS(m.i * 0.0174532925) * SQRT(m.a / 5.2026 * (1 - m.e * m.e)) BETWEEN 2 AND 3
+   ORDER BY o.designation, o.midpointMjdTai
+
+The ``DiaSources`` of one visit whose nearest predicted object lies within three times the prediction's uncertainty (``ephOffset`` is in arcseconds; ``ephRaErr`` and ``ephDecErr`` are in degrees):
 
 .. code-block:: sql
 
    SELECT n.diaSourceId, n.designation, n.ephOffset,
           n.ephRaErr * 3600 AS ephRaErr_arcsec, n.ephDecErr * 3600 AS ephDecErr_arcsec
    FROM ppdb.NearbySSO AS n
-   WHERE n.diaSourceId IS NOT NULL
+   WHERE n.visit = 2026011200081
+     AND n.diaSourceId IS NOT NULL
      AND n.diaDistanceRank = 1
      AND n.ephOffset < 3 * 3600 * SQRT(n.ephRaErr * n.ephRaErr + n.ephDecErr * n.ephDecErr)
 
