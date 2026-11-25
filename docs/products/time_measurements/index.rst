@@ -6,9 +6,12 @@ Time Measurements
 
 Time measurements are in International Atomic Time (TAI).
 
-The data products that contain time measurements include the :doc:`DiaObject </products/catalogs/dia_object>`, :doc:`DiaSource </products/catalogs/dia_source>`, :doc:`DiaForcedSource </products/catalogs/dia_forced_source>`, :doc:`SSObject </products/catalogs/ss_object>`, :doc:`SSObservation </products/catalogs/ss_observation>`, and :doc:`mpc_orbits </products/catalogs/mpc_orbits>` catalogs.
+The data products that contain time measurements include the :doc:`DiaObject </products/catalogs/dia_object>`, :doc:`DiaSource </products/catalogs/dia_source>`, :doc:`DiaForcedSource </products/catalogs/dia_forced_source>`, :doc:`SSObject </products/catalogs/ss_object>`, :doc:`SSObservation </products/catalogs/ss_observation>`, :doc:`NearbySSO </products/catalogs/nearby_sso>`, and :doc:`mpc_orbits </products/catalogs/mpc_orbits>` catalogs.
 
-The ``epoch_mjd`` provided in the :doc:`mpc_orbits </products/catalogs/mpc_orbits>` catalog is the only time measurement that is not measured in TAI, but Terrestrial Time (TT).
+The exceptions are in the tables copied from the Minor Planet Center (MPC):
+
+- the orbit epoch ``epoch_mjd`` in :doc:`mpc_orbits </products/catalogs/mpc_orbits>` is in Terrestrial Time (TT);
+- the MPC's record-keeping timestamps (``created_at``, ``updated_at``, and ``fitting_datetime`` in ``mpc_orbits``, ``current_identifications``, and ``numbered_identifications``) are copied from the MPC database as-is: calendar date-times without a declared time scale (presumably UTC).
 
 
 Time scale definitions

@@ -6,7 +6,7 @@ Numbered identifications
 
 .. important::
 
-   Prompt catalogs are not yet available.
+   The Solar System tables are available via the TAP service as of Nov 30 2026.
 
 
 The numbered identifications catalog produced by the `Minor Planet Center <https://minorplanetcenter.net/>`_ (MPC).
@@ -30,27 +30,30 @@ TAP
 Description
 ===========
 
-The `Minor Planet Center <https://minorplanetcenter.net/>`_ (MPC) is the single worldwide location for receipt and distribution of positional measurements of small bodies.
-The MPC is responsible for the identification, designation, and orbit computation for all moving objects.
+``numbered_identifications`` is a daily copy of the `MPC database <https://data.minorplanetcenter.net/mpcops/documentation/replicated-tables-schema/>`_ table of numbered objects.
+Each row gives an object's permanent number (``permid``) and its primary provisional designation.
+The ``iau_designation``, ``iau_name``, and ``naming_credit`` columns are present, but are not currently populated in the MPC's replicated table.
+Use it to translate a number into the primary designation used by the Rubin tables.
 
-All solar system objects discovered by Rubin Observatory with LSSTCam are reported to the `Minor Planet Center <https://minorplanetcenter.net/>`_ (MPC).
-The MPC has assigned `"observatory code" <https://minorplanetcenter.net/iau/lists/ObsCodesF.html>`_ ``X05`` to the Rubin Observatory.
+The columns keep the MPC's definitions; see the `MPC replicated-tables schema <https://docs.minorplanetcenter.net/mpc-ops-docs/data-and-services/replicated-tables-schema/>`_.
+For the MPC's role, see :doc:`mpc_orbits <mpc_orbits>`.
 
-The PPDB ``numbered_identifications`` table is a daily auxiliary snapshot adopted from the `Minor Planet Center PostgreSQL database <https://data.minorplanetcenter.net/mpcops/documentation/replicated-tables-schema/>`_.
-It connects an object's permanent number to its primary provisional designation and includes IAU designations, names, discovery credits, and publication references where available.
-The upstream definitions and field semantics are documented in the `MPC replicated-tables schema <https://docs.minorplanetcenter.net/mpc-ops-docs/data-and-services/replicated-tables-schema/>`_.
+Joins
+-----
 
-This table is useful for translating between permanent numbers and the provisional designations used by the Rubin-derived Solar System tables.
+- ``unpacked_primary_provisional_designation`` to ``designation`` in :doc:`SSObservation <ss_observation>`, :doc:`SSObject <ss_object>`, :doc:`NearbySSO <nearby_sso>`, and :doc:`mpc_orbits <mpc_orbits>`.
+- ``packed_primary_provisional_designation`` to :doc:`mpc_orbits <mpc_orbits>`.
 
-The ``numbered_identifications`` table can be joined to the :doc:`mpc_orbits <mpc_orbits>` table on the ``packed_primary_provisional_designation`` to obtain Minor Planet Center (MPC)-derived orbital parameters.
+Updates
+-------
 
-The PPDB contains all alerts from roughly September 2025 onwards as well as the accumulated Solar System tables. The ``numbered_identifications`` catalog is ingested daily from the MPC and includes moving object observations Rubin submits to and are accepted by the MPC as well as discoveries and detections by other contemporaneous programs made during the past 24 hours.
+A new copy is taken daily, so it reflects the MPC's current numbering.
 
 
 Processing
 ----------
 
-The numbered identifications catalog is the result of :doc:`/processing/moving/index`.
+The numbered identifications catalog is a daily snapshot of the MPC's table; it is used by :doc:`/processing/moving/index` but not modified.
 
 Tutorials
 ---------
