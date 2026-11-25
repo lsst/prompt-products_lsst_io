@@ -216,11 +216,18 @@ This example gets the observations of an object, removes measurements with probl
    obs = service.search(query).to_table().to_pandas()
 
    # The TAP service can't filter on boolean columns, so cut on the flags here.
-   flags = ["psfFlux_flag", "centroid_flag", "pixelFlags_saturated", "pixelFlags_cr"]
+   flags = [
+       "psfFlux_flag",
+       "centroid_flag",
+       "pixelFlags_saturated",
+       "pixelFlags_cr",
+   ]
    good = obs[~obs[flags].fillna(False).any(axis=1)]
 
    for band, rows in good.groupby("band"):
-       plt.errorbar(rows.phaseAngle, rows.reducedMag, rows.psfMagErr, fmt="o", label=band)
+       plt.errorbar(
+           rows.phaseAngle, rows.reducedMag, rows.psfMagErr, fmt="o", label=band
+       )
    plt.gca().invert_yaxis()
    plt.xlabel("Phase angle (deg)")
    plt.ylabel("Reduced magnitude")
