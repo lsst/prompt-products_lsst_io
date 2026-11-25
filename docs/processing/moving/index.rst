@@ -89,7 +89,22 @@ The tables join on these keys:
 - ``designation``: the same three tables and ``mpc_orbits``.
 - ``diaSourceId``: ``NearbySSO`` and ``DiaSource``.
 
-``SSObservation`` already contains the full measurement of each observation, so it never needs to be joined to ``DiaSource``.
+The Solar System tables and DiaSource are separate datasets
+------------------------------------------------------------
+
+Think of the Solar System tables and the PPDB's ``DiaSource`` table as two separate datasets.
+You should almost never need to join them.
+
+``SSObservation`` has a ``diaSourceId`` column, but its observations come from more than the PPDB's alert processing.
+They also come from reprocessings of earlier data (e.g., DP1 and DP2) and from direct-image ``Sources``.
+The ``processing`` column says which processing each observation comes from.
+Only rows with ``processing = 'AP-DS'`` (alert production, difference images) refer to the PPDB's ``DiaSource`` table.
+In other rows, ``diaSourceId`` identifies a source of a different processing; it is unique only together with ``processing``.
+
+Even for ``AP-DS`` rows, the join isn't needed: each ``SSObservation`` row already contains the full source record of the observation.
+
+The exception is ``NearbySSO``.
+It is built on the PPDB's ``DiaSources``, so joining it to ``DiaSource`` on ``diaSourceId`` is how you get the measurements of the detections it lists.
 
 
 Which table should I use?
@@ -181,6 +196,9 @@ Things to know
 - **NearbySSO shows proximity, not identification.**
   The ``DiaSource`` may be a different object or an artifact, especially when ``ephOffset`` is large compared with the prediction's uncertainty.
   Confirmed observations are in ``SSObservation``.
+- **The Solar System tables and DiaSource are separate datasets.**
+  ``SSObservation`` contains the full measurement of every observation, including many not in the PPDB's ``DiaSource`` table; you should almost never need to join the two.
+  ``NearbySSO`` is the exception: it is built on the PPDB's ``DiaSources``.
 - **The ssObjectId is an opaque identifier.**
   It does not change when an object is numbered.
   It does change if the MPC changes the object's primary provisional designation, for example when two designations turn out to be the same object.

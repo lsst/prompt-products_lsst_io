@@ -45,7 +45,9 @@ Key columns
 
 - ``obsid``, ``obssubid``, ``trksub``, ``trkid``, ``submission_id``, ``status``: the MPC's record of the observation.
 - ``measuredOn``: the kind of image measured, 'difference' (a ``DiaSource``) or 'science' (a ``Source``).
-  ``processing`` and ``processingTable`` tell which processing the measurement comes from; ``diaSourceId`` or ``sourceId`` identifies it.
+- ``processing`` and ``processingTable``: which processing the measurement comes from (e.g., ``AP-DS`` for alert production, ``DP2-DS`` for the DP2 reprocessing).
+  ``diaSourceId`` or ``sourceId`` identifies the measurement within that processing.
+  Only ``AP-DS`` measurements are in the PPDB's ``DiaSource`` table, and the row already contains the full measurement anyway (see :ref:`moving`).
 - ``ap03Flux``, ``ap06Flux``, ``ap25Flux`` (and their magnitudes): 3, 6, and 25 pixel aperture photometry, for ``Source`` rows only.
 - ``ssObjectId`` and ``designation``: the object the MPC identified the observation with.
   Both are NULL for observations in the MPC's Isolated Tracklet File (``status`` = 'I'): accepted, but not yet identified with a known object.
