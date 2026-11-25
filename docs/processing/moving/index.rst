@@ -77,5 +77,94 @@ The ``NearbySSO`` catalog is rebuilt daily from all PPDB ``DiaSources`` and the 
 
 To retrieve the observations of Solar System objects that Rubin has submitted to and been accepted by the Minor Planet Center (MPC), use the ``SSObservation`` table. For orbit information, use the ``mpc_orbits`` table, and for per-object properties, such as per-band absolute magnitudes, use the ``SSObject`` table. These three tables can be joined using the Solar System object ``designation``. To find which known objects were predicted near ``DiaSources``, and how close, query ``NearbySSO``. To search for non-detections of known Solar System objects in prompt processing, select the ``NearbySSO`` rows with a NULL ``diaSourceId``.
 
+
 The three MPC tables retain the upstream MPC field semantics rather than being recomputed from Rubin observations.
 The delivered ``mpc_orbits``, ``current_identifications``, and ``numbered_identifications`` reference products are daily snapshots of the `MPC PostgreSQL tables <https://data.minorplanetcenter.net/mpcops/documentation/replicated-tables-schema/>`_.
+
+
+Which table should I use?
+-------------------------
+
+.. list-table::
+   :header-rows: 1
+   :widths: 50 50
+
+   * - To find...
+     - Use
+   * - Rubin's observations of an object (astrometry, photometry, observing geometry)
+     - ``SSObservation``
+   * - Per-object properties (per-band absolute magnitudes and phase-curve slopes, Earth MOID, Tisserand parameter)
+     - ``SSObject``
+   * - An object's orbit
+     - ``mpc_orbits``
+   * - Which known objects were predicted near a ``DiaSource``, or predicted positions where no ``DiaSource`` was detected
+     - ``NearbySSO``
+   * - The primary provisional designation for a permanent number or an alternate designation
+     - ``numbered_identifications`` or ``current_identifications``
+
+The Solar System tables are keyed on the primary provisional designation (``designation``).
+To look up an object by its number or by another designation, first translate it with ``numbered_identifications`` or ``current_identifications``, as in the examples below.
+
+
+Example queries
+---------------
+
+All Rubin observations of asteroid (1246):
+
+.. code-block:: sql
+
+   SELECT o.midpointMjdTai, o.band, o.ra, o.dec, o.psfMag, o.psfMagErr, o.phaseAngle
+   FROM ppdb.SSObservation AS o
+   JOIN ppdb.numbered_identifications AS n
+     ON o.designation = n.unpacked_primary_provisional_designation
+   WHERE n.permid = '1246'
+   ORDER BY o.midpointMjdTai
+
+The same for an object known by an alternate (secondary) designation, here 2025 PL160:
+
+.. code-block:: sql
+
+   SELECT o.midpointMjdTai, o.band, o.ra, o.dec, o.psfMag, o.psfMagErr
+   FROM ppdb.SSObservation AS o
+   JOIN ppdb.current_identifications AS c
+     ON o.designation = c.unpacked_primary_provisional_designation
+   WHERE c.unpacked_secondary_provisional_designation = '2025 PL160'
+   ORDER BY o.midpointMjdTai
+
+r-band phase-curve parameters, only where the slope was fitted (a fit that fell back to G12 = 0.5 has a NULL ``r_G12Err``), from at least 20 observations:
+
+.. code-block:: sql
+
+   SELECT designation, r_H, r_HErr, r_G12, r_G12Err, r_nObsUsed,
+          r_phaseAngleMin, r_phaseAngleMax
+   FROM ppdb.SSObject
+   WHERE r_G12Err IS NOT NULL AND r_nObsUsed >= 20
+
+``DiaSources`` whose nearest predicted known object lies within three times the prediction's positional uncertainty (``ephOffset`` is in arcseconds, ``ephRaErr`` and ``ephDecErr`` in degrees):
+
+.. code-block:: sql
+
+   SELECT n.diaSourceId, n.designation, n.ephOffset,
+          n.ephRaErr * 3600 AS ephRaErr_arcsec, n.ephDecErr * 3600 AS ephDecErr_arcsec
+   FROM ppdb.NearbySSO AS n
+   WHERE n.diaSourceId IS NOT NULL
+     AND n.diaDistanceRank = 1
+     AND n.ephOffset < 3 * 3600 * SQRT(n.ephRaErr * n.ephRaErr + n.ephDecErr * n.ephDecErr)
+
+Predicted positions of an object in visits where no ``DiaSource`` matched it (non-detections):
+
+.. code-block:: sql
+
+   SELECT n.visit, n.detector, n.ephRa, n.ephDec, n.ephVmag
+   FROM ppdb.NearbySSO AS n
+   WHERE n.designation = '2006 SH230' AND n.diaSourceId IS NULL
+
+
+Things to know
+--------------
+
+- **SSObservation and SSObject lag the alerts.** They contain only observations the MPC has accepted and published, so an observation appears days to months after it was made. Single-night detections that cannot yet be identified with an object (singletons) are currently held at the MPC's request.
+- **NearbySSO is a statement about proximity, not identification.** A row says that a known object was predicted near a ``DiaSource``; the ``DiaSource`` may be a different object or an artifact, particularly when ``ephOffset`` is large compared with the prediction's uncertainty. Observations confirmed by the MPC are in ``SSObservation``.
+- **The ssObjectId is an opaque identifier.** It stays the same when an object is numbered, but changes if the MPC changes the object's primary provisional designation (for example, when it finds that two designations are the same object); the object's rows then appear under the new ``ssObjectId``. For references that must last, record the designation or number.
+- **The tables are rebuilt daily.** Newly accepted observations, new discoveries, orbit updates, and designation changes all appear the next day, so query results can change from day to day.
+- **Check the phase-curve fits.** Where ``{band}_slope_fit_failed`` is true, G12 was fixed at 0.5 and only H was fitted; see :doc:`SSObject </products/catalogs/ss_object>`.

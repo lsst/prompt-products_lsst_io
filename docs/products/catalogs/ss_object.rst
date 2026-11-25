@@ -33,7 +33,7 @@ Description
 In these tables, a "Solar System object" (``SSObject``) is a small body known to the Minor Planet Center (MPC) with at least one Rubin observation accepted by the MPC, whether Rubin discovered it or observed a previously known object.
 
 ``SSObject`` includes one row per object with at least one MPC-accepted Rubin observation, built only from those observations (``SSObservation``), with observation summaries, per-band absolute-magnitude fits, and selected orbit-derived quantities.
-The ``SSObject`` table includes the unique identifier integer ``ssObjectId``, the unpacked primary provisional ``designation``, total and per-band observation counts, the first observation epoch and observing arc, per-band phase-angle ranges, extendedness summaries, and selected quantities derived from the input MPC orbit (``mpc_orbits``).
+The ``SSObject`` table includes the integer identifier ``ssObjectId`` (an opaque identifier that changes if the MPC changes the object's primary provisional designation; see :ref:`moving`), the unpacked primary provisional ``designation``, total and per-band observation counts, the first observation epoch and observing arc, per-band phase-angle ranges, extendedness summaries, and selected quantities derived from the input MPC orbit (``mpc_orbits``).
 
 The ``SSObject`` table can be joined to the :doc:`SSObservation <ss_observation>` and :doc:`NearbySSO <nearby_sso>` tables on the ``ssObjectId`` or ``designation`` to obtain Minor Planet Center (MPC)-submitted observations (``SSObservation``) and nearest predicted known Solar System object per ``DiaSource`` (``NearbySSO``).
 
