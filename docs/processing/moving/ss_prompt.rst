@@ -46,8 +46,6 @@ During the day before the coming night’s observing:
 
 6. The Solar System tables are released in the PPDB.
 
-7. Precovery linking is attempted for all ``SSObjects`` whose orbits were updated in the above process (or are new). Where successful, newly discovered observations are queued up for submission to the Minor Planet Center.
-
 Production of Solar System PPDB tables
 ======================================
 
