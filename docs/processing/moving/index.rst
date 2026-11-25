@@ -181,19 +181,16 @@ r-band phase-curve parameters from at least 20 observations, where the slope was
    FROM ppdb.SSObject
    WHERE r_G12Err IS NOT NULL AND r_nObsUsed >= 20
 
-All observations of objects on Jupiter-family comet (JFC) orbits, selected by their Tisserand parameter with respect to Jupiter, 2 < T\ :sub:`J` < 3, computed from the MPC orbit (5.2026 au is Jupiter's semi-major axis; 0.0174532925 converts degrees to radians).
-This simple cut also selects the Jupiter Trojans (``a`` near 5.2 au); add a cut on ``a`` or ``q`` to exclude them.
-``SSObject`` also has a precomputed ``tisserand_J``.
+All observations of objects on Jupiter-family comet (JFC) orbits, selected by their Tisserand parameter with respect to Jupiter, 2 < T\ :sub:`J` < 3 (``tisserand_J`` in ``SSObject``, computed from the MPC orbit).
+This simple cut also selects the Jupiter Trojans (semi-major axis near 5.2 au); join ``mpc_orbits`` on ``designation`` and cut on ``a`` or ``q`` to exclude them.
 
 .. code-block:: sql
 
    SELECT o.designation, o.midpointMjdTai, o.band, o.ra, o.dec, o.psfMag, o.psfMagErr,
-          m.a, m.e, m.i,
-          5.2026 / m.a + 2 * COS(m.i * 0.0174532925) * SQRT(m.a / 5.2026 * (1 - m.e * m.e)) AS tisserandJ
+          s.tisserand_J
    FROM ppdb.SSObservation AS o
-   JOIN ppdb.mpc_orbits AS m ON o.designation = m.designation
-   WHERE m.e < 1
-     AND 5.2026 / m.a + 2 * COS(m.i * 0.0174532925) * SQRT(m.a / 5.2026 * (1 - m.e * m.e)) BETWEEN 2 AND 3
+   JOIN ppdb.SSObject AS s ON o.ssObjectId = s.ssObjectId
+   WHERE s.tisserand_J BETWEEN 2 AND 3
    ORDER BY o.designation, o.midpointMjdTai
 
 The ``DiaSources`` of one visit whose nearest predicted object lies within three times the prediction's uncertainty (``ephOffset`` is in arcseconds; ``ephRaErr`` and ``ephDecErr`` are in degrees):
