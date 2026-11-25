@@ -30,7 +30,7 @@ TAP
 Description
 ===========
 
-One row per nearest predicted known Solar System object for each ``DiaSource``, including the nearest objects predicted to land on a detector but match no ``DiaSource`` (with ``DiaSourceId`` = NULL).
+One row per nearest predicted known Solar System object for each ``DiaSource``, including the nearest objects predicted to land on a detector but match no ``DiaSource`` (with ``DiaSourceId`` = NULL). Unlike the ``SSObject`` and ``SSObservation`` tables that includes only observations (``SSObservation``) and objects (``SSObjects``) that have been submitted to and accepted by the MPC, the ``NearbySSO`` table only includes predictions for the nearest known Solar System objects to each ``DiaSource`` (or expected ``DiaSource`` given that a known Solar System object should be nearby). The ``NearbySSO`` table does NOT have detections of Solar System objects that have been passed through the MPC, only known objects that have been positionally matched to ``DiaSource`` detections or NULL ``DiaSource`` detections of known Solar System objects expected to be nearby.
 
 The ``NearbySSO`` table includes the unique identifiers ``diaSourceId``, ``ssObjectId``, and ``designation``.
 It also contains the ephemeris information (``ephRa``, ``ephDec``, and ``ephVmag``) with the predicted position's error ellipse (``ephRaErr``, ``ephDecErr``, ``ephRa_ephDec_Cov``).
@@ -47,7 +47,7 @@ Alternatively, to search for non-detections of known Solar System objects in pro
 
 The ``NearbySSO`` table can be joined to the :doc:`SSObject <ss_object>` and :doc:`SSObservation <ss_observation>` tables on the ``ssObjectId`` or ``designation`` to obtain Rubin-derived object-level photometry and summary properties (``SSObject``) and Minor Planet Center (MPC)-submitted observations (``SSObservation``).
 
-The PPDB contains all alerts from roughly September 2025 onwards as well as the accumulated Solar System tables. The ``NearbySSO`` catalog is rebuilt daily from the moving object observations Rubin submits to and are accepted by the MPC.
+The PPDB contains all alerts from roughly September 2025 onwards as well as the accumulated Solar System tables. The ``NearbySSO`` catalog is rebuilt daily using updated information from the MPC to include the predictions for the nearest known Solar System objects to each ``DiaSource`` detection. As additional detection/object linkages are made by the MPC and Solar System object ``designations`` and ``ssObjectId`` may change accordingly, the ``NearbySSO`` table is kept up-to-date daily with the most recent available information and provides the most up-to-date information for determining whether ``DiaSource`` detections have been positionally matched to known Solar System objects (but have not necessarily been 'observed' by Rubin and been submitted to and accepted by the MPC unless they appear in the ``SSObservation`` table).
 
 Processing
 ----------
