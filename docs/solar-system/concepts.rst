@@ -18,7 +18,7 @@ These are the rows of ``SSObservation``.
 Rubin treats a detection as an observation of an object once the MPC has accepted it and identified it with that object.
 
 **An object**: "Here is what Rubin's observations tell us about this object."
-These are the rows of ``SSObject``, computed from the object's observations and its MPC orbit.
+These are the rows of ``SSObject``, computed from the object's observations and its orbit in ``mpc_orbits``.
 
 **A prediction**: "According to its orbit, this known object should have been here."
 These are the rows of ``NearbySSO``.
@@ -38,8 +38,7 @@ A detection becomes a row of ``SSObservation`` in four steps:
 
 Two things follow.
 First, ``SSObservation`` and ``SSObject`` lag the alerts: an observation appears only after the MPC has accepted and published it.
-Second, single-night detections that can't yet be linked to an object (singletons) are currently not being submitted to the MPC, at the MPC's request, so they are not in ``SSObservation``.
-``NearbySSO`` has no such lag: it covers every difference-image detection (``DiaSource``) in the PPDB, as soon as it is there. It does not cover measurements made on visit images (``Sources``).
+Second, ``SSObservation`` generally doesn't contain single-night detections that can't yet be linked to an object (singletons): Rubin is currently not submitting them to the MPC, at the MPC's request, with some exceptions, mainly for distant objects such as TNOs.
 
 
 Where the measurements come from
@@ -69,10 +68,7 @@ To start from a number or from another designation, translate it first:
 - ``numbered_identifications`` maps permanent numbers (``permid``) to primary designations; it includes numbered comets such as ``29P``;
 - ``current_identifications`` maps each secondary designation to its object's primary designation.
 
-The tables also have an integer ``ssObjectId``.
-Treat it as an opaque identifier, convenient for joining tables within a query.
-It does not change when an object is numbered, but it does change if the MPC changes the object's primary designation, for example when it finds that two designations are the same object.
-So join on ``designation`` or ``ssObjectId`` as you like, but if you need to refer to an object later, record its designation or number, not its ``ssObjectId``.
+Objects in the ``SSObject`` table are also identified by an integer ``ssObjectId``, which you can use to join ``SSObject``, ``SSObservation``, and ``NearbySSO``.
 
 
 The Solar System tables and DiaSource are separate datasets
@@ -94,12 +90,9 @@ TAI is currently 37 seconds ahead of UTC, the time scale of MPC observation reco
 The one exception is the orbit epoch in ``mpc_orbits``, ``epoch_mjd``, which is in TT.
 See :doc:`/products/time_measurements/index` for converting between time scales.
 
-``midpointMjdTai`` is the time of the observation at the detector: the middle of the exposure, at the source's position on the focal plane.
+In ``SSObservation``, ``midpointMjdTai`` is the time of the observation at the detector: the middle of the exposure, at the source's position on the focal plane.
 Rubin's camera shutter sweeps across the focal plane, so different parts of an image are exposed at slightly different times; ``midpointMjdTai`` is corrected for this.
 (``midpointMjdTai_flag`` marks the rare rows where no correction was available and the visit's midpoint is used instead.)
-It is not corrected for light travel time.
-``topoRange`` is the distance from Rubin to the object, with the object's position taken at the time the light left it, so ``topoRange`` divided by the speed of light is the light time (see :doc:`recipes`).
-The times in the PPDB's ``DiaSource`` table, and in Rubin's earlier MPC submissions, are the visit's midpoint, without the shutter correction.
 
 
 Positions

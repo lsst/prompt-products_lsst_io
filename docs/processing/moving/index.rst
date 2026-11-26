@@ -8,7 +8,7 @@ Solar System Processing includes both the association of known Solar System Obje
 Rubin reports its SSO observations and discoveries to the Minor Planet Center (MPC).
 The MPC identifies the observations, assigns designations, and computes the orbits of all known objects.
 Rubin computes per-object properties, such as per-band absolute magnitudes, from its observations accepted by the MPC.
-Single-night detections not yet linked to an object (singletons) are currently not being submitted to the MPC, at the MPC's request.
+Single-night detections not yet linked to an object (singletons) are generally not being submitted to the MPC at present, at the MPC's request; the exceptions are mainly distant objects such as TNOs.
 
 
 General overview of SSP

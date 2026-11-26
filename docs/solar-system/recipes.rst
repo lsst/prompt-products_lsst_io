@@ -143,9 +143,12 @@ Observations of objects with cometary designations, with aperture magnitude, ext
    FROM ppdb.SSObservation AS o
    WHERE o.designation LIKE 'C/%' OR o.designation LIKE 'P/%'
       OR o.designation LIKE 'D/%' OR o.designation LIKE 'I/%'
+      OR o.designation LIKE 'A/%'
    ORDER BY o.designation, o.midpointMjdTai
 
-Active asteroids and other objects with asteroidal designations are not selected by this query; select them by designation or by orbit.
+Numbered comets are included: their primary designations start with ``P/`` (1P/Halley is ``P/1682 Q1``).
+``A/`` designations are objects on cometary orbits that look asteroidal, such as 1I/ʻOumuamua (``A/2017 U1``).
+Active asteroids with ordinary asteroid designations are not selected; select them by designation or by orbit.
 
 
 Everything Rubin saw in a field

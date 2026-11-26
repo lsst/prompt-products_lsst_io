@@ -87,7 +87,7 @@ What the tables contain, and what they don't
 ============================================
 
 As :doc:`concepts` explains, ``SSObservation`` contains a detection only if Rubin detected it, associated or linked it to an object and submitted it, and the MPC accepted and published it.
-So the tables do not contain detections the MPC hasn't yet published, singletons, or objects Rubin saw but hasn't linked.
+So the tables do not contain detections the MPC hasn't yet published or objects Rubin saw but hasn't linked, and they generally don't contain singletons.
 Fields observed before a template existed for them are covered only where Rubin measured moving objects on the visit images.
 
 These selection effects depend on the field, the time, and the state of Rubin's processing, and they are not characterized in the PPDB.

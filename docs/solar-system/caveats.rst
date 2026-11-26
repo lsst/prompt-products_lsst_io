@@ -11,8 +11,8 @@ Most are explained in more detail elsewhere in this guide.
 About the data
 ==============
 
-**SSObservation and SSObject lag the alerts, and don't contain singletons.**
-An observation appears only after the MPC has accepted and published it; singletons are currently not being submitted to the MPC, at the MPC's request.
+**SSObservation and SSObject lag the alerts, and generally don't contain singletons.**
+An observation appears only after the MPC has accepted and published it; singletons are currently not being submitted to the MPC, at the MPC's request, with some exceptions, mainly for TNOs.
 
 **The tables change every day.**
 They follow the MPC's latest observations, orbits, and designations, so the same query can return different results tomorrow.
