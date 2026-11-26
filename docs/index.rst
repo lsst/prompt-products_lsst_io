@@ -43,6 +43,18 @@ Descriptions and schemas for the alert packets, catalogs, and images.
    Data products <products/index>
 
 
+Solar System science
+====================
+
+A guide to the Solar System tables in the Prompt Products Database, for astronomers who work on small bodies.
+
+.. toctree::
+   :maxdepth: 2
+   :titlesonly:
+
+   Solar System science <solar-system/index>
+
+
 Data processing
 ===============
 

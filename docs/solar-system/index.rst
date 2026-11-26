@@ -1,0 +1,81 @@
+.. _solar-system:
+
+###################################
+Solar System science with the PPDB
+###################################
+
+This guide is for astronomers who work on asteroids, comets, and other small bodies, and want to use Rubin's data.
+It assumes you know the Minor Planet Center (MPC), designations, absolute magnitudes and phase curves, and a little SQL.
+It does not assume you know anything about Rubin.
+
+.. toctree::
+   :maxdepth: 1
+   :hidden:
+
+   concepts
+   tables
+   quality
+   recipes
+   caveats
+   production
+
+
+Solar System Science Tables
+===========================
+
+- ``SSObservation`` holds every Rubin observation of a Solar System object that the MPC has accepted, with the full Rubin measurement behind it.
+- ``SSObject`` summarizes those observations, one row per object: observation counts, per-band phase-curve fits, and a few orbit-derived quantities.
+- ``NearbySSO`` lists the known objects predicted near each Rubin detection; it tells you what an object *could* be, not what it *is*.
+- ``mpc_orbits``, ``current_identifications``, and ``numbered_identifications`` are daily copies of the MPC's orbit and designation tables, so you can join orbits to Rubin data in one query.
+
+.. image:: /processing/moving/images/LSST-Solar-System-Processing-Infographic-PPDB.png
+
+
+Your first query
+================
+
+The Solar System tables live in the Prompt Products Database (PPDB), which you query with ADQL, a dialect of SQL, through the Rubin Science Platform (RSP).
+
+1. **Get an RSP account.** Follow the `instructions to sign up <https://rsp.lsst.io/guides/getting-started/get-an-account.html>`_. The RSP is available to Rubin data rights holders; see :doc:`/access/index`.
+2. **Open a query interface.** Use the Portal's ADQL search or a notebook in the Notebook Aspect (see :doc:`recipes` for the Python version), and choose the PPDB TAP service.
+3. **Run a query.** This one returns Rubin's observations of Pluto, whose designation is 1930 BM:
+
+.. code-block:: sql
+
+   SELECT midpointMjdTai, band, ra, dec, psfMag
+   FROM ppdb.SSObservation
+   WHERE designation = '1930 BM'
+   ORDER BY midpointMjdTai
+
+Each row is one observation: its time, filter, position, and magnitude.
+To look up objects by number or other designations, see :doc:`recipes`.
+
+
+Two things to know before you start
+===================================
+
+**The tables are rebuilt every day.**
+They follow the MPC: new observations, new discoveries, improved orbits, and changed designations all appear the next day.
+That keeps them current, but it also means that the same query can return different results tomorrow.
+If you use the results in a paper, save the table you queried and note the date and time of your query.
+The latest ``updated_at`` in ``mpc_orbits`` (``SELECT MAX(updated_at) FROM ppdb.mpc_orbits``) tells you roughly when the MPC snapshot behind that day's tables was taken.
+
+**The PPDB is the current view; data releases are the reference catalogs.**
+The PPDB gives you Rubin's best current knowledge of the Solar System, updated daily.
+Rubin's data releases provide versioned catalogs, processed homogeneously and with characterized systematics and selection.
+Use the PPDB to work with the latest data on an object or a population.
+Use a data release when you need a fixed, homogeneous catalog, for example to measure a population's size distribution.
+
+
+Where to go next
+================
+
+- :doc:`concepts` explains how an observation gets into the tables and how to identify objects.
+- :doc:`tables` is a tour of each table and its most useful columns.
+- :doc:`quality` covers uncertainties, flags, and what the tables do and don't contain.
+- :doc:`recipes` has copy-and-paste queries for common tasks.
+- :doc:`caveats` lists the things that most often trip people up.
+- :doc:`production` describes how the tables are made, for the curious.
+
+For questions, post in the `Support category of the Rubin Community Forum <https://www.rubin.community/c/support/6>`_.
+To cite the data, see :doc:`/cite`.
