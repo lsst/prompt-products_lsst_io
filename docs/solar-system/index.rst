@@ -38,18 +38,17 @@ The Solar System tables live in the Prompt Products Database (PPDB), which you q
 
 1. **Get an RSP account.** Follow the `instructions to sign up <https://rsp.lsst.io/guides/getting-started/get-an-account.html>`_. The RSP is available to Rubin data rights holders; see :doc:`/access/index`.
 2. **Open a query interface.** Use the Portal's ADQL search or a notebook in the Notebook Aspect (see :doc:`recipes` for the Python version), and choose the PPDB TAP service.
-3. **Run a query.** This one returns every Rubin observation of (134340) Pluto, chosen only as a demonstration:
+3. **Run a query.** This one returns Rubin's observations of Pluto, whose designation is 1930 BM:
 
 .. code-block:: sql
 
-   SELECT o.midpointMjdTai, o.band, o.ra, o.dec, o.psfMag, o.psfMagErr
-   FROM ppdb.SSObservation AS o
-   JOIN ppdb.numbered_identifications AS n
-     ON o.designation = n.unpacked_primary_provisional_designation
-   WHERE n.permid = '134340'
-   ORDER BY o.midpointMjdTai
+   SELECT midpointMjdTai, band, ra, dec, psfMag
+   FROM ppdb.SSObservation
+   WHERE designation = '1930 BM'
+   ORDER BY midpointMjdTai
 
-You get a table of times, filters, positions, and magnitudes: one row for each observation of Pluto that Rubin reported and the MPC accepted.
+Each row is one observation: its time, filter, position, and magnitude.
+To look up objects by number or other designations, see :doc:`recipes`.
 
 
 Two things to know before you start
